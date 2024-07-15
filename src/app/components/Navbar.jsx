@@ -15,7 +15,7 @@ const Navbar = () => {
 
             <a href='/' className="flex items-center">
               <img src="/logo.png" alt="Logo" className="w-14 h-10 mr-2" />
-              <span className='text-white'>AHSAN ALI</span>
+              <span className='text-slate-400'>AHSAN ALI</span>
             </a>
 
         </div>
