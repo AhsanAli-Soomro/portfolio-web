@@ -9,11 +9,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="backdrop-blur-sm z-20 text-white fixed top-0 w-full">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="/" className="flex items-center space-x-3">
-          <img src="/logo.png" alt="Logo" className="h-10" />
-          <span className="self-center text-2xl font-semibold text-white">HSAN ALI</span>
+    <nav className="backdrop-blur-sm z-20 md:pr-4 md:pl-4 text-white fixed top-0 w-full">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
+        <a href="/" className="flex items-center space-x-1">
+          <img src="/logo.png" alt="Logo" className="h-8" />
+          <span className="self-center text-2xl font-semibold pt-3 text-white">HSAN ALI</span>
         </a>
         <button
           onClick={toggleMenu}
@@ -28,18 +28,18 @@ const Navbar = () => {
           </svg>
         </button>
         <div className={`w-full md:block md:w-auto ${isOpen ? 'block' : 'hidden'}`} id="navbar-default">
-          <ul className="font-medium flex flex-col p-4 md:p-0 text-center md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-black">
+          <ul className="font-medium text-sm flex flex-col p-4 md:p-0 text-center md:flex-row md:space-x-8 md:mt-0 md:border-0">
             <li>
-              <a href="/" className="block py-2 px-3 text-white rounded  md:border-0 md:hover:text-orange-400 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" aria-current="page">Home</a>
+              <a href="/" className="block py-2 px-3 text-white rounded  md:border-0 hover:text-orange-400 md:p-0 " aria-current="page">Home</a>
             </li>
             <li>
-              <a href="/Resume" className="block py-2 px-3 text-white rounded   md:border-0 md:hover:text-orange-400 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Resume</a>
+              <a href="/Resume" className="block py-2 px-3 text-white rounded   md:border-0 hover:text-orange-400 md:p-0 ">Resume</a>
             </li>
             <li>
-              <a href="/About" className="block py-2 px-3 text-white rounded   md:border-0 md:hover:text-orange-400 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
+              <a href="/About" className="block py-2 px-3 text-white rounded   md:border-0 hover:text-orange-400 md:p-0 ">About</a>
             </li>
             <li>
-              <a href="/Hire" className="block py-2 px-3 text-white rounded   md:border-0 md:hover:text-orange-400 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Hire Me</a>
+              <a href="/Hire" className="block py-2 px-3 text-white rounded   md:border-0 hover:text-orange-400 md:p-0 ">Hire Me</a>
             </li>
           </ul>
         </div>

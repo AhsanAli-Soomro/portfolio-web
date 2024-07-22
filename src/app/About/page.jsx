@@ -24,7 +24,6 @@ const About = () => {
                 </div>
             </div>
             <div className='w-full'>
-
                 <Cards />
             </div>
         </div>

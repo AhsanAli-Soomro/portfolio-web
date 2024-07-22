@@ -55,7 +55,7 @@ function Cards() {
     ];
 
     return (
-        <div className='bg-black flex flex-wrap justify-center gap-6 p-4 sm:p-6 lg:p-10'>
+        <div className='bg-black flex flex-wrap justify-center gap-6'>
             {CardData.map((data, index) => (
                 <div key={index} className="flex flex-col mb-6 rounded-lg dark:bg-gray-800 bg-black border border-orange-400 p-6 sm:p-8 w-64 sm:w-80 md:w-96 shadow-xl transition duration-300 transform hover:-translate-y-2">
                     <div className="flex items-center mb-3">

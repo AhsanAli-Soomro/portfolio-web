@@ -4,7 +4,7 @@ import Cards from '../components/Cards'
 
 function page() {
   return (
-    <div>
+    <div className=''>
       <Hero/>
       <Cards/>
     </div>
