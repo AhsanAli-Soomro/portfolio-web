@@ -38,7 +38,7 @@ const Hire = () => {
 
   return (
     <div className='pt-24 pb-10 bg-black min-h-screen text-white'>
-      <div className="max-w-4xl mx-auto p-8 bg-gray-900 shadow-lg rounded-lg">
+      <div className="max-w-4xl mx-auto p-8  shadow-lg rounded-lg">
         <Header />
         <Form formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} />
       </div>
@@ -62,7 +62,7 @@ const Form = ({ formData, handleChange, handleSubmit }) => (
         name="name"
         value={formData.name}
         onChange={handleChange}
-        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 bg-gray-800 text-white border-gray-600"
+        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 bg-gray-950 text-white border-gray-600"
         required
       />
     </div>
@@ -73,7 +73,7 @@ const Form = ({ formData, handleChange, handleSubmit }) => (
         name="email"
         value={formData.email}
         onChange={handleChange}
-        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 bg-gray-800 text-white border-gray-600"
+        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 bg-gray-950 text-white border-gray-600"
         required
       />
     </div>
@@ -84,7 +84,7 @@ const Form = ({ formData, handleChange, handleSubmit }) => (
         name="subject"
         value={formData.subject}
         onChange={handleChange}
-        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 bg-gray-800 text-white border-gray-600"
+        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 bg-gray-950 text-white border-gray-600"
         required
       />
     </div>
@@ -94,7 +94,7 @@ const Form = ({ formData, handleChange, handleSubmit }) => (
         name="message"
         value={formData.message}
         onChange={handleChange}
-        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 bg-gray-800 text-white border-gray-600"
+        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 bg-gray-950 text-white border-gray-600"
         rows="5"
         required
       ></textarea>
