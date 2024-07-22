@@ -5,8 +5,12 @@ import Cards from '../components/Cards'
 function page() {
   return (
     <div className=''>
-      <Hero/>
-      <Cards/>
+      <div>
+        <Hero />
+      </div>
+      <div>
+        <Cards />
+      </div>
     </div>
   )
 }
