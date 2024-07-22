@@ -9,8 +9,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="backdrop-blur-sm z-20 md:pr-4 md:pl-4 text-white fixed top-0 w-full">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
+    <nav className="z-20 md:pr-4 md:pl-4 text-white fixed top-0 w-full">
+      <div className="backdrop-blur-sm max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
         <a href="/" className="flex items-center space-x-1">
           <img src="/logo.png" alt="Logo" className="h-8" />
           <span className="self-center text-2xl font-semibold pt-3 text-white">HSAN ALI</span>
