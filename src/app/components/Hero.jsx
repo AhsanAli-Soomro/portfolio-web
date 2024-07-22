@@ -2,12 +2,11 @@
 import Image from 'next/image';
 import React from 'react';
 import TypewriterText from './TypewriterText';
-import Cards from './Cards';
 
 const Hero = () => {
   return (
-    <div className="relative flex flex-col md:flex-row p-10 md:p-10 bg-black bg-cover bg-center h-screen">
-      <div className="absolute inset-0 bg-black opacity-50"></div>
+    <div className="relative flex flex-col-2 md:flex-row p-10 md:p-10 bg-black bg-cover bg-center h-screen">
+      {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-52 relative z-10">
         <h1 className="text-3xl sm:text-4xl md:text-5xl text-orange-400 mb-4 md:mb-6">
           <TypewriterText/>
@@ -19,6 +18,9 @@ const Hero = () => {
           Hire me
         </a>
       </div>
+      {/* <div className='w-full'>
+      <Image src='/myimg1.png' width={1000} height={100}/>
+      </div> */}
     </div>
   );
 };
