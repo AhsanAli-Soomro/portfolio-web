@@ -1,6 +1,9 @@
 "use client";
 
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faFacebook, faInstagram, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const Resume = () => {
     const handleDownload = () => {
@@ -22,7 +25,7 @@ const Resume = () => {
 
 const Sidebar = ({ handleDownload }) => (
     <div className='hidden md:block w-1/4 min-h-screen bg-black p-5'>
-        <ul className="space-y-10 top-20 fixed left-0 text-gray-300">
+        <ul className="space-y-10 pl-2 top-20 fixed left-0 text-gray-300">
             {['header', 'summary', 'experience', 'education', 'skills', 'contact'].map((section) => (
                 <li key={section}>
                     <a href={`#${section}`} className="flex items-center space-x-2">
@@ -44,7 +47,7 @@ const Sidebar = ({ handleDownload }) => (
 );
 
 const MainContent = ({ handleDownload }) => (
-    <div className='w-full md:w-3/4 pt-24 pb-10 bg-black text-white px-4 md:px-10'>
+    <div className='w-full md:w-3/4 pt-16 pb-10 bg-black text-white px-4 md:px-10'>
         <div className="flex justify-center mb-4 md:hidden">
             <button
                 onClick={handleDownload}
@@ -59,6 +62,26 @@ const MainContent = ({ handleDownload }) => (
         <Section id="education" Component={Education} />
         <Section id="skills" Component={Skills} />
         <Section id="contact" Component={Contact} />
+        <div className="flex justify-center space-x-6 mt-6">
+            <a href="https://www.linkedin.com/in/ahsanali-soomro" className="text-orange-400 hover:text-white transition duration-300">
+                <FontAwesomeIcon icon={faLinkedin} size="2x" />
+            </a>
+            <a href="mailto:ahsanalisoomro147@gmail.com" className="text-orange-400 hover:text-white transition duration-300">
+                <FontAwesomeIcon icon={faEnvelope} size="2x" />
+            </a>
+            <a href="https://www.facebook.com/ahsanali.king.92" className="text-orange-400 hover:text-white transition duration-300">
+                <FontAwesomeIcon icon={faFacebook} size="2x" />
+            </a>
+            <a href="https://www.instagram.com/soomroahsan_ali/" className="text-orange-400 hover:text-white transition duration-300">
+                <FontAwesomeIcon icon={faInstagram} size="2x" />
+            </a>
+            <a href="http://www.twitter.com/AhsanAli3860" className="text-orange-400 hover:text-white transition duration-300">
+                <FontAwesomeIcon icon={faTwitter} size="2x" />
+            </a>
+            <a href="https://www.github.com/AhsanAli-Soomro" className="text-orange-400 hover:text-white transition duration-300">
+                <FontAwesomeIcon icon={faGithub} size="2x" />
+            </a>
+        </div>
     </div>
 );
 
@@ -83,7 +106,7 @@ const Header = () => (
 
 const Summary = () => (
     <div className="mb-8">
-        <h3 className="text-3xl text-orange-400 font-bold mb-4 underline decoration-wavy decoration-orange-400">Summary</h3>
+        <h3 className="text-3xl text-orange-400 font-bold mb-4 underline">Summary</h3>
         <p className="text-gray-300 leading-relaxed">
             Experienced Front-end developer with a strong background in building scalable web applications and working across the Front-end. Proficient in HTML, CSS, JavaScript, React, and Next.js. Excellent problem-solving skills and a team player.
         </p>
@@ -92,7 +115,7 @@ const Summary = () => (
 
 const Experience = () => (
     <div className="mb-8">
-        <h3 className="text-3xl font-bold text-orange-400 mb-4 underline decoration-wavy decoration-orange-400">Experience</h3>
+        <h3 className="text-3xl font-bold text-orange-400 mb-4 underline">Experience</h3>
         {[
             {
                 title: 'React.js Developer at Verge System | WebHR',
@@ -139,7 +162,7 @@ const Job = ({ job }) => (
 
 const Education = () => (
     <div className="mb-8">
-        <h3 className="text-3xl font-bold mb-4 text-orange-400 underline decoration-wavy decoration-orange-400">Education</h3>
+        <h3 className="text-3xl font-bold mb-4 text-orange-400 underline">Education</h3>
         <div className="mb-6">
             <h4 className="text-2xl font-semibold text-gray-300">Bachelor of Science in Software Engineering</h4>
             <p className="text-gray-400">Isra University Hyd, 2018 - 2022</p>
@@ -149,7 +172,7 @@ const Education = () => (
 
 const Skills = () => (
     <div className="mb-8 mt-2">
-        <h3 className="text-3xl font-bold mb-4 text-orange-400 underline decoration-wavy decoration-orange-400">Skills</h3>
+        <h3 className="text-3xl font-bold mb-4 text-orange-400 underline">Skills</h3>
         <ul className="list-disc list-inside text-gray-300 leading-relaxed space-y-2 ml-6">
             <li>JavaScript, React, Next.js, Node.js</li>
             <li>Python</li>
@@ -162,7 +185,7 @@ const Skills = () => (
 
 const Contact = () => (
     <div className="mb-4">
-        <h3 className="text-3xl font-bold mb-4 text-orange-400 underline decoration-wavy decoration-orange-400">Contact</h3>
+        <h3 className="text-3xl font-bold mb-4 text-orange-400 underline">Contact</h3>
         <p className="text-gray-400">ahsanalisoomro147@gmail.com</p>
         <p className="text-gray-400">(+92) 317-3215380</p>
     </div>

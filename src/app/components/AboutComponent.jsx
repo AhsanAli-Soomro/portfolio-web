@@ -1,7 +1,10 @@
-"use client"
+"use client";
 import React from 'react';
 import Cards from './Cards';
 import TypewriterText from './TypewriterText';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faFacebook, faInstagram, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const About = () => {
     return (
@@ -21,6 +24,26 @@ const About = () => {
                             From responsive design to UI/UX prototyping, I cover a wide range of web design aspects to ensure your website stands out. My process includes thorough research, detailed wireframing, and iterative testing to deliver the best results.
                         </p>
                     </div>
+                </div>
+                <div className="flex space-x-6 mt-6">
+                    <a href="https://www.linkedin.com/in/ahsanali-soomro" className="text-orange-400 hover:text-white transition duration-300">
+                        <FontAwesomeIcon icon={faLinkedin} size="2x" />
+                    </a>
+                    <a href="mailto:ahsanalisoomro147@gmail.com" className="text-orange-400 hover:text-white transition duration-300">
+                        <FontAwesomeIcon icon={faEnvelope} size="2x" />
+                    </a>
+                    <a href="https://www.facebook.com/ahsanali.king.92" className="text-orange-400 hover:text-white transition duration-300">
+                        <FontAwesomeIcon icon={faFacebook} size="2x" />
+                    </a>
+                    <a href="https://www.instagram.com/soomroahsan_ali/" className="text-orange-400 hover:text-white transition duration-300">
+                        <FontAwesomeIcon icon={faInstagram} size="2x" />
+                    </a>
+                    <a href="http://www.twitter.com/AhsanAli3860" className="text-orange-400 hover:text-white transition duration-300">
+                        <FontAwesomeIcon icon={faTwitter} size="2x" />
+                    </a>
+                    <a href="https://www.github.com/AhsanAli-Soomro" className="text-orange-400 hover:text-white transition duration-300">
+                        <FontAwesomeIcon icon={faGithub} size="2x" />
+                    </a>
                 </div>
             </div>
             <div className='w-full'>
