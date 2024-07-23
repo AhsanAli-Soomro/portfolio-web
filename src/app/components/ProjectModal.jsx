@@ -39,7 +39,7 @@ const ProjectModal = ({ project, onClose }) => {
                     >
                         Close
                     </button>
-                    <Link href={project.link} className="mt-3 text-orange-400 dark:text-white hover:text-blue-600 inline-flex items-center">Learn More
+                    <Link href={project.link} className="mt-3 text-orange-400 dark:text-white hover:text-blue-600 inline-flex items-center">Visit Site
                         <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
                             strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                             <path d="M5 12h14M12 5l7 7-7 7"></path>
