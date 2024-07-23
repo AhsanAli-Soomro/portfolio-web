@@ -15,25 +15,25 @@ const ProjectModal = ({ project, onClose }) => {
                     &times;
                 </button>
                 <h2 className="text-3xl font-bold mb-4 text-orange-400">{project.title}</h2>
-                <div className="flex flex-col md:flex-row gap-6">
-                    <div className="relative">
-                        <span className="absolute top-0 left-0 bg-black bg-opacity-75 text-white p-1 rounded">Laptop View</span>
+                <div className="flex flex-col md:flex-row gap-14">
+                    <div className="relative transition-transform transform hover:scale-110">
+                        <span className="absolute top-2 left-2 z-10 bg-black bg-opacity-75 text-white p-1 rounded">Laptop View</span>
                         <Image
                             src={project.image}
-                            width={400}
-                            height={300}
+                            width={500}
+                            height={500}
                             alt={project.title}
-                            className="mb-4 rounded transition-transform transform hover:scale-110"
+                            className="m-6 rounded"
                         />
                     </div>
-                    <div className="relative">
-                        <span className="absolute top-0 left-0 bg-black bg-opacity-75 text-white p-1 rounded">Mobile View</span>
+                    <div className="relative mx-auto md:mx-0 transition-transform transform hover:scale-110">
+                        <span className="absolute top-2 left-2 z-10 bg-black bg-opacity-75 text-white p-1 rounded">Mobile View</span>
                         <Image
                             src={project.imageapp}
                             width={200}
                             height={300}
                             alt={project.title}
-                            className="mb-4 rounded transition-transform transform hover:scale-110"
+                            className="mb-4 rounded"
                         />
                     </div>
                 </div>
@@ -55,10 +55,11 @@ const ProjectModal = ({ project, onClose }) => {
                     >
                         Close
                     </button>
-                    <Link href={project.link}>
+                    <Link href={project.link} passHref>
                         <div
                             className="mt-3 text-orange-400 dark:text-white hover:text-blue-600 inline-flex items-center transition-transform transform hover:scale-110"
                             target="_blank"
+                            rel="noopener noreferrer"
                         >
                             Visit Site
                             <svg
