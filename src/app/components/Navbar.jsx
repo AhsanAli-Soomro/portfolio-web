@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className="backdrop-blur-sm max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
         <a href="/" className="flex items-center space-x-1">
           <img src="/logo.png" alt="Logo" className="h-8" />
-          <span className="self-center text-2xl font-semibold pt-3 text-white">HSAN ALI</span>
+          {/* <span className="self-center text-2xl font-semibold pt-3 text-white">HSAN ALI</span> */}
         </a>
         <button
           onClick={toggleMenu}
@@ -28,9 +28,12 @@ const Navbar = () => {
           </svg>
         </button>
         <div className={`w-full md:block md:w-auto ${isOpen ? 'block' : 'hidden'}`} id="navbar-default">
-          <ul className="font-medium text-sm flex flex-col p-4 md:p-0 text-center md:flex-row md:space-x-8 md:mt-0 md:border-0">
+          <ul className="font-medium flex flex-col p-4 md:p-0 text-center md:flex-row md:space-x-10 md:mt-0 md:border-0">
             <li>
               <a href="/" className="block py-2 px-3 text-white rounded  md:border-0 hover:text-orange-400 md:p-0 " aria-current="page">Home</a>
+            </li>
+            <li>
+              <a href="/Projects" className="block py-2 px-3 text-white rounded  md:border-0 hover:text-orange-400 md:p-0 " aria-current="page">Projects</a>
             </li>
             <li>
               <a href="/Resume" className="block py-2 px-3 text-white rounded   md:border-0 hover:text-orange-400 md:p-0 ">Resume</a>
