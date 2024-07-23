@@ -161,8 +161,8 @@ const ProjectsPage = () => {
             title: 'Imagartify',
             heading: 'Revolutionizing Image Editing with AI',
             description: 'Imagartify is an innovative online platform dedicated to transforming the way you edit images. Leveraging the power of advanced artificial intelligence, Imagartify offers a suite of cutting-edge tools designed to simplify and enhance your photo editing experience.',
-            image: '/imagartifyweb.png',
-            imageapp: '/imagartifyapp.png', 
+            image: '/imagartifyweb.PNG',
+            imageapp: '/imagartifyapp.PNG', 
             features: [
                 'Background Removal: Instantly remove backgrounds from your images with precision. Our AI ensures clean and accurate cutouts, perfect for creating transparent backgrounds or isolating subjects.',
                 'Restore Background: Effortlessly restore backgrounds that may have been previously removed or altered. Our intelligent algorithms seamlessly blend the restored background with the existing image.',
@@ -175,8 +175,8 @@ const ProjectsPage = () => {
             title: 'MyVideos',
             heading:"Your Ultimate Video Watching Platform",
             description: 'Welcome to MyVideos, the premier destination for all your video watching needs. MyVideos is a cutting-edge platform designed to offer an immersive and seamless video streaming experience. Whether you\'re a fan of movies, documentaries, tutorials, or user-generated content, MyVideos has something for everyone.',
-            image: '/myvideosweb.png',
-            imageapp: '/myvideosapp.png',
+            image: '/myvideosweb.PNG',
+            imageapp: '/myvideosapp.PNG',
             features: [
                 'Vast Library: Access an extensive collection of videos spanning various genres, including entertainment, education, lifestyle, and more.',
                 'User-Friendly Interface: Enjoy a sleek, intuitive interface that makes browsing and watching videos effortless.',
