@@ -11,7 +11,7 @@ const About = () => {
         <div className="relative p-4 flex flex-col bg-black bg-cover bg-center min-h-screen">
             <div className="absolute inset-0 opacity-50"></div>
             <div className="container mx-auto px-6 py-24 relative z-10">
-                <h1 className="text-5xl h-14 text-orange-400 mb-6">
+                <h1 className="text-5xl h-20 sm:h-10  text-orange-400 mb-6">
                     <TypewriterText />
                 </h1>
                 <p className="text-xl text-white mb-6">
