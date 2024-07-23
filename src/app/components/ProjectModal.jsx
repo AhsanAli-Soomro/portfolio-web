@@ -1,4 +1,3 @@
-// components/ProjectModal.jsx
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -17,20 +16,26 @@ const ProjectModal = ({ project, onClose }) => {
                 </button>
                 <h2 className="text-3xl font-bold mb-4 text-orange-400">{project.title}</h2>
                 <div className="flex flex-col md:flex-row gap-6">
-                    <Image
-                        src={project.image}
-                        width={400}
-                        height={300}
-                        alt={project.title}
-                        className="mb-4 rounded transition-transform transform hover:scale-110"
-                    />
-                    <Image
-                        src={project.imageapp}
-                        width={200}
-                        height={300}
-                        alt={project.title}
-                        className="mb-4 rounded transition-transform transform hover:scale-110"
-                    />
+                    <div className="relative">
+                        <span className="absolute top-0 left-0 bg-black bg-opacity-75 text-white p-1 rounded">Laptop View</span>
+                        <Image
+                            src={project.image}
+                            width={400}
+                            height={300}
+                            alt={project.title}
+                            className="mb-4 rounded transition-transform transform hover:scale-110"
+                        />
+                    </div>
+                    <div className="relative">
+                        <span className="absolute top-0 left-0 bg-black bg-opacity-75 text-white p-1 rounded">Mobile View</span>
+                        <Image
+                            src={project.imageapp}
+                            width={200}
+                            height={300}
+                            alt={project.title}
+                            className="mb-4 rounded transition-transform transform hover:scale-110"
+                        />
+                    </div>
                 </div>
                 <p className="text-lg mb-4">{project.description}</p>
                 {project.features && (
