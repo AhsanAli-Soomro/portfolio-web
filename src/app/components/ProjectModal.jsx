@@ -15,7 +15,7 @@ const ProjectModal = ({ project, onClose }) => {
                     &times;
                 </button>
                 <h2 className="text-3xl font-bold mb-4 text-orange-400">{project.title}</h2>
-                <div className="flex flex-col md:flex-row gap-14">
+                <div className="flex flex-col md:flex-row gap-6">
                     <div className="relative transition-transform transform hover:scale-110">
                         <span className="absolute top-2 left-2 z-10 bg-black bg-opacity-75 text-white p-1 rounded">Laptop View</span>
                         <Image
@@ -23,7 +23,7 @@ const ProjectModal = ({ project, onClose }) => {
                             width={500}
                             height={500}
                             alt={project.title}
-                            className="m-6 rounded"
+                            className="m-6 ml-0 rounded"
                         />
                     </div>
                     <div className="relative mx-auto md:mx-0 transition-transform transform hover:scale-110">
