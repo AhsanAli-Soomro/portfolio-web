@@ -16,39 +16,35 @@ const Resume = () => {
     };
 
     return (
-        <div className='flex flex-col md:flex-row'>
-            <Sidebar handleDownload={handleDownload} />
+        <div className='flex bg-black flex-col'>
+            <Stepper />
             <MainContent handleDownload={handleDownload} />
         </div>
     );
 };
 
-const Sidebar = ({ handleDownload }) => (
-    <div className='hidden md:block w-1/4 min-h-screen bg-black p-5'>
-        <ul className="space-y-10 pl-2 top-20 fixed left-0 text-gray-300">
+const Stepper = () => (
+    <div className="w-full fixed bg-black pt-14 mb-10 z-10">
+        <ul className="flex flex-wrap justify-around items-center font-normal text-gray-300 px-2 sm:px-6">
             {['header', 'summary', 'experience', 'education', 'skills', 'contact'].map((section) => (
-                <li key={section}>
+                <li key={section} className="relative text-xs sm:text-sm font-normal flex flex-col items-center mb-4 sm:mb-0">
                     <a href={`#${section}`} className="flex items-center space-x-2">
-                        <span className="block w-4 h-4 bg-orange-400 rounded-full"></span>
-                        <span className="text-lg capitalize">{section}</span>
+                        <span className="block w-3 h-3 sm:w-4 sm:h-4 bg-orange-400 rounded-full"></span>
+                        <span className="text-xs sm:text-lg capitalize">{section}</span>
                     </a>
+                    {section !== 'contact' && (
+                        <span className="absolute w-px h-6 sm:h-8 left-1/2 transform -translate-x-1/2 top-6"></span>
+                    )}
                 </li>
             ))}
-            <li className='text-center'>
-                <button
-                    onClick={handleDownload}
-                    className="bg-orange-400 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-orange-400"
-                >
-                    Download Resume
-                </button>
-            </li>
         </ul>
     </div>
 );
 
+
 const MainContent = ({ handleDownload }) => (
-    <div className='w-full md:w-3/4 pt-16 pb-10 bg-black text-white px-4 md:px-10'>
-        <div className="flex justify-center mb-4 md:hidden">
+    <div className='w-full pt-40 pb-10 bg-black text-white px-4 md:px-10'>
+        <div className="flex justify-center mb-4">
             <button
                 onClick={handleDownload}
                 className="bg-orange-400 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-orange-400"
@@ -85,8 +81,9 @@ const MainContent = ({ handleDownload }) => (
     </div>
 );
 
+
 const Section = ({ id, Component }) => (
-    <div id={id} className="max-w-5xl mx-auto p-4 md:p-10 bg-black border-b border-gray-700">
+    <div id={id} className="max-w-5xl mx-auto p-4 md:p-10 bg-black border-b border-gray-700 scroll-mt-36">
         <Component />
     </div>
 );
