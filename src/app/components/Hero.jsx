@@ -21,7 +21,7 @@ const Hero = () => {
           </div>
           <div className="relative md:w-1/2 flex justify-end">
             <div className="relative w-68 h-68 flex items-center justify-center">
-              <Image className="relative z-10 shadow-inner " src="/ahsan.png" width={400} height={400} alt="Ahsan" />
+              <Image className="relative z-10 shadow-inner " src="/aahsan.png" width={500} height={500} alt="Ahsan" />
             </div>
           </div>
         </div>
