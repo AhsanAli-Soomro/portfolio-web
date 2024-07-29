@@ -54,19 +54,21 @@ const ProjectsPage = () => {
                 "Cross-Device Compatibility: Plan and manage your events anytime, anywhere, on any device, from your smartphone to your desktop."
             ],
             link: "https://eventify-gold.vercel.app",
-        }, {
-            title: 'Imagartify',
-            heading: 'Revolutionizing Image Editing with AI',
-            description: 'Imagartify is an innovative online platform dedicated to transforming the way you edit images. Leveraging the power of advanced artificial intelligence, Imagartify offers a suite of cutting-edge tools designed to simplify and enhance your photo editing experience.',
-            image: '/imagartifyweb.webp',
-            imageapp: '/imagartifyapp.webp',
+        }, 
+        {
+            title: 'AutoCare Pro',
+            heading: 'Redefining Car Maintenance and Repair with Expertise and Technology',
+            description: 'AutoCare Pro is a state-of-the-art online platform dedicated to transforming the way you maintain and repair your vehicle. Leveraging the power of cutting-edge technology and professional expertise, AutoCare Pro offers a comprehensive suite of services designed to keep your car running smoothly and efficiently.',
+            image: '/autocareproweb.webp',
+            imageapp: '/autocareproapp.webp',
             features: [
-                'Background Removal: Instantly remove backgrounds from your images with precision. Our AI ensures clean and accurate cutouts, perfect for creating transparent backgrounds or isolating subjects.',
-                'Restore Background: Effortlessly restore backgrounds that may have been previously removed or altered. Our intelligent algorithms seamlessly blend the restored background with the existing image.',
-                'Expand Background: Need more space in your images? Imagartify allows you to expand the background naturally, maintaining the aesthetic integrity of your photos.',
-                'Additional Tools: Explore a variety of other AI-powered tools designed to enhance, retouch, and perfect your images with ease.',
+                'Comprehensive Diagnostics: Utilize advanced diagnostic tools to quickly identify and troubleshoot issues with your vehicle. Our system ensures accurate detection, saving you time and money.',
+                'Scheduled Maintenance: Keep your vehicle in top condition with our scheduled maintenance services. Receive timely reminders and book appointments for oil changes, tire rotations, brake inspections, and more.',
+                'Emergency Repairs: Get quick and reliable repair services when you need them most. Our platform connects you with expert mechanics who are ready to address any urgent issues with your vehicle.',
+                'Customer-Centric Services: Enjoy a seamless and user-friendly experience with features like online booking, service history tracking, and real-time updates on your vehicle’s status.',
+                'Expert Advice: Access a wealth of knowledge from experienced professionals. Our blog and support center provide valuable tips and advice on car maintenance and repair.',
             ],
-            link: 'https://imageartify.vercel.app/'
+            link: 'https://car-service-iota.vercel.app/'
         },
         {
             title: 'MyVideos',
