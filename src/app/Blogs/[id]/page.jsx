@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import { useRouter } from 'next/navigation'; // Replace next/router with next/navigation
 import { useBlog } from '../../context/BlogContext';
