@@ -60,7 +60,7 @@ const BlogsPage = () => {
                     )}
                 </div>
                 <div className='mt-8 text-center'>
-                    <Link href="/blogs/new">
+                    <Link href="/Blogs/new">
                         <p className='text-orange-500 hover:text-orange-600'>Write a new blog</p>
                     </Link>
                 </div>

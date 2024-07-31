@@ -38,7 +38,7 @@ const BlogFormPage = ({ blog, onSave }) => {
         } else {
             const newBlog = { ...formData, date: new Date().toISOString() };
             addBlog(newBlog);
-            router.push('/blogs');
+            router.push('/Blogs');
         }
     };
 
