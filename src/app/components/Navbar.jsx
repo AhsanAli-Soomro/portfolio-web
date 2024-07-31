@@ -36,6 +36,9 @@ const Navbar = () => {
               <a href="/Projects" className="block py-2 px-3 text-white rounded  md:border-0 hover:text-orange-400 md:p-0 " aria-current="page">Projects</a>
             </li>
             <li>
+              <a href="/Blogs" className="block py-2 px-3 text-white rounded  md:border-0 hover:text-orange-400 md:p-0 " aria-current="page">Blogs</a>
+            </li>
+            <li>
               <a href="/Resume" className="block py-2 px-3 text-white rounded   md:border-0 hover:text-orange-400 md:p-0 ">Resume</a>
             </li>
             <li>

@@ -26,3 +26,21 @@ body {
     text-wrap: balance;
   }
 }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #000; /* Black background */
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.bg-black {
+  background-color: #000;
+}
