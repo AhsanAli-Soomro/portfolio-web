@@ -9,7 +9,6 @@ const BlogModal = ({ blog, onClose }) => {
                 </button>
                 <div className='overflow-auto' style={{ maxHeight: '80vh' }}>
                     <h2 className='text-2xl font-bold mb-4 text-black'>{blog.title}</h2>
-                    {blog.image && <img src={blog.image} alt={blog.title} className='mb-4 rounded-md max-h-60 object-cover' />}
                     <div className='text-black' dangerouslySetInnerHTML={{ __html: blog.content }}></div>
                     <p className='mt-4 text-gray-500 text-sm'>Published on {new Date(blog.date).toLocaleDateString()}</p>
                 </div>

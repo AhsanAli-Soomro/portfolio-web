@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import BlogCard from '../components/BlogCard';
 import BlogModal from '../components/BlogModal';
-import { useBlog } from '../context/BlogContext';
+import { useBlog } from '../../context/BlogContext';
 import BlogFormPage from './new/page';
 
 const BlogsPage = () => {
-    const { blogs, setBlogs } = useBlog();
+    const { blogs, updateBlog, deleteBlog } = useBlog();
     const [selectedBlog, setSelectedBlog] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
 
@@ -20,9 +20,7 @@ const BlogsPage = () => {
     };
 
     const handleDelete = (id) => {
-        const updatedBlogs = blogs.filter(blog => blog.id !== id);
-        setBlogs(updatedBlogs);
-        localStorage.setItem('blogs', JSON.stringify(updatedBlogs));
+        deleteBlog(id);
     };
 
     const handleUpdate = (blog) => {
@@ -31,9 +29,7 @@ const BlogsPage = () => {
     };
 
     const handleSave = (updatedBlog) => {
-        const updatedBlogs = blogs.map(blog => blog.id === updatedBlog.id ? updatedBlog : blog);
-        setBlogs(updatedBlogs);
-        localStorage.setItem('blogs', JSON.stringify(updatedBlogs));
+        updateBlog(updatedBlog);
         setIsEditing(false);
         setSelectedBlog(null);
     };

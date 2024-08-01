@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { useBlog } from '../../context/BlogContext';
+import { useBlog } from '../../../context/BlogContext';
 import dynamic from 'next/dynamic';
 import 'react-quill/dist/quill.snow.css';
 
@@ -36,14 +36,14 @@ const BlogFormPage = ({ blog, onSave }) => {
         if (blog) {
             onSave(formData);
         } else {
-            const newBlog = { ...formData, date: new Date().toISOString() };
+            const newBlog = { ...formData, id: Date.now().toString(), date: new Date().toISOString() };
             addBlog(newBlog);
             router.push('/Blogs');
         }
     };
 
     return (
-        <div className='container bg-black text-white mx-auto px-4 sm:px-6 lg:px-8'>
+        <div className='container p-24 bg-black text-white mx-auto px-4 sm:px-6 lg:px-8'>
             <h2 className='text-4xl font-bold text-orange-400 mb-8 text-center'>
                 {blog ? 'Edit Blog' : 'Write a New Blog'}
             </h2>
