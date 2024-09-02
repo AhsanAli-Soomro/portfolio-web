@@ -173,7 +173,7 @@ const Skills = () => (
         <ul className="list-disc list-inside text-gray-300 leading-relaxed space-y-2 ml-6">
             <li>JavaScript, React, Next.js, Node.js</li>
             <li>Python</li>
-            <li>HTML, CSS, Tailwind CSS, Bootstrap</li>
+            <li>HTML, CSS, Tailwind CSS, Bootstrap, Ant Design (antd), Material UI, ShadCN UI</li>
             <li>Git, Docker, CI/CD</li>
             <li>Adobe: Photoshop, Illustrator, XD</li>
         </ul>

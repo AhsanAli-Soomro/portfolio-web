@@ -1,6 +1,7 @@
 import React from 'react';
 
 const BlogCard = ({ blog, onClick, onDelete, onUpdate }) => {
+
     return (
         <div className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto mt-10 cursor-pointer transition-transform transform hover:scale-105" onClick={onClick}>
             {blog.image && (

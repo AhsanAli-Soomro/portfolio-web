@@ -1,12 +1,12 @@
-import React from 'react'
-import Home from '@/app/Home/page'
+import React from 'react';
+import Home from '@/app/Home/page';
 
-function page() {
+function Page() {
   return (
-    <div className=' bg-black p-4'>
-      <Home/>
+    <div className='bg-black p-4'>
+      <Home />
     </div>
-  )
+  );
 }
 
-export default page
+export default Page;
