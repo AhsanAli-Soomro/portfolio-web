@@ -7,7 +7,7 @@ const ProjectCard = ({ project, onClick }) => {
     return (
         <div >
             <article
-                className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto mt-10 cursor-pointer transition-transform transform hover:scale-105"
+                className="relative h-48 w-72 isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto mt-10 cursor-pointer transition-transform transform hover:scale-105"
                 onClick={() => onClick(project)}
             >
                 <Image

@@ -8,7 +8,22 @@ const ProjectsPage = () => {
 
     const projects = [
 
-
+        {
+            title: 'DailyPulse',
+            heading: 'YOUR PULSE ON NEWS TRENDS AND THOUGHTFUL INSIGHTS',
+            description: 'DailyPulse is your ultimate destination for diverse blogs and real-time news on every topic imaginable. From the latest tech trends to lifestyle insights, we cover it all—curated by a team of passionate writers and experts in the field.',
+            image: '/dailypulseweb.png',
+            imageapp: '/dailypulseapp.png',
+            features: [
+                "Blogs on Every Topic: Stay informed with our comprehensive blogs that cover a wide range of topics. Whether you're interested in technology, lifestyle, business, or entertainment, we've got you covered. Our content is designed to keep you updated with the latest news and trends across every domain.",
+                "News Category: Get real-time news updates across multiple sectors, including politics, science, technology, and global events. We ensure you stay informed with accurate and well-researched articles, bringing you the latest developments as they happen.",
+                "Categorized for Easy Navigation: Easily explore our blogs through a user-friendly category system. From health and fitness to financial advice, our organized structure ensures that you can quickly find content tailored to your interests.",
+                "Engaging Insights: Dive deep into insightful blogs written by experts and passionate writers. Whether it’s a detailed analysis of current trends or practical tips for daily life, our content aims to engage and inspire readers across all walks of life.",
+                "Interactive Features: Engage with our community through comments, polls, and discussions. Share your opinions, ask questions, and interact with both writers and fellow readers to enhance your understanding and broaden your perspective."
+            ],
+            link: 'https://dailyp.vercel.app/'
+        },
+        
         {
             title: 'Imagartify',
             heading: 'Revolutionizing Image Editing with AI',
