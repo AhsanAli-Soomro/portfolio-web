@@ -23,7 +23,7 @@ const ProjectsPage = () => {
             ],
             link: 'https://dailyp.vercel.app/'
         },
-        
+
         {
             title: 'Imagartify',
             heading: 'Revolutionizing Image Editing with AI',
@@ -39,20 +39,15 @@ const ProjectsPage = () => {
             link: 'https://imageartify.vercel.app/'
         },
         {
-            title: 'MyVideos',
-            heading: "Your Ultimate Video Watching Platform",
-            description: 'Welcome to MyVideos, the premier destination for all your video watching needs. MyVideos is a cutting-edge platform designed to offer an immersive and seamless video streaming experience. Whether you\'re a fan of movies, documentaries, tutorials, or user-generated content, MyVideos has something for everyone.',
-            image: '/myvideosweb.webp',
-            imageapp: '/myvideosapp.webp',
+            title: 'HireSide-Clone',
+            heading: "Front-End Clone Model of HireSide",
+            description: 'This web application is a front-end clone model of HireSide. The original HireSide full-stack website is developed by Verge Systems Ltd. This project aims to replicate the look and feel of HireSide\'s front-end interface.',
+            image: '/hireside-clone.png',
+            imageapp: '/hiresideapp.png',
             features: [
-                'Vast Library: Access an extensive collection of videos spanning various genres, including entertainment, education, lifestyle, and more.',
-                'User-Friendly Interface: Enjoy a sleek, intuitive interface that makes browsing and watching videos effortless.',
-                'Personalized Recommendations: Discover new content tailored to your interests with our smart recommendation engine.',
-                'High-Quality Streaming: Experience videos in high definition with minimal buffering, ensuring a smooth viewing experience.',
-                'Community Engagement: Connect with other viewers through comments, likes, and shares, fostering a vibrant community of video enthusiasts.',
-                'Cross-Device Compatibility: Watch your favorite videos anytime, anywhere, on any device, from your smartphone to your smart TV.'
+                <>For a full list of features, visit the original HireSide website at <a className="text-blue-400" href="https://hireside.com" target="_blank" rel="noopener noreferrer">www.hireside.com</a>.</>
             ],
-            link: 'https://my-videos-nine.vercel.app/'
+            link: 'https://github.com/AhsanAli-Soomro/hireside-clone'
         },
         {
             "title": "Eventify",
@@ -69,7 +64,7 @@ const ProjectsPage = () => {
                 "Cross-Device Compatibility: Plan and manage your events anytime, anywhere, on any device, from your smartphone to your desktop."
             ],
             link: "https://eventify-gold.vercel.app",
-        }, 
+        },
         {
             title: 'AutoCare Pro',
             heading: 'Redefining Car Maintenance and Repair with Expertise and Technology',
