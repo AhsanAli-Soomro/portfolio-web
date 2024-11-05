@@ -113,22 +113,22 @@ const ProjectsPage = () => {
             ],
             link: 'https://my-videos-nine.vercel.app/'
         },
-        {
-            "title": "Eventify",
-            "heading": "Your Ultimate Event Creation Platform",
-            "description": "Welcome to Eventify, the premier destination for all your event creation needs. Eventify is a cutting-edge platform designed to offer an immersive and seamless event planning experience. Whether you're organizing corporate events, social gatherings, conferences, or personal celebrations, Eventify has everything you need to make your event a success.",
-            "image": "/eventweb.webp",
-            "imageapp": "/eventapp.webp",
-            "features": [
-                "Comprehensive Event Management: Access a robust suite of tools to plan, organize, and manage events of any size and type.",
-                "User-Friendly Interface: Enjoy a sleek, intuitive interface that makes event creation and management effortless.",
-                "Personalized Templates: Discover a range of customizable templates tailored to various event types, helping you create stunning event pages with ease.",
-                "Real-Time Collaboration: Work with your team in real-time, ensuring seamless communication and coordination throughout the event planning process.",
-                "Attendee Engagement: Enhance attendee experience with interactive features such as RSVPs, live polls, and social media integration.",
-                "Cross-Device Compatibility: Plan and manage your events anytime, anywhere, on any device, from your smartphone to your desktop."
-            ],
-            link: "https://eventify-gold.vercel.app",
-        }
+        // {
+        //     "title": "Eventify",
+        //     "heading": "Your Ultimate Event Creation Platform",
+        //     "description": "Welcome to Eventify, the premier destination for all your event creation needs. Eventify is a cutting-edge platform designed to offer an immersive and seamless event planning experience. Whether you're organizing corporate events, social gatherings, conferences, or personal celebrations, Eventify has everything you need to make your event a success.",
+        //     "image": "/eventweb.webp",
+        //     "imageapp": "/eventapp.webp",
+        //     "features": [
+        //         "Comprehensive Event Management: Access a robust suite of tools to plan, organize, and manage events of any size and type.",
+        //         "User-Friendly Interface: Enjoy a sleek, intuitive interface that makes event creation and management effortless.",
+        //         "Personalized Templates: Discover a range of customizable templates tailored to various event types, helping you create stunning event pages with ease.",
+        //         "Real-Time Collaboration: Work with your team in real-time, ensuring seamless communication and coordination throughout the event planning process.",
+        //         "Attendee Engagement: Enhance attendee experience with interactive features such as RSVPs, live polls, and social media integration.",
+        //         "Cross-Device Compatibility: Plan and manage your events anytime, anywhere, on any device, from your smartphone to your desktop."
+        //     ],
+        //     link: "https://eventify-gold.vercel.app",
+        // }
 
 
     ];
