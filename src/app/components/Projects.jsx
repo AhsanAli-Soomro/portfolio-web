@@ -25,6 +25,23 @@ const ProjectsPage = () => {
         },
 
         {
+            title: 'RoyalHunt',
+            heading: 'YOUR PREMIER DESTINATION FOR PREMIUM PRODUCTS AND EXCLUSIVE DEALS',
+            description: 'RoyalHunt is a one-stop e-commerce platform that offers a curated selection of high-quality products across multiple categories. From fashion and accessories to home essentials and tech gadgets, we bring you the best products at competitive prices, backed by a commitment to exceptional customer service.',
+            image: '/royalhuntweb.png',
+            imageapp: '/royalhuntapp.png',
+            features: [
+                "Wide Product Range: Explore an extensive collection of products across categories like fashion, electronics, home decor, beauty, and more. We handpick each item to ensure quality and satisfaction, catering to a variety of tastes and needs.",
+                "Exclusive Deals and Discounts: Take advantage of exclusive discounts and special offers available only on RoyalHunt. Our deals are updated regularly, so you can always find great prices on popular items.",
+                "User-Friendly Shopping Experience: Enjoy a seamless shopping experience with easy navigation and a clear categorization system. Our platform is designed to make finding and purchasing products effortless, whether you’re on a desktop or mobile device.",
+                "Customer Reviews and Ratings: Make informed choices with the help of genuine customer reviews and ratings. We encourage honest feedback to help other shoppers, ensuring transparency and trustworthiness in every purchase.",
+                "Personalized Recommendations: Get product recommendations based on your browsing and purchase history. Our advanced recommendation engine helps you discover items tailored to your preferences.",
+                "Secure Payment and Fast Shipping: Shop with confidence with our secure payment options, and enjoy fast, reliable shipping on all orders. We prioritize security and efficiency to ensure a positive experience from checkout to delivery."
+            ],
+            link: 'https://royalhunt.vercel.app/'
+        },
+
+        {
             title: 'Imagartify',
             heading: 'Revolutionizing Image Editing with AI',
             description: 'Imagartify is an innovative online platform dedicated to transforming the way you edit images. Leveraging the power of advanced artificial intelligence, Imagartify offers a suite of cutting-edge tools designed to simplify and enhance your photo editing experience.',
