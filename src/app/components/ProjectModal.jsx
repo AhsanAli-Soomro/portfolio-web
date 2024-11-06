@@ -23,7 +23,7 @@ const ProjectModal = ({ project, onClose }) => {
                             width={400}
                             height={500}
                             alt={project.title}
-                            className=" rounded object-fill h-60 w-full"
+                            className="rounded object-fill h-60 w-full"
                         />
                     </div>
                     <div className="relative mx-auto md:mx-0 transition-transform transform hover:scale-110">
