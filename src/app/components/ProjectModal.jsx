@@ -27,7 +27,7 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
 
                 </button>
             </div>
-            <div className="bg-black border h-svh pt-6 p-8 rounded-lg max-w-3xl w-4/5 my-10 relative overflow-y-auto max-h-screen text-white">
+            <div className="bg-black border z-10 h-svh pt-6 p-8 rounded-lg max-w-3xl w-4/5 my-10 relative overflow-y-auto max-h-screen text-white">
                 <button
                     onClick={onClose}
                     className="absolute top-2 right-2 text-orange-400 rounded-full p-2 hover:text-red-600 transition-transform transform hover:scale-110"
