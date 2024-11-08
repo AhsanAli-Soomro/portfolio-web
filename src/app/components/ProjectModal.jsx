@@ -1,12 +1,19 @@
+// ProjectModal.jsx
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const ProjectModal = ({ project, onClose }) => {
+const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
     if (!project) return null;
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 overflow-y-auto">
+            <button
+                onClick={onPrev}
+                className="text-white transition-transform transform hover:scale-110 sm:mb-0"
+            >
+                <span className='text-9xl'>{"<"}</span>
+            </button>
             <div className="bg-black border pt-6 p-8 rounded-lg max-w-3xl w-full mx-4 my-10 relative overflow-y-auto max-h-screen text-white">
                 <button
                     onClick={onClose}
@@ -48,7 +55,7 @@ const ProjectModal = ({ project, onClose }) => {
                         </ul>
                     </div>
                 )}
-                <div className="flex flex-col sm:flex-row justify-between mt-4">
+                <div className="flex mt-4 justify-between items-center text-center">
                     <button
                         onClick={onClose}
                         className="bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-600 transition-transform transform hover:scale-110 mb-2 sm:mb-0"
@@ -56,10 +63,10 @@ const ProjectModal = ({ project, onClose }) => {
                         Close
                     </button>
                     <Link href={project.link} passHref>
-                        <div
-                            className="mt-3 text-orange-400 dark:text-white hover:text-blue-600 inline-flex items-center transition-transform transform hover:scale-110"
+                        <p
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="text-orange-400 dark:text-white hover:text-blue-600 inline-flex items-center transition-transform transform hover:scale-110"
                         >
                             Visit Site
                             <svg
@@ -73,10 +80,16 @@ const ProjectModal = ({ project, onClose }) => {
                             >
                                 <path d="M5 12h14M12 5l7 7-7 7"></path>
                             </svg>
-                        </div>
+                        </p>
                     </Link>
                 </div>
             </div>
+            <button
+                onClick={onNext}
+                className="text-white transition-transform transform hover:scale-110 sm:mb-0"
+            >
+                <span className='text-9xl'>{">"}</span>
+            </button>
         </div>
     );
 };

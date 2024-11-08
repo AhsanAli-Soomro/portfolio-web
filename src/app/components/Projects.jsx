@@ -4,8 +4,8 @@ import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
 
 const ProjectsPage = () => {
-    const [selectedProject, setSelectedProject] = useState(null);
-
+    const [selectedIndex, setSelectedIndex] = useState(null);
+    
     const projects = [
 
         {
@@ -133,12 +133,21 @@ const ProjectsPage = () => {
 
     ];
 
-    const handleProjectClick = (project) => {
-        setSelectedProject(project);
+
+    const handleProjectClick = (index) => {
+        setSelectedIndex(index);
     };
 
     const handleCloseModal = () => {
-        setSelectedProject(null);
+        setSelectedIndex(null);
+    };
+
+    const handleNextProject = () => {
+        setSelectedIndex((prevIndex) => (prevIndex + 1) % projects.length);
+    };
+
+    const handlePreviousProject = () => {
+        setSelectedIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
     };
 
     return (
@@ -149,11 +158,18 @@ const ProjectsPage = () => {
                 </h2>
                 <div className='flex flex-wrap justify-center gap-6'>
                     {projects.map((project, index) => (
-                        <ProjectCard key={index} project={project} onClick={handleProjectClick} />
+                        <ProjectCard key={index} project={project} onClick={() => handleProjectClick(index)} />
                     ))}
                 </div>
             </div>
-            {selectedProject && <ProjectModal project={selectedProject} onClose={handleCloseModal} />}
+            {selectedIndex !== null && (
+                <ProjectModal
+                    project={projects[selectedIndex]}
+                    onClose={handleCloseModal}
+                    onNext={handleNextProject}
+                    onPrev={handlePreviousProject}
+                />
+            )}
         </div>
     );
 };
