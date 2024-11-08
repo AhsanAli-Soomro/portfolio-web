@@ -7,14 +7,27 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
     if (!project) return null;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 overflow-y-auto">
-            <button
-                onClick={onPrev}
-                className="text-white transition-transform transform hover:scale-110 sm:mb-0"
-            >
-                <span className='text-9xl'>{"<"}</span>
-            </button>
-            <div className="bg-black border pt-6 p-8 rounded-lg max-w-3xl w-full mx-4 my-10 relative overflow-y-auto max-h-screen text-white">
+        <div className="fixed w-full inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 overflow-y-auto">
+            <div onClick={onPrev} className='flex transition-transform transform hover:scale-110 cursor-pointer w-2/5 text-center hover:bg-slate-800 hover:bg-opacity-40 h-svh justify-center items-center'>
+                <button
+                    onClick={onPrev}
+                    className="text-white sm:mb-0"
+                >
+                    <svg
+                        fill="none"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        className="w-44 h-44 mr-2"
+                        viewBox="0 0 24 24"
+                    >
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+
+                </button>
+            </div>
+            <div className="bg-black border h-svh pt-6 p-8 rounded-lg max-w-3xl w-4/5 my-10 relative overflow-y-auto max-h-screen text-white">
                 <button
                     onClick={onClose}
                     className="absolute top-2 right-2 text-orange-400 rounded-full p-2 hover:text-red-600 transition-transform transform hover:scale-110"
@@ -84,12 +97,25 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
                     </Link>
                 </div>
             </div>
-            <button
-                onClick={onNext}
-                className="text-white transition-transform transform hover:scale-110 sm:mb-0"
-            >
-                <span className='text-9xl'>{">"}</span>
-            </button>
+            <div onClick={onNext} className='flex cursor-pointer transition-transform transform hover:scale-110 w-2/5 text-center hover:bg-slate-800 hover:bg-opacity-40 h-svh justify-center items-center'>
+                <button
+                    onClick={onNext}
+                    className="text-white sm:mb-0"
+                >
+                    <svg
+                        fill="none"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        className="w-44 h-44 ml-2"
+                        viewBox="0 0 24 24"
+                    >
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+
+                </button>
+            </div>
         </div>
     );
 };
