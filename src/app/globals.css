@@ -2,3 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Swiper navigation arrows */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #6b46c1; /* Purple color */
+}
+
+/* Swiper pagination dots */
+.swiper-pagination-bullet {
+    background-color: #c4b5fd; /* Light purple */
+    opacity: 0.8;
+}
+.swiper-pagination-bullet-active {
+    background-color: #6b46c1; /* Darker purple */
+    opacity: 1;
+}

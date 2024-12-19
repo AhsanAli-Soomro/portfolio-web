@@ -29,8 +29,8 @@ const Resume = () => {
 };
 
 const Stepper = () => (
-  <div className="w-full fixed top-0 pt-14 mb-10 z-10">
-    <ul className="flex flex-wrap bg-purple-700 justify-around items-center font-normal text-gray-600 px-2 sm:px-6">
+  <div className="w-full fixed top-0 bg-purple-700 pt-14 mb-10 z-10">
+    <ul className="container mx-auto flex flex-wrap justify-around items-center font-normal text-gray-600 px-2 sm:px-6">
       {[
         "header",
         "summary",

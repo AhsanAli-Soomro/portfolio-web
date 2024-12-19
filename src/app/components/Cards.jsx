@@ -1,6 +1,12 @@
-import React from 'react';
+"use client";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Autoplay, Navigation, Pagination } from "swiper";
 
-function Cards() {
+const Cards = () => {
     const CardData = [
         {
             title: 'Responsive Design',
@@ -55,59 +61,53 @@ function Cards() {
     ];
 
     return (
-        <div className="bg-white flex flex-col items-center justify-center py-12">
-            <h2 className="text-4xl font-extrabold text-purple-700 mb-8 animate-fadeIn">
+        <div className="bg-white py-12">
+            <div className="container mx-auto">
+            <h2 className="text-4xl font-extrabold text-purple-700 mb-8 text-center">
                 Services
             </h2>
-            <div className="flex flex-wrap justify-center gap-6">
+            <Swiper
+                modules={[Navigation, Pagination]}
+                navigation
+                pagination={{ clickable: true }}
+                loop
+                centeredSlides={true}
+                slidesPerView={1.2}
+                spaceBetween={30}
+                breakpoints={{
+                    768: {
+                        slidesPerView: 2.2,
+                    },
+                    1024: {
+                        slidesPerView: 3.2,
+                    },
+                }}
+                className="relative "
+            >
                 {CardData.map((data, index) => (
-                    <div
-                        key={index}
-                        className="flex flex-col mb-6 rounded-lg border border-gray-200 p-6 sm:p-8 w-full sm:w-80 md:w-96 shadow-lg transition duration-300 transform hover:shadow-xl hover:-translate-y-2 bg-white"
-                    >
-                        <div className="flex items-center mb-4">
-                            <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-purple-700 text-white flex-shrink-0">
-                                <svg
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    className="w-6 h-6"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                                </svg>
-                            </div>
-                            <h3 className="text-lg font-semibold text-gray-800 ml-4">{data.title}</h3>
+                    <SwiperSlide key={index}>
+                        <div className="py-10">
+
+                        <div className="relative flex flex-col justify-center bg-white rounded-xl shadow-lg p-6 border border-gray-200 transform transition-transform hover:scale-105">
+                            <h3 className="text-lg font-semibold text-gray-800 mb-4">
+                                {data.title}
+                            </h3>
+                            <ul className="text-sm leading-relaxed text-gray-600">
+                                {data.features.map((feature, idx) => (
+                                    <li key={idx} className="mb-2">
+                                        - {feature}
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
-                        <ul className="text-sm leading-relaxed text-gray-600 mb-6">
-                            {data.features.map((feature, idx) => (
-                                <li key={idx} className="mb-2">- {feature}</li>
-                            ))}
-                        </ul>
-                        <a
-                            href="/About"
-                            className="mt-auto text-purple-700 hover:text-purple-900 font-medium transition duration-300 inline-flex items-center"
-                        >
-                            Learn More
-                            <svg
-                                fill="none"
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                className="w-4 h-4 ml-2"
-                                viewBox="0 0 24 24"
-                            >
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
+                        </div>
+                    </SwiperSlide>
                 ))}
+            </Swiper>
+
             </div>
         </div>
     );
-}
+};
 
 export default Cards;

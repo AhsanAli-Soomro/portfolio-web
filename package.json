@@ -16,14 +16,17 @@
     "aws-sdk": "^2.1665.0",
     "axios": "^1.7.3",
     "emailjs-com": "^3.2.0",
-    "next": "14.2.5",
+    "next": "^15.1.2",
     "npm": "^10.8.3",
     "quill": "^2.0.2",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-quill": "^2.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-quill": "^0.0.2",
     "react-simple-typewriter": "^5.0.1",
-    "redux-devtools-extension": "^2.13.9"
+    "react-slick": "^0.30.3",
+    "redux-devtools-extension": "^2.13.9",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^9.4.1"
   },
   "devDependencies": {
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
