@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faGithub, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const Resume = () => {
     const handleDownload = () => {
@@ -54,6 +55,26 @@ const MainContent = ({ handleDownload }) => (
         <Section id="skills" Component={Skills} />
         <Section id="projects" Component={Projects} />
         <Section id="contact" Component={Contact} />
+        <div className="flex justify-center space-x-6 mt-6">
+            <a href="https://www.linkedin.com/in/ahsanali-soomro" className="text-orange-400 hover:text-white transition duration-300">
+                <FontAwesomeIcon icon={faLinkedin} size="2x" />
+            </a>
+            <a href="mailto:ahsanalisoomro147@gmail.com" className="text-orange-400 hover:text-white transition duration-300">
+                <FontAwesomeIcon icon={faEnvelope} size="2x" />
+            </a>
+            <a href="https://www.facebook.com/ahsanali.king.92" className="text-orange-400 hover:text-white transition duration-300">
+                <FontAwesomeIcon icon={faFacebook} size="2x" />
+            </a>
+            <a href="https://www.instagram.com/soomroahsan_ali/" className="text-orange-400 hover:text-white transition duration-300">
+                <FontAwesomeIcon icon={faInstagram} size="2x" />
+            </a>
+            <a href="http://www.twitter.com/AhsanAli3860" className="text-orange-400 hover:text-white transition duration-300">
+                <FontAwesomeIcon icon={faTwitter} size="2x" />
+            </a>
+            <a href="https://www.github.com/AhsanAli-Soomro" className="text-orange-400 hover:text-white transition duration-300">
+                <FontAwesomeIcon icon={faGithub} size="2x" />
+            </a>
+        </div>
     </div>
 );
 
