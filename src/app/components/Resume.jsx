@@ -8,7 +8,7 @@ import { faFacebook, faGithub, faInstagram, faTwitter } from '@fortawesome/free-
 const Resume = () => {
     const handleDownload = () => {
         const link = document.createElement('a');
-        link.href = 'CV.pdf';
+        link.href = 'Ahsan Soomro Resume.pdf';
         link.download = 'Ahsan_Soomro_Resume.pdf';
         document.body.appendChild(link);
         link.click();
