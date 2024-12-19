@@ -87,7 +87,7 @@ const Summary = () => (
 
 const Experience = () => (
     <div className="mb-8">
-        <h3 className="text-3xl font-bold text-orange-400 mb-4 underline">Experience</h3>
+        <h3 className="text-3xl font-bold text-orange-400 mb-4 underline">Professional Experience</h3>
         {[
             {
                 title: 'React.js Developer at Verge System | WebHR',
@@ -105,6 +105,30 @@ const Experience = () => (
                 details: [
                     'Created responsive and visually appealing web applications.',
                     'Ensured seamless cross-browser performance and device compatibility.',
+                ],
+            },
+            {
+                title: 'Network Engineer at GENTEC Soft.',
+                date: 'Jun 2023 – Sep 2023',
+                details: [
+                    'Reduced network outages by 25% through proactive monitoring.',
+                    'Designed scalable, secure network infrastructures for enterprise operations.',
+                ],
+            },
+            {
+                title: 'Computer Science Teacher at Air Foundation School',
+                date: 'May 2022 – Aug 2023',
+                details: [
+                    'Taught Computer Science to grades 1–10, covering programming fundamentals.',
+                    'Delivered lessons on problem-solving and logical thinking.',
+                ],
+            },
+            {
+                title: 'Web Designing Teacher at NAVTTC',
+                date: 'Feb 2022 – May 2022',
+                details: [
+                    'Conducted training in HTML, CSS, and responsive design principles.',
+                    'Prepared students with hands-on web design experience.',
                 ],
             },
         ].map((job, index) => (
@@ -128,9 +152,17 @@ const Job = ({ job }) => (
 const Education = () => (
     <div className="mb-8">
         <h3 className="text-3xl font-bold text-orange-400 underline">Education</h3>
-        <div>
-            <h4 className="text-2xl text-gray-300">Bachelor of Science in Software Engineering</h4>
-            <p className="text-gray-400">Isra University, Hyderabad</p>
+        <div className="mb-6">
+            <h4 className="text-2xl font-semibold text-gray-300">Bachelor of Science in Software Engineering</h4>
+            <p className="text-gray-400">Isra University, Hyderabad (2018 – 2022)</p>
+        </div>
+        <div className="mb-6">
+            <h4 className="text-2xl font-semibold text-gray-300">Certificate in Graphic Designing</h4>
+            <p className="text-gray-400">Isra University in Collaboration with NAVTTC (Oct 2017 – Mar 2018)</p>
+        </div>
+        <div className="mb-6">
+            <h4 className="text-2xl font-semibold text-gray-300">Certificate in MS Office</h4>
+            <p className="text-gray-400">AMIS Academy</p>
         </div>
     </div>
 );
@@ -141,6 +173,7 @@ const Skills = () => (
         <ul className="list-disc ml-6 text-gray-300">
             <li>Frontend Development: React.js, Next.js, JavaScript, HTML, CSS</li>
             <li>UI/UX Design: Adobe Photoshop, Illustrator, XD</li>
+            <li>Performance Optimization, Collaboration, and Problem-Solving</li>
         </ul>
     </div>
 );
@@ -150,7 +183,13 @@ const Projects = () => (
         <h3 className="text-3xl font-bold text-orange-400 underline">Technical Projects</h3>
         <ul className="list-disc ml-6 text-gray-300">
             <li>
-                <strong>Blog Management Platform:</strong> Built a blog site with React.js, Node.js, Clerk, and Tailwind CSS with a secure admin dashboard.
+                <strong>E-Commerce Web Platform:</strong> Built a scalable e-commerce application using React.js, Node.js, and Tailwind CSS with an admin dashboard.
+            </li>
+            <li>
+                <strong>Portfolio Website:</strong> Designed a personal portfolio showcasing live projects and development skills using Next.js.
+            </li>
+            <li>
+                <strong>Blog Management Platform:</strong> Developed a blog site with React.js, Clerk, and Tailwind CSS, including a secure admin dashboard for content management.
             </li>
         </ul>
     </div>
