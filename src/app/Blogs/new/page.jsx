@@ -43,28 +43,28 @@ const BlogFormPage = ({ blog, onSave }) => {
     };
 
     return (
-        <div className='container p-24 bg-black text-white mx-auto px-4 sm:px-6 lg:px-8'>
-            <h2 className='text-4xl font-bold text-orange-400 mb-8 text-center'>
+        <div className='container p-24 bg-gray-100 text-black my-36 rounded-md shadow-md mx-auto px-4 sm:px-6 lg:px-8'>
+            <h2 className='text-4xl font-bold text-purple-700 mb-8 text-center'>
                 {blog ? 'Edit Blog' : 'Write a New Blog'}
             </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
-                    <label className="block text-gray-400">Title</label>
+                    <label className="block text-black">Title</label>
                     <input
                         type="text"
                         name="title"
                         value={formData.title}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 bg-gray-950 text-white border-gray-600"
+                        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-700 bg-white text-black border-gray-600"
                         required
                     />
                 </div>
                 <div className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
-                    <label className="block text-gray-400">Content</label>
+                    <label className="block text-black">Content</label>
                     <ReactQuill
                         value={formData.content}
                         onChange={handleContentChange}
-                        className="bg-gray-950 text-white"
+                        className="bg-white text-black"
                         modules={{
                             toolbar: [
                                 [{ 'header': '1'}, {'header': '2'}, { 'font': [] }],
@@ -85,13 +85,13 @@ const BlogFormPage = ({ blog, onSave }) => {
                     />
                 </div>
                 <div className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
-                    <label className="block text-gray-400">Image</label>
+                    <label className="block text-black">Image</label>
                     <input
                         type="file"
                         name="image"
                         accept="image/*"
                         onChange={handleImageChange}
-                        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 bg-gray-950 text-white border-gray-600"
+                        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-700 bg-white text-black border-gray-600"
                     />
                     {formData.image && (
                         <img src={formData.image} alt="Preview" className="mt-4 max-h-60" />
@@ -100,7 +100,7 @@ const BlogFormPage = ({ blog, onSave }) => {
                 <div className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
                     <button
                         type="submit"
-                        className="w-full bg-orange-400 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                        className="w-full bg-purple-700 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-purple-700"
                     >
                         {blog ? 'Save Changes' : 'Submit Blog'}
                     </button>

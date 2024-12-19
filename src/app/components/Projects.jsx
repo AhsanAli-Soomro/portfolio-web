@@ -1,11 +1,11 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
 import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
 
 const ProjectsPage = () => {
     const [selectedIndex, setSelectedIndex] = useState(null);
-    
+
     const projects = [
 
         {
@@ -133,7 +133,6 @@ const ProjectsPage = () => {
 
     ];
 
-
     const handleProjectClick = (index) => {
         setSelectedIndex(index);
     };
@@ -151,14 +150,18 @@ const ProjectsPage = () => {
     };
 
     return (
-        <div className='bg-black py-12'>
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className='text-4xl font-bold text-orange-400 mb-8 text-center animate-fadeIn'>
+        <div className="bg-gray-100 pt-16 py-12">
+            <div className="mx-auto">
+                <h2 className="text-2xl py-1 fixed w-full z-20 text-white font-bold bg-purple-700 mb-12 text-center animate-fadeIn">
                     My Projects
                 </h2>
-                <div className='flex flex-wrap justify-center gap-6'>
+                <div className="container mx-auto pt-8 flex flex-wrap justify-center gap-8">
                     {projects.map((project, index) => (
-                        <ProjectCard key={index} project={project} onClick={() => handleProjectClick(index)} />
+                        <ProjectCard
+                            key={index}
+                            project={project}
+                            onClick={() => handleProjectClick(index)}
+                        />
                     ))}
                 </div>
             </div>

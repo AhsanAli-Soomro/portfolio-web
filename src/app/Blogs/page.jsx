@@ -35,12 +35,12 @@ const BlogsPage = () => {
     };
 
     return (
-        <div className='bg-black text-white py-12'>
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className='text-4xl font-bold text-orange-400 mb-8 text-center'>
+        <div className='bg-gray-100 text-black pt-16 py-12 h-svh'>
+            <div className="mx-auto">
+                <h2 className="text-2xl py-1 fixed w-full z-20 text-white font-bold bg-purple-700 mb-12 text-center animate-fadeIn">
                     My Blogs
                 </h2>
-                <div className='flex flex-wrap justify-center gap-4'>
+                <div className='flex pt-16 flex-wrap justify-center gap-4'>
                     {blogs.length > 0 ? (
                         blogs.map((blog, index) => (
                             <BlogCard
@@ -52,12 +52,12 @@ const BlogsPage = () => {
                             />
                         ))
                     ) : (
-                        <p className="text-white">No blogs available.</p>
+                        <p className="text-black">No blogs available.</p>
                     )}
                 </div>
                 <div className='mt-8 text-center'>
                     <Link href="/Blogs/new">
-                        <p className='text-orange-500 hover:text-orange-600'>Write a new blog</p>
+                        <p className='text-purple-700 hover:text-purple-900'>Write a new blog</p>
                     </Link>
                 </div>
             </div>

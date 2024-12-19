@@ -37,8 +37,8 @@ const Hire = () => {
   };
 
   return (
-    <div className='pt-24 pb-10 bg-black min-h-screen text-white'>
-      <div className="max-w-4xl mx-auto p-8  shadow-lg rounded-lg">
+    <div className="pt-24 pb-10 bg-white min-h-screen text-white">
+      <div className="max-w-4xl mx-auto p-8 bg-purple-700 shadow-xl rounded-lg">
         <Header />
         <Form formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} />
       </div>
@@ -47,67 +47,78 @@ const Hire = () => {
 };
 
 const Header = () => (
-  <div className="border-b-2 border-orange-400 pb-4 mb-4 text-center">
-    <h1 className="text-3xl text-orange-400 font-bold">Hire Me</h1>
-    <p className="text-gray-400">Fill out the form below to get in touch with me.</p>
+  <div className="border-b-2 border-purple-500 pb-4 mb-6 text-center">
+    <h1 className="text-4xl text-white font-extrabold">Hire Me</h1>
+    <p className="text-gray-200">Fill out the form below to get in touch with me.</p>
   </div>
 );
 
 const Form = ({ formData, handleChange, handleSubmit }) => (
   <form onSubmit={handleSubmit} className="space-y-6">
-    <div className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
-      <label className="block text-gray-400">Name</label>
-      <input
-        type="text"
-        name="name"
-        value={formData.name}
-        onChange={handleChange}
-        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 bg-gray-950 text-white border-gray-600"
-        required
-      />
-    </div>
-    <div className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
-      <label className="block text-gray-400">Email</label>
-      <input
-        type="email"
-        name="email"
-        value={formData.email}
-        onChange={handleChange}
-        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 bg-gray-950 text-white border-gray-600"
-        required
-      />
-    </div>
-    <div className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
-      <label className="block text-gray-400">Subject</label>
-      <input
-        type="text"
-        name="subject"
-        value={formData.subject}
-        onChange={handleChange}
-        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 bg-gray-950 text-white border-gray-600"
-        required
-      />
-    </div>
-    <div className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
-      <label className="block text-gray-400">Message</label>
-      <textarea
-        name="message"
-        value={formData.message}
-        onChange={handleChange}
-        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 bg-gray-950 text-white border-gray-600"
-        rows="5"
-        required
-      ></textarea>
-    </div>
-    <div className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+    <InputField
+      label="Name"
+      type="text"
+      name="name"
+      value={formData.name}
+      onChange={handleChange}
+    />
+    <InputField
+      label="Email"
+      type="email"
+      name="email"
+      value={formData.email}
+      onChange={handleChange}
+    />
+    <InputField
+      label="Subject"
+      type="text"
+      name="subject"
+      value={formData.subject}
+      onChange={handleChange}
+    />
+    <TextareaField
+      label="Message"
+      name="message"
+      value={formData.message}
+      onChange={handleChange}
+    />
+    <div className="transition duration-300 hover:scale-105">
       <button
         type="submit"
-        className="w-full bg-orange-400 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-orange-400"
+        className="w-full bg-white text-purple-700 px-4 py-2 rounded-md hover:bg-gray-200 transition duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
       >
         Send Message
       </button>
     </div>
   </form>
+);
+
+const InputField = ({ label, type, name, value, onChange }) => (
+  <div className="transition duration-300 hover:scale-105">
+    <label className="block text-gray-200 font-medium">{label}</label>
+    <input
+      type={type}
+      name={name}
+      value={value}
+      onChange={onChange}
+      className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-300 bg-purple-600 text-white border-purple-500"
+      required
+    />
+  </div>
+);
+
+const TextareaField = ({ label, name, value, onChange }) => (
+  <div className="transition duration-300 hover:scale-105">
+    <label className="block text-gray-200 font-medium">{label}</label>
+    <textarea
+      name={name}
+      value={value}
+      onChange={onChange}
+      className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-300 bg-purple-600 text-white border-purple-500"
+      rows="5"
+      required
+    ></textarea>
+  </div>
 );
 
 export default Hire;
