@@ -136,7 +136,7 @@ const BlogsPage = () => {
         <div className="bg-gradient-to-br from-orange-800 via-orange-600 to-orange-500 py-20">
             <div className="container mx-auto px-4 sm:px-6 lg:px-16">
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-white text-center mb-10">
-                    My Projects
+                    My Blogs
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {blog.map((blog, index) => (
