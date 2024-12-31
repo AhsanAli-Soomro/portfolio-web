@@ -10,10 +10,10 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row items-center justify-between space-y-12 md:space-y-0 md:space-x-12">
           {/* Left Section */}
           <div className="md:w-2/3 text-center md:text-left">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white mb-6 leading-tight">
               <TypewriterText />
             </h1>
-            <p className="text-lg sm:text-xl text-gray-200 mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-200 mb-8 leading-relaxed">
               Crafting visually compelling and user-centered websites that
               inspire and engage. With innovation and precision, I transform
               ideas into immersive digital experiences.
@@ -22,14 +22,14 @@ const Hero = () => {
               <a
                 href="/Hire"
                 aria-label="Hire me"
-                className="px-6 py-3 bg-white text-orange-700 font-semibold rounded-lg shadow-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300 focus:ring-4 focus:ring-orange-300"
+                className="px-4 sm:px-6 py-2 sm:py-3 bg-white text-orange-700 font-semibold rounded-lg shadow-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300 focus:ring-4 focus:ring-orange-300"
               >
                 Hire me
               </a>
               <a
                 href="#portfolio"
                 aria-label="View Portfolio"
-                className="px-6 py-3 border-2 border-white text-white font-semibold rounded-lg shadow-lg hover:bg-orange-800 hover:border-orange-600 transition-all duration-300 focus:ring-4 focus:ring-orange-400"
+                className="px-4 sm:px-6 py-2 sm:py-3 border-2 border-white text-white font-semibold rounded-lg shadow-lg hover:bg-orange-800 hover:border-orange-600 transition-all duration-300 focus:ring-4 focus:ring-orange-400"
               >
                 View Portfolio
               </a>
@@ -38,7 +38,7 @@ const Hero = () => {
 
           {/* Right Section */}
           <div className="relative md:w-1/3 flex justify-center md:justify-end">
-            <div className="relative w-80 h-80 sm:w-96 sm:h-96 rounded-full overflow-hidden transform hover:scale-105 transition-transform duration-500">
+            <div className="relative w-60 h-60 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden transform hover:scale-105 transition-transform duration-500">
               <Image
                 src="/ahsana.png"
                 layout="fill"
@@ -50,16 +50,16 @@ const Hero = () => {
               <div className="absolute inset-0 rounded-full bg-orange-500 blur-lg opacity-20"></div>
             </div>
             {/* Glow Effects */}
-            <div className="absolute -top-6 -right-6 w-32 h-32 rounded-full bg-orange-400 blur-lg opacity-50"></div>
-            <div className="absolute bottom-4 left-4 w-32 h-32 rounded-full bg-yellow-400 blur-lg opacity-50"></div>
+            <div className="absolute -top-4 sm:-top-6 -right-4 sm:-right-6 w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-orange-400 blur-lg opacity-50"></div>
+            <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-yellow-400 blur-lg opacity-50"></div>
           </div>
         </div>
       </div>
 
       {/* Background Glow Effects */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-orange-700 rounded-full blur-[200px] opacity-30"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-yellow-500 rounded-full blur-[200px] opacity-30"></div>
+        <div className="absolute top-1/3 left-1/3 w-60 h-60 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-orange-700 rounded-full blur-[150px] opacity-30"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-60 h-60 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-yellow-500 rounded-full blur-[150px] opacity-30"></div>
       </div>
 
       {/* Gradient Overlay for Additional Depth */}

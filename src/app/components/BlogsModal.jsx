@@ -3,8 +3,8 @@
     import Image from 'next/image';
     import Link from 'next/link';
 
-    const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
-        if (!project) return null;
+    const BlogsModal = ({ blog, onClose, onNext, onPrev }) => {
+        if (!blog) return null;
 
         return (
             <div className="fixed w-full inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 overflow-y-auto">
@@ -34,35 +34,35 @@
                     >
                         &times;
                     </button>
-                    <h2 className="text-3xl font-bold mb-4 text-orange-400">{project.title}</h2>
+                    <h2 className="text-3xl font-bold mb-4 text-orange-400">{blog.title}</h2>
                     <div className="flex flex-col md:flex-row gap-6">
                         <div className="relative transition-transform transform hover:scale-110">
                             <span className="top-2 left-2 z-10 bg-orange-500 bg-opacity-75 text-black p-1 rounded">Laptop View</span>
                             <Image
-                                src={project.image}
+                                src={blog.image}
                                 width={400}
                                 height={500}
-                                alt={project.title}
+                                alt={blog.title}
                                 className="rounded object-fill h-60 w-full"
                             />
                         </div>
                         <div className="relative mx-auto md:mx-0 transition-transform transform hover:scale-110">
                             <span className="top-2 left-2 z-10 bg-orange-500 bg-opacity-75 text-black p-1 rounded">Mobile View</span>
                             <Image
-                                src={project.imageapp}
+                                src={blog.imageapp}
                                 width={300}
                                 height={200}
-                                alt={project.title}
+                                alt={blog.title}
                                 className="mb-4 rounded object-fill h-60 w-36"
                             />
                         </div>
                     </div>
-                    <p className="text-lg mb-4">{project.description}</p>
-                    {project.features && (
+                    <p className="text-lg mb-4">{blog.description}</p>
+                    {blog.features && (
                         <div>
                             <h3 className="text-xl text-orange-400 font-semibold mb-2">Key Features:</h3>
                             <ul className="list-disc list-inside mb-4 space-y-1">
-                                {project.features.map((feature, index) => (
+                                {blog.features.map((feature, index) => (
                                     <li key={index}>{feature}</li>
                                 ))}
                             </ul>
@@ -75,7 +75,7 @@
                         >
                             Close
                         </button>
-                        <Link href={project.link} passHref>
+                        <Link href={blog.link} passHref>
                             <p
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -120,4 +120,4 @@
         );
     };
 
-    export default ProjectModal;
+    export default BlogsModal;

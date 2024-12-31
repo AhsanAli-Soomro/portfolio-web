@@ -57,20 +57,20 @@ const Cards = () => {
 
   return (
     <div className="py-16 bg-gradient-to-br from-orange-300 to-white">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-extrabold text-orange-800 mb-12 text-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-16">
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-orange-800 mb-8 sm:mb-12 text-center">
           My Expertise
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
           {CardData.map((data, index) => (
             <div
               key={index}
               className="bg-white rounded-lg shadow-md p-6 border-t-4 border-orange-500 hover:shadow-lg transform transition-transform hover:-translate-y-2"
             >
-              <h3 className="text-xl font-semibold text-orange-800 mb-4">
+              <h3 className="text-lg sm:text-xl font-semibold text-orange-800 mb-4">
                 {data.title}
               </h3>
-              <ul className="text-base leading-relaxed text-gray-700 mb-6">
+              <ul className="text-sm sm:text-base leading-relaxed text-gray-700 mb-6">
                 {data.features.map((feature, idx) => (
                   <li key={idx} className="mb-2">
                     • {feature}

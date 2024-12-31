@@ -16,24 +16,24 @@ const About = () => {
   return (
     <div className="relative bg-gradient-to-br from-orange-800 via-orange-600 to-orange-500 overflow-hidden">
       {/* Hero Section */}
-      <div className="container mx-auto px-6 sm:px-12 lg:px-16 py-20 flex flex-col justify-center items-center relative z-10 min-h-screen text-center">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-8 leading-tight">
+      <div className="container mx-auto px-6 sm:px-12 lg:px-16 py-16 sm:py-20 lg:py-28 flex flex-col justify-center items-center relative z-10 min-h-screen text-center">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white mb-6 sm:mb-8 leading-tight">
           <TypewriterText />
         </h1>
-        <p className="text-lg sm:text-xl text-gray-200 mb-6 leading-relaxed">
+        <p className="text-base sm:text-lg lg:text-xl text-gray-200 mb-4 sm:mb-6 leading-relaxed max-w-2xl">
           Hi, I’m <span className="font-semibold">Ahsan Ali</span>, a web
           designer with a passion for creating beautiful and functional digital
           experiences. I bring innovation, precision, and a unique perspective
           to every project I work on.
         </p>
-        <p className="text-lg sm:text-xl text-gray-200 leading-relaxed">
+        <p className="text-base sm:text-lg lg:text-xl text-gray-200 leading-relaxed max-w-2xl mb-8 sm:mb-12">
           Let’s build something amazing together. From responsive designs to
           seamless user experiences, I ensure every detail is crafted to
           perfection.
         </p>
 
         {/* Social Media Links */}
-        <div className="flex justify-center mt-8 space-x-6">
+        <div className="flex justify-center mt-4 sm:mt-6 lg:mt-8 space-x-4 sm:space-x-6">
           {[
             {
               icon: faLinkedin,
@@ -87,8 +87,8 @@ const About = () => {
 
       {/* Glow Effects */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-orange-700 rounded-full blur-[200px] opacity-30"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-yellow-500 rounded-full blur-[200px] opacity-30"></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-orange-700 rounded-full blur-[150px] opacity-30"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-yellow-500 rounded-full blur-[150px] opacity-30"></div>
       </div>
 
       {/* Overlay */}

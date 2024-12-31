@@ -2,13 +2,18 @@
 
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  faLinkedin,
+  faEnvelope,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebook,
   faGithub,
   faInstagram,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import Image from "next/image";
 
 const Resume = () => {
   const handleDownload = () => {
@@ -21,155 +26,183 @@ const Resume = () => {
   };
 
   return (
-    <div className="flex bg-gray-100 flex-col">
-      <Stepper />
-      <MainContent handleDownload={handleDownload} />
+    <div className="bg-gradient-to-br from-orange-800 via-orange-600 to-orange-500 min-h-screen text-white">
+      <div className="container mx-auto px-6 lg:px-12 py-20">
+        {/* Header Section */}
+        <Header onDownload={handleDownload} />
+
+        {/* Main Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-12">
+          {/* Sidebar */}
+          <div className="lg:col-span-1">
+            <Sidebar />
+          </div>
+
+          {/* Main Content */}
+          <div className="lg:col-span-2 space-y-12">
+            {/* Summary */}
+            <Section title="Summary">
+              <p className="leading-relaxed">
+                Enthusiastic and results-oriented Frontend Developer with over
+                two years of experience creating interactive, user-friendly web
+                applications. Adept at developing scalable, maintainable, and
+                efficient solutions using React, Next.js, and modern tools.
+                Skilled in UI/UX principles, optimizing functionality and
+                aesthetics to elevate user experiences.
+              </p>
+            </Section>
+
+            {/* Professional Experience */}
+            <Section title="Professional Experience">
+              {[
+                {
+                  title: "React.js Developer at Verge System | WebHR",
+                  date: "April 2024 – Present",
+                  details: [
+                    "Optimized load time by 30% through state management improvements.",
+                    "Designed reusable components to accelerate project delivery.",
+                    "Developed and integrated RESTful APIs.",
+                    "Collaborated with cross-functional teams to deliver high-quality projects.",
+                  ],
+                },
+                {
+                  title: "Frontend Developer at WebSolve",
+                  date: "Nov 2023 – Jan 2024",
+                  details: [
+                    "Created responsive and visually appealing web applications.",
+                    "Ensured seamless cross-browser performance and device compatibility.",
+                  ],
+                },
+                {
+                  title: "Network Engineer at GENTEC Soft.",
+                  date: "Jun 2023 – Sep 2023",
+                  details: [
+                    "Reduced network outages by 25% through proactive monitoring.",
+                    "Designed scalable, secure network infrastructures for enterprise operations.",
+                  ],
+                },
+              ].map((job, index) => (
+                <Job key={index} job={job} />
+              ))}
+            </Section>
+
+            {/* Education */}
+            <Section title="Education">
+              {[
+                {
+                  degree: "Bachelor of Science in Software Engineering",
+                  institution: "Isra University, Hyderabad",
+                  duration: "2018 – 2022",
+                },
+                {
+                  degree: "Certificate in Graphic Designing",
+                  institution: "Isra University (Collaboration with NAVTTC)",
+                  duration: "Oct 2017 – Mar 2018",
+                },
+              ].map((edu, index) => (
+                <EducationItem key={index} edu={edu} />
+              ))}
+            </Section>
+
+            {/* Skills */}
+            <Section title="Skills">
+              <ul className="list-disc list-inside leading-relaxed">
+                <li>Frontend Development: React.js, Next.js, JavaScript, HTML, CSS</li>
+                <li>UI/UX Design: Adobe Photoshop, Illustrator, XD</li>
+                <li>Performance Optimization, Collaboration, Problem-Solving</li>
+              </ul>
+            </Section>
+
+            {/* Projects */}
+            <Section title="Technical Projects">
+              <ul className="list-disc list-inside leading-relaxed">
+                <li>
+                  <strong>E-Commerce Web Platform:</strong> Built a scalable
+                  e-commerce application using React.js, Node.js, and Tailwind
+                  CSS with an admin dashboard.
+                </li>
+                <li>
+                  <strong>Portfolio Website:</strong> Designed a personal
+                  portfolio showcasing live projects and development skills
+                  using Next.js.
+                </li>
+                <li>
+                  <strong>Blog Management Platform:</strong> Developed a blog
+                  site with React.js, Clerk, and Tailwind CSS, including a
+                  secure admin dashboard for content management.
+                </li>
+              </ul>
+            </Section>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
 
-const Stepper = () => (
-  <div className="w-full fixed top-0 bg-purple-700 pt-14 mb-10 z-10">
-    <ul className="container mx-auto flex flex-wrap justify-around items-center font-normal text-gray-600 px-2 sm:px-6">
-      {[
-        "header",
-        "summary",
-        "experience",
-        "education",
-        "skills",
-        "projects",
-        "contact",
-      ].map((section) => (
-        <li
-          key={section}
-          className="relative text-xs sm:text-sm font-normal flex flex-col items-center mb-4 sm:mb-0"
-        >
-          <a href={`#${section}`} className="flex items-center space-x-2">
-            {/* <span className="block w-3 h-3 sm:w-4 sm:h-4 bg-purple-700 rounded-full"></span> */}
-            <span className="text-xs text-white font-bold sm:text-lg capitalize">{section}</span>
-          </a>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
-
-const MainContent = ({ handleDownload }) => (
-  <div className="w-full pt-40 pb-10 bg-gray-100 text-gray-900 px-4 md:px-10">
-    <div className="flex justify-center mb-4">
-      <button
-        onClick={handleDownload}
-        className="bg-purple-700 text-white px-4 py-2 rounded-md hover:bg-purple-900 transition duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
-      >
-        Download Resume
-      </button>
+const Header = ({ onDownload }) => (
+  <div className="flex flex-col lg:flex-row items-center lg:items-start space-y-6 lg:space-y-0 lg:space-x-10 text-center lg:text-left">
+    <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden bg-gradient-to-br from-orange-800 via-orange-600 to-orange-800 shadow-lg">
+      <Image
+        src="/ahsan.png"
+        alt="Ahsan Ali Soomro"
+        layout="fill"
+        objectFit="cover"
+      />
     </div>
-    <Section id="header" Component={Header} />
-    <Section id="summary" Component={Summary} />
-    <Section id="experience" Component={Experience} />
-    <Section id="education" Component={Education} />
-    <Section id="skills" Component={Skills} />
-    <Section id="projects" Component={Projects} />
-    <Section id="contact" Component={Contact} />
-    <SocialLinks />
+    <div>
+      <h1 className="text-4xl lg:text-5xl font-extrabold">Ahsan Ali Soomro</h1>
+      <h2 className="text-xl lg:text-2xl mt-2">Frontend Web Developer</h2>
+      <p className="text-md mt-2">
+        <FontAwesomeIcon icon={faPhone} className="mr-2" /> (+92) 317-3215380 ·{" "}
+        <FontAwesomeIcon icon={faEnvelope} className="mr-2" />{" "}
+        ahsanalisoomro147@gmail.com
+      </p>
+      <div className="mt-4">
+        <button
+          onClick={onDownload}
+          className="bg-white text-orange-700 font-medium px-6 py-2 rounded hover:bg-orange-700 hover:text-white transition"
+        >
+          Download Resume
+        </button>
+      </div>
+    </div>
   </div>
 );
 
-const Section = ({ id, Component }) => (
-  <div
-    id={id}
-    className="max-w-5xl mx-auto p-4 md:p-10 bg-gray-100 border-b border-gray-300 scroll-mt-36"
-  >
-    <Component />
+const Sidebar = () => (
+  <div className="space-y-8 sticky top-20">
+    <div>
+      <h3 className="text-lg font-semibold">Contact</h3>
+      <p>Email: ahsanalisoomro147@gmail.com</p>
+      <p>Phone: (+92) 317-3215380</p>
+    </div>
+    <div>
+      <h3 className="text-lg font-semibold">Social Links</h3>
+      <div className="flex space-x-4 mt-2">
+        <SocialIcon href="https://linkedin.com/in/ahsanali-soomro" icon={faLinkedin} />
+        <SocialIcon href="mailto:ahsanalisoomro147@gmail.com" icon={faEnvelope} />
+        <SocialIcon href="https://github.com/AhsanAli-Soomro" icon={faGithub} />
+        <SocialIcon href="https://www.instagram.com/soomroahsan_ali/" icon={faInstagram} />
+        <SocialIcon href="https://www.facebook.com/ahsanali.king.92" icon={faFacebook} />
+        <SocialIcon href="https://twitter.com/AhsanAli3860" icon={faTwitter} />
+      </div>
+    </div>
   </div>
 );
 
-const Header = () => (
-  <div className="text-center">
-    <h1 className="text-4xl font-bold text-purple-700">Ahsan Ali Soomro</h1>
-    <h2 className="text-2xl text-gray-600 mt-2">Frontend Web Developer</h2>
-    <p className="text-gray-600 mt-2">(+92) 317-3215380 · ahsanalisoomro147@gmail.com</p>
-    <p className="text-gray-600 mt-2">
-      <a
-        href="https://ahsanalisoomro.vercel.app"
-        className="hover:text-purple-700 transition duration-300"
-      >
-        Portfolio
-      </a>{" "}
-      ·{" "}
-      <a
-        href="https://linkedin.com/in/ahsanali-soomro"
-        className="hover:text-purple-700 transition duration-300"
-      >
-        LinkedIn
-      </a>{" "}
-      ·{" "}
-      <a
-        href="https://github.com/AhsanAli-Soomro"
-        className="hover:text-purple-700 transition duration-300"
-      >
-        GitHub
-      </a>
-    </p>
-  </div>
-);
-
-const Summary = () => (
-  <div className="mb-8">
-    <h3 className="text-3xl text-purple-700 font-bold mb-4 underline">Summary</h3>
-    <p className="text-gray-700 leading-relaxed">
-      Enthusiastic and results-oriented Frontend Developer with over two years
-      of experience creating interactive, user-friendly web applications. Adept
-      at developing scalable, maintainable, and efficient solutions using
-      React, Next.js, and modern tools. Skilled in UI/UX principles, optimizing
-      functionality and aesthetics to elevate user experiences.
-    </p>
-  </div>
-);
-
-const Experience = () => (
-  <div className="mb-8">
-    <h3 className="text-3xl font-bold text-purple-700 mb-4 underline">
-      Professional Experience
-    </h3>
-    {[
-      {
-        title: "React.js Developer at Verge System | WebHR",
-        date: "April 2024 – Present",
-        details: [
-          "Optimized load time by 30% through state management improvements.",
-          "Designed reusable components to accelerate project delivery.",
-          "Developed and integrated RESTful APIs.",
-          "Collaborated with cross-functional teams to deliver high-quality projects.",
-        ],
-      },
-      {
-        title: "Frontend Developer at WebSolve",
-        date: "Nov 2023 – Jan 2024",
-        details: [
-          "Created responsive and visually appealing web applications.",
-          "Ensured seamless cross-browser performance and device compatibility.",
-        ],
-      },
-      {
-        title: "Network Engineer at GENTEC Soft.",
-        date: "Jun 2023 – Sep 2023",
-        details: [
-          "Reduced network outages by 25% through proactive monitoring.",
-          "Designed scalable, secure network infrastructures for enterprise operations.",
-        ],
-      },
-    ].map((job, index) => (
-      <Job key={index} job={job} />
-    ))}
+const Section = ({ title, children }) => (
+  <div>
+    <h3 className="text-2xl font-bold mb-4">{title}</h3>
+    {children}
   </div>
 );
 
 const Job = ({ job }) => (
   <div className="mb-6">
-    <h4 className="text-2xl font-semibold text-purple-700">{job.title}</h4>
-    <p className="text-gray-600">{job.date}</p>
-    <ul className="list-disc list-inside text-gray-700 leading-relaxed space-y-2 ml-6">
+    <h4 className="text-lg font-semibold">{job.title}</h4>
+    <p className="text-sm text-gray-200">{job.date}</p>
+    <ul className="list-disc list-inside mt-2 space-y-1 text-gray-100">
       {job.details.map((detail, index) => (
         <li key={index}>{detail}</li>
       ))}
@@ -177,108 +210,23 @@ const Job = ({ job }) => (
   </div>
 );
 
-const Education = () => (
-  <div className="mb-8">
-    <h3 className="text-3xl font-bold text-purple-700 underline">Education</h3>
-    <div className="mb-6">
-      <h4 className="text-2xl font-semibold text-gray-700">
-        Bachelor of Science in Software Engineering
-      </h4>
-      <p className="text-gray-600">Isra University, Hyderabad (2018 – 2022)</p>
-    </div>
-    <div className="mb-6">
-      <h4 className="text-2xl font-semibold text-gray-700">
-        Certificate in Graphic Designing
-      </h4>
-      <p className="text-gray-600">
-        Isra University in Collaboration with NAVTTC (Oct 2017 – Mar 2018)
-      </p>
-    </div>
+const EducationItem = ({ edu }) => (
+  <div className="mb-6">
+    <h4 className="text-lg font-semibold">{edu.degree}</h4>
+    <p className="text-sm text-gray-200">{edu.institution}</p>
+    <p className="text-sm text-gray-200">{edu.duration}</p>
   </div>
 );
 
-const Skills = () => (
-  <div>
-    <h3 className="text-3xl font-bold text-purple-700 underline">Skills</h3>
-    <ul className="list-disc ml-6 text-gray-700">
-      <li>Frontend Development: React.js, Next.js, JavaScript, HTML, CSS</li>
-      <li>UI/UX Design: Adobe Photoshop, Illustrator, XD</li>
-      <li>Performance Optimization, Collaboration, and Problem-Solving</li>
-    </ul>
-  </div>
-);
-
-const Projects = () => (
-  <div>
-    <h3 className="text-3xl font-bold text-purple-700 underline">
-      Technical Projects
-    </h3>
-    <ul className="list-disc ml-6 text-gray-700">
-      <li>
-        <strong>E-Commerce Web Platform:</strong> Built a scalable e-commerce
-        application using React.js, Node.js, and Tailwind CSS with an admin
-        dashboard.
-      </li>
-      <li>
-        <strong>Portfolio Website:</strong> Designed a personal portfolio
-        showcasing live projects and development skills using Next.js.
-      </li>
-      <li>
-        <strong>Blog Management Platform:</strong> Developed a blog site with
-        React.js, Clerk, and Tailwind CSS, including a secure admin dashboard
-        for content management.
-      </li>
-    </ul>
-  </div>
-);
-
-const Contact = () => (
-  <div>
-    <h3 className="text-3xl font-bold text-purple-700 underline">Contact</h3>
-    <p>Email: ahsanalisoomro147@gmail.com</p>
-    <p>Phone: (+92) 317-3215380</p>
-  </div>
-);
-
-const SocialLinks = () => (
-  <div className="flex justify-center space-x-6 mt-6">
-    <a
-      href="https://www.linkedin.com/in/ahsanali-soomro"
-      className="text-purple-700 hover:text-purple-900 transition duration-300"
-    >
-      <FontAwesomeIcon icon={faLinkedin} size="2x" />
-    </a>
-    <a
-      href="mailto:ahsanalisoomro147@gmail.com"
-      className="text-purple-700 hover:text-purple-900 transition duration-300"
-    >
-      <FontAwesomeIcon icon={faEnvelope} size="2x" />
-    </a>
-    <a
-      href="https://www.facebook.com/ahsanali.king.92"
-      className="text-purple-700 hover:text-purple-900 transition duration-300"
-    >
-      <FontAwesomeIcon icon={faFacebook} size="2x" />
-    </a>
-    <a
-      href="https://www.instagram.com/soomroahsan_ali/"
-      className="text-purple-700 hover:text-purple-900 transition duration-300"
-    >
-      <FontAwesomeIcon icon={faInstagram} size="2x" />
-    </a>
-    <a
-      href="http://www.twitter.com/AhsanAli3860"
-      className="text-purple-700 hover:text-purple-900 transition duration-300"
-    >
-      <FontAwesomeIcon icon={faTwitter} size="2x" />
-    </a>
-    <a
-      href="https://www.github.com/AhsanAli-Soomro"
-      className="text-purple-700 hover:text-purple-900 transition duration-300"
-    >
-      <FontAwesomeIcon icon={faGithub} size="2x" />
-    </a>
-  </div>
+const SocialIcon = ({ href, icon }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-white hover:text-orange-300 transition"
+  >
+    <FontAwesomeIcon icon={icon} size="2x" />
+  </a>
 );
 
 export default Resume;
