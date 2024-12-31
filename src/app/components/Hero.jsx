@@ -27,11 +27,11 @@ const Hero = () => {
                 Hire me
               </a>
               <a
-                href="#portfolio"
+                href="/Resume"
                 aria-label="View Portfolio"
                 className="px-4 sm:px-6 py-2 sm:py-3 border-2 border-white text-white font-semibold rounded-lg shadow-lg hover:bg-orange-800 hover:border-orange-600 transition-all duration-300 focus:ring-4 focus:ring-orange-400"
               >
-                View Portfolio
+                View Resume
               </a>
             </div>
           </div>
