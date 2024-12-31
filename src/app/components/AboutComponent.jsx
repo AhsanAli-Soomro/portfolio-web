@@ -1,73 +1,100 @@
 "use client";
-import React from 'react';
-import Cards from './Cards';
-import TypewriterText from './TypewriterText';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faFacebook, faInstagram, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import React from "react";
+import TypewriterText from "./TypewriterText";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLinkedin,
+  faFacebook,
+  faInstagram,
+  faTwitter,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import Cards from "./Cards";
 
 const About = () => {
-    return (
-        <div className="relative pt-10 flex flex-col bg-purple-700 h-svh">
-            <div className="container mx-auto px-6 py-24 relative z-10">
-                <h1 className="text-5xl font-bold text-white mb-6">
-                    <TypewriterText />
-                </h1>
-                <p className="text-lg text-gray-100 mb-6">
-                    I am Ahsan, a passionate web designer dedicated to creating visually stunning and user-friendly websites. With a keen eye for design and a commitment to innovation, I transform ideas into digital experiences that captivate and engage.
-                </p>
-                <div className="flex flex-col lg:flex-row justify-between items-start">
-                    <div className="w-full lg:w-1/2">
-                        <h2 className="text-3xl font-semibold text-white mb-4">My Expertise</h2>
-                        <p className="text-base text-gray-100 mb-6">
-                            From responsive design to UI/UX prototyping, I cover a wide range of web design aspects to ensure your website stands out. My process includes thorough research, detailed wireframing, and iterative testing to deliver the best results.
-                        </p>
-                    </div>
-                </div>
-                <div className="flex space-x-4 mt-6">
-                    <a
-                        href="https://www.linkedin.com/in/ahsanali-soomro"
-                        className="text-white hover:text-gray-200 transition duration-300"
-                    >
-                        <FontAwesomeIcon icon={faLinkedin} size="2x" />
-                    </a>
-                    <a
-                        href="mailto:ahsanalisoomro147@gmail.com"
-                        className="text-white hover:text-gray-200 transition duration-300"
-                    >
-                        <FontAwesomeIcon icon={faEnvelope} size="2x" />
-                    </a>
-                    <a
-                        href="https://www.facebook.com/ahsanali.king.92"
-                        className="text-white hover:text-gray-200 transition duration-300"
-                    >
-                        <FontAwesomeIcon icon={faFacebook} size="2x" />
-                    </a>
-                    <a
-                        href="https://www.instagram.com/soomroahsan_ali/"
-                        className="text-white hover:text-gray-200 transition duration-300"
-                    >
-                        <FontAwesomeIcon icon={faInstagram} size="2x" />
-                    </a>
-                    <a
-                        href="http://www.twitter.com/AhsanAli3860"
-                        className="text-white hover:text-gray-200 transition duration-300"
-                    >
-                        <FontAwesomeIcon icon={faTwitter} size="2x" />
-                    </a>
-                    <a
-                        href="https://www.github.com/AhsanAli-Soomro"
-                        className="text-white hover:text-gray-200 transition duration-300"
-                    >
-                        <FontAwesomeIcon icon={faGithub} size="2x" />
-                    </a>
-                </div>
-            </div>
-            <div className="w-full mt-12">
-                <Cards />
-            </div>
+  return (
+    <div className="relative bg-gradient-to-br from-orange-800 via-orange-600 to-orange-500 overflow-hidden">
+      {/* Hero Section */}
+      <div className="container mx-auto px-6 sm:px-12 lg:px-16 py-20 flex flex-col justify-center items-center relative z-10 min-h-screen text-center">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-8 leading-tight">
+          <TypewriterText />
+        </h1>
+        <p className="text-lg sm:text-xl text-gray-200 mb-6 leading-relaxed">
+          Hi, I’m <span className="font-semibold">Ahsan Ali</span>, a web
+          designer with a passion for creating beautiful and functional digital
+          experiences. I bring innovation, precision, and a unique perspective
+          to every project I work on.
+        </p>
+        <p className="text-lg sm:text-xl text-gray-200 leading-relaxed">
+          Let’s build something amazing together. From responsive designs to
+          seamless user experiences, I ensure every detail is crafted to
+          perfection.
+        </p>
+
+        {/* Social Media Links */}
+        <div className="flex justify-center mt-8 space-x-6">
+          {[
+            {
+              icon: faLinkedin,
+              href: "https://www.linkedin.com/in/ahsanali-soomro",
+              label: "LinkedIn",
+            },
+            {
+              icon: faEnvelope,
+              href: "mailto:ahsanalisoomro147@gmail.com",
+              label: "Email",
+            },
+            {
+              icon: faFacebook,
+              href: "https://www.facebook.com/ahsanali.king.92",
+              label: "Facebook",
+            },
+            {
+              icon: faInstagram,
+              href: "https://www.instagram.com/soomroahsan_ali/",
+              label: "Instagram",
+            },
+            {
+              icon: faTwitter,
+              href: "http://www.twitter.com/AhsanAli3860",
+              label: "Twitter",
+            },
+            {
+              icon: faGithub,
+              href: "https://www.github.com/AhsanAli-Soomro",
+              label: "GitHub",
+            },
+          ].map((social, idx) => (
+            <a
+              key={idx}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-yellow-300 transition duration-300"
+              aria-label={social.label}
+            >
+              <FontAwesomeIcon icon={social.icon} size="2x" />
+            </a>
+          ))}
         </div>
-    );
+      </div>
+
+      {/* Expertise Section */}
+      <div className="relative z-10">
+        <Cards />
+      </div>
+
+      {/* Glow Effects */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-orange-700 rounded-full blur-[200px] opacity-30"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-yellow-500 rounded-full blur-[200px] opacity-30"></div>
+      </div>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-orange-900 opacity-50 pointer-events-none"></div>
+    </div>
+  );
 };
 
 export default About;

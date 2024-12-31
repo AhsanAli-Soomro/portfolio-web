@@ -3,51 +3,56 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav className="fixed py-4 bg-white top-0 w-full z-50 shadow-lg">
+    <nav className="fixed py-4 top-0 w-full z-50">
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
-        <a href="/" className="flex items-center text-orange-800 font-bold text-2xl">
+        <a href="/" className="flex items-center text-white font-bold text-2xl">
           <span className="text-4xl">ahsan.</span>
         </a>
 
         {/* Navigation Links */}
-        <div className="hidden md:flex space-x-8 text-orange-800 font-medium">
+        <div className="hidden md:flex space-x-8 text-white font-medium">
           <a
             href="/"
-            className="hover:text-yellow-300 transition duration-300"
+            className="relative group transition duration-500"
           >
             Home
+            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
           </a>
           <a
             href="/About"
-            className="hover:text-yellow-300 transition duration-300"
+            className="relative group transition duration-500"
           >
             About
+            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
           </a>
           <a
             href="/Projects"
-            className="hover:text-yellow-300 transition duration-300"
+            className="relative group transition duration-500"
           >
             Projects
+            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
           </a>
           <a
             href="/Blogs"
-            className="hover:text-yellow-300 transition duration-300"
+            className="relative group transition duration-500"
           >
             Blogs
+            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
           </a>
           <a
             href="/Resume"
-            className="hover:text-yellow-300 transition duration-300"
+            className="relative group transition duration-500"
           >
             Resume
+            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
           </a>
         </div>
 
         {/* Call to Action Button */}
         <a
           href="/Hire"
-          className="hidden md:inline-block bg-gradient-to-r from-orange-800 via-orange-600 to-orange-500 text-white px-4 py-2 rounded-md font-medium hover:bg-yellow-300 hover:text-orange-800 transition duration-300 shadow-md"
+          className="hidden md:inline-block bg-gradient-to-r from-orange-700 via-orange-600 to-orange-500 text-white px-4 py-2 rounded-md font-medium hover:bg-white hover:text-white transition duration-300 shadow-md"
         >
           Let’s Talk
         </a>
@@ -55,7 +60,7 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <button
           type="button"
-          className="md:hidden text-orange-800 focus:outline-none"
+          className="md:hidden text-white focus:outline-none"
           onClick={() => alert("Open mobile menu!")}
         >
           <svg

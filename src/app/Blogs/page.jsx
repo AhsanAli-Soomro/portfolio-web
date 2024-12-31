@@ -57,7 +57,7 @@ const BlogsPage = () => {
                 </div>
                 <div className='mt-8 text-center'>
                     <Link href="/Blogs/new">
-                        <p className='text-purple-700 hover:text-purple-900'>Write a new blog</p>
+                        {/* <p className='text-purple-700 hover:text-purple-900'>Write a new blog</p> */}
                     </Link>
                 </div>
             </div>

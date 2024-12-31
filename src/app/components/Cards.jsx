@@ -56,24 +56,24 @@ const Cards = () => {
   ];
 
   return (
-    <div className="py-12">
+    <div className="py-16 bg-gradient-to-br from-orange-300 to-white">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-extrabold text-orange-800 mb-12 text-center">
-          Services
+          My Expertise
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {CardData.map((data, index) => (
             <div
               key={index}
-              className="relative flex flex-col justify-between bg-white rounded-xl shadow-lg p-6 border border-gray-200 transform transition-transform hover:scale-105"
+              className="bg-white rounded-lg shadow-md p-6 border-t-4 border-orange-500 hover:shadow-lg transform transition-transform hover:-translate-y-2"
             >
-              <h3 className="text-lg font-semibold text-orange-800 mb-4">
+              <h3 className="text-xl font-semibold text-orange-800 mb-4">
                 {data.title}
               </h3>
-              <ul className="text-sm leading-relaxed text-gray-600 mb-4">
+              <ul className="text-base leading-relaxed text-gray-700 mb-6">
                 {data.features.map((feature, idx) => (
                   <li key={idx} className="mb-2">
-                    - {feature}
+                    • {feature}
                   </li>
                 ))}
               </ul>
