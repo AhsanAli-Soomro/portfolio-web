@@ -71,7 +71,7 @@ const About = () => {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-yellow-300 transition duration-300"
+              className="text-white hover:text-orange-800 transition duration-300"
               aria-label={social.label}
             >
               <FontAwesomeIcon icon={social.icon} size="2x" />

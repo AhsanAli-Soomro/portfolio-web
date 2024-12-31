@@ -223,7 +223,7 @@ const SocialIcon = ({ href, icon }) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="text-white hover:text-orange-300 transition"
+    className="text-white hover:text-orange-800 transition"
   >
     <FontAwesomeIcon icon={icon} size="2x" />
   </a>
