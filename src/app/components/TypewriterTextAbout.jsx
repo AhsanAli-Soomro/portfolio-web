@@ -4,7 +4,7 @@ import { Typewriter } from 'react-simple-typewriter';
 const TypewriterTextAbout = ({ text }) => {
     return (
         <Typewriter
-            options={{    
+            options={{
                 strings: ['About Me'],
                 autoStart: true,
                 loop: true,

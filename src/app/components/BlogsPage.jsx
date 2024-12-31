@@ -110,9 +110,9 @@ const BlogsPage = () => {
                 "Image Optimization: Use Next.js’s built-in image optimization features to improve performance."
             ],
         }
-        
-        
-        
+
+
+
 
 
     ];

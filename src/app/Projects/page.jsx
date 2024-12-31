@@ -4,7 +4,7 @@ import ProjectsPage from '../components/Projects'
 function page() {
   return (
     <div>
-      <ProjectsPage/>
+      <ProjectsPage />
     </div>
   )
 }

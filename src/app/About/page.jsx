@@ -4,7 +4,7 @@ import AboutComponent from '@/app/components/AboutComponent'
 
 const About = () => {
     return (
-        <AboutComponent /> 
+        <AboutComponent />
     );
 };
 

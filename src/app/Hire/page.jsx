@@ -5,7 +5,7 @@ import Hire from '../components/Hire'
 function page() {
   return (
     <div>
-      <Hire/>
+      <Hire />
     </div>
   )
 }

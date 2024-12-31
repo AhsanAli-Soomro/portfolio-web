@@ -23,11 +23,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed py-4 top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? "backdrop-blur-md"
-          : "bg-transparent"
-      }`}
+      className={`fixed py-4 top-0 w-full z-50 transition-all duration-300 ${isScrolled
+        ? "backdrop-blur-md"
+        : "bg-transparent"
+        }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
@@ -47,15 +46,13 @@ const Navbar = () => {
             <a
               key={idx}
               href={link.href}
-              className={`relative group transition duration-500 ${
-                activeLink === link.href ? "text-white" : ""
-              }`}
+              className={`relative group transition duration-500 ${activeLink === link.href ? "text-white" : ""
+                }`}
             >
               {link.name}
               <span
-                className={`absolute bottom-0 left-0 h-[2px] bg-white transition-all duration-500 ${
-                  activeLink === link.href ? "w-full" : "w-0"
-                } group-hover:w-full`}
+                className={`absolute bottom-0 left-0 h-[2px] bg-white transition-all duration-500 ${activeLink === link.href ? "w-full" : "w-0"
+                  } group-hover:w-full`}
               ></span>
             </a>
           ))}
@@ -94,9 +91,8 @@ const Navbar = () => {
 
       {/* Mobile Dropdown */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-        } backdrop-blur-sm text-white shadow-md`}
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+          } backdrop-blur-sm text-white shadow-md`}
       >
         {[
           { name: "Home", href: "/" },
@@ -109,9 +105,8 @@ const Navbar = () => {
           <a
             key={idx}
             href={link.href}
-            className={`block px-4 py-2 hover:bg-orange-600 transition duration-300 ${
-              activeLink === link.href ? "text-white" : ""
-            }`}
+            className={`block px-4 py-2 hover:bg-orange-600 transition duration-300 ${activeLink === link.href ? "text-white" : ""
+              }`}
           >
             {link.name}
           </a>
