@@ -64,7 +64,7 @@ const Navbar = () => {
         {/* Call to Action Button */}
         <a
           href="/Hire"
-          className="hidden md:inline-block bg-gradient-to-r from-orange-700 via-orange-600 to-orange-500 text-white px-4 py-2 rounded-md font-medium hover:bg-white hover:text-orange-600 transition duration-300 shadow-md"
+          className="hidden md:inline-block bg-gradient-to-r from-orange-700 via-orange-600 to-orange-500 text-white px-4 py-2 rounded-md font-medium hover:bg-white transition duration-300 shadow-md"
         >
           Let’s Talk
         </a>
