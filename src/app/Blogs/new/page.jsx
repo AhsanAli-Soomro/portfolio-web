@@ -1,113 +1,102 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import { useBlog } from '../../../context/BlogContext';
-import dynamic from 'next/dynamic';
-import 'react-quill/dist/quill.snow.css';
+import React, { useState } from "react";
 
-const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+const BlogFormPage = () => {
+  const [formData, setFormData] = useState({
+    title: "",
+    content: "",
+    image: null,
+  });
 
-const BlogFormPage = ({ blog, onSave }) => {
-    const [formData, setFormData] = useState({ title: '', content: '', image: null });
-    const router = useRouter();
-    const { addBlog } = useBlog();
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
-    useEffect(() => {
-        if (blog) {
-            setFormData(blog);
-        }
-    }, [blog]);
+  const handleContentChange = (e) => {
+    setFormData({ ...formData, content: e.target.value });
+  };
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
+  const handleImageChange = (e) => {
+    if (e.target.files.length > 0) {
+      setFormData({ ...formData, image: URL.createObjectURL(e.target.files[0]) });
+    }
+  };
 
-    const handleContentChange = (value) => {
-        setFormData({ ...formData, content: value });
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Blog Submitted:", formData);
+    // Add blog submission logic here
+    setFormData({ title: "", content: "", image: null });
+  };
 
-    const handleImageChange = (e) => {
-        setFormData({ ...formData, image: URL.createObjectURL(e.target.files[0]) });
-    };
+  return (
+    <div className="bg-gray-100 min-h-screen flex items-center justify-center py-12">
+      <div className="bg-white p-8 rounded-lg shadow-md max-w-lg w-full">
+        <h2 className="text-2xl font-bold text-center text-purple-700 mb-6">
+          Write a Blog
+        </h2>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Title Input */}
+          <div>
+            <label className="block text-gray-700 mb-2">Title</label>
+            <input
+              type="text"
+              name="title"
+              value={formData.title}
+              onChange={handleChange}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-700 focus:outline-none"
+              placeholder="Enter blog title"
+              required
+            />
+          </div>
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (blog) {
-            onSave(formData);
-        } else {
-            const newBlog = { ...formData, id: Date.now().toString(), date: new Date().toISOString() };
-            addBlog(newBlog);
-            router.push('/Blogs');
-        }
-    };
+          {/* Content Input */}
+          <div>
+            <label className="block text-gray-700 mb-2">Content</label>
+            <textarea
+              name="content"
+              value={formData.content}
+              onChange={handleContentChange}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-700 focus:outline-none"
+              placeholder="Write your blog content here..."
+              rows="6"
+              required
+            ></textarea>
+          </div>
 
-    return (
-        <div className='container p-24 bg-gray-100 text-black my-36 rounded-md shadow-md mx-auto px-4 sm:px-6 lg:px-8'>
-            <h2 className='text-4xl font-bold text-purple-700 mb-8 text-center'>
-                {blog ? 'Edit Blog' : 'Write a New Blog'}
-            </h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
-                    <label className="block text-black">Title</label>
-                    <input
-                        type="text"
-                        name="title"
-                        value={formData.title}
-                        onChange={handleChange}
-                        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-700 bg-white text-black border-gray-600"
-                        required
-                    />
-                </div>
-                <div className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
-                    <label className="block text-black">Content</label>
-                    <ReactQuill
-                        value={formData.content}
-                        onChange={handleContentChange}
-                        className="bg-white text-black"
-                        modules={{
-                            toolbar: [
-                                [{ 'header': '1'}, {'header': '2'}, { 'font': [] }],
-                                [{size: []}],
-                                ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-                                [{'list': 'ordered'}, {'list': 'bullet'}, 
-                                 {'indent': '-1'}, {'indent': '+1'}],
-                                ['link', 'image', 'video'],
-                                ['clean']
-                            ],
-                        }}
-                        formats={[
-                            'header', 'font', 'size',
-                            'bold', 'italic', 'underline', 'strike', 'blockquote',
-                            'list', 'bullet', 'indent',
-                            'link', 'image', 'video'
-                        ]}
-                    />
-                </div>
-                <div className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
-                    <label className="block text-black">Image</label>
-                    <input
-                        type="file"
-                        name="image"
-                        accept="image/*"
-                        onChange={handleImageChange}
-                        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-700 bg-white text-black border-gray-600"
-                    />
-                    {formData.image && (
-                        <img src={formData.image} alt="Preview" className="mt-4 max-h-60" />
-                    )}
-                </div>
-                <div className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
-                    <button
-                        type="submit"
-                        className="w-full bg-purple-700 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-purple-700"
-                    >
-                        {blog ? 'Save Changes' : 'Submit Blog'}
-                    </button>
-                </div>
-            </form>
-        </div>
-    );
+          {/* Image Upload */}
+          <div>
+            <label className="block text-gray-700 mb-2">Upload Image</label>
+            <input
+              type="file"
+              name="image"
+              accept="image/*"
+              onChange={handleImageChange}
+              className="w-full px-4 py-2 text-gray-700 border border-gray-300 rounded-lg focus:outline-none"
+            />
+            {formData.image && (
+              <img
+                src={formData.image}
+                alt="Preview"
+                className="mt-4 rounded-lg max-h-48"
+              />
+            )}
+          </div>
+
+          {/* Submit Button */}
+          <div>
+            <button
+              type="submit"
+              className="w-full bg-purple-700 text-white py-2 rounded-lg hover:bg-purple-900 transition duration-300"
+            >
+              Submit Blog
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default BlogFormPage;
