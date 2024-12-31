@@ -7,7 +7,7 @@ const TypewriterText = () => {
     <div>
       <h1>
         <Typewriter
-          words={['Hello, I am Ahsan Ali . . .', 'I am a Web Designer . . .', 'Welcome to my Portfolio']}
+          words={['Hello, I am Ahsan Ali', 'I am a Web Designer', 'Welcome to my Portfolio']}
           loop={true}
           cursor
           cursorStyle='|'
