@@ -21,7 +21,7 @@ const About = () => {
                     <TypewriterText />
                 </h1>
                 <p className="text-base sm:text-lg lg:text-xl text-gray-200 mb-4 sm:mb-6 leading-relaxed max-w-2xl">
-                    Hi, I’m <span className="font-semibold">Ahsan Ali</span>, a web
+                Hi, I’m <span className="font-semibold">Ahsan Ali Soomro</span>, a web
                     designer with a passion for creating beautiful and functional digital
                     experiences. I bring innovation, precision, and a unique perspective
                     to every project I work on.

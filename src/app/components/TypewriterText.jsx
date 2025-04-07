@@ -8,7 +8,7 @@ const TypewriterText = () => {
       <h1 className="text-white font-extrabold leading-tight truncate md:whitespace-nowrap">
         <Typewriter
           words={[
-            'Hello, I am Ahsan',
+            'Hello, I am Ahsan Ali Soomro',
             'Web Designer',
             'Creative Developer',
             'Let’s Build Together'

@@ -8,7 +8,7 @@ function Footer() {
                 <span className="text-sm text-center md:text-left">
                     © 2024{" "}
                     <a href="/" className="hover:underline font-semibold">
-                        Ahsan Ali
+                        Ahsan Ali Soomro
                     </a>
                     . All Rights Reserved.
                 </span>
