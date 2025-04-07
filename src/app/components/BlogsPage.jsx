@@ -10,7 +10,7 @@ const BlogsPage = () => {
             title: 'Next.js Nirvana',
             heading: 'Why Next.js is the Ultimate Framework for Production-Ready Web Apps',
             description: 'Next.js, built on top of React, has rapidly become the go-to framework for developers seeking performance, scalability, and a great developer experience. Created by Vercel, Next.js offers a hybrid approach to rendering, allowing both server-side rendering (SSR) and static site generation (SSG) out of the box. This makes it ideal for building SEO-friendly, lightning-fast websites and applications. Features like API routes, image optimization, and built-in TypeScript support make Next.js a comprehensive solution for modern web development. Whether youre building a startup MVP or a large-scale enterprise app, Next.js equips you with the tools to succeed in production environments.',
-            image: '/NextjsNirvana.avif',
+            image: '/NextjsNirvana.jpg',
             features: [
                 "Hybrid Rendering Capabilities: Support for Static Generation, Server-Side Rendering, and Incremental Static Regeneration gives unmatched flexibility.",
                 "File-Based Routing: Simplifies the routing process with a page-based system that mirrors your project structure.",
