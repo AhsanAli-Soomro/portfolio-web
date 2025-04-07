@@ -31,11 +31,13 @@ const Resume = () => {
         <Header onDownload={handleDownload} />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-12">
+          
           <div className="lg:col-span-1">
             <Sidebar />
           </div>
 
           <div className="lg:col-span-2 space-y-12">
+
             <Section title="Summary">
               <p className="leading-relaxed">
                 Enthusiastic and results-oriented Frontend Developer with over two years of experience creating interactive, user-friendly web
@@ -46,6 +48,7 @@ const Resume = () => {
 
             <Section title="Professional Experience">
               {[
+
                 {
                   title: "React.js Developer at Verge System | WebHR",
                   date: "April 2024 – Present",
@@ -56,6 +59,7 @@ const Resume = () => {
                     "Collaborated with cross-functional teams to deliver high-quality projects.",
                   ],
                 },
+
                 {
                   title: "Frontend Developer at WebSolve",
                   date: "Nov 2023 – Jan 2024",
@@ -64,6 +68,7 @@ const Resume = () => {
                     "Ensured seamless cross-browser performance and device compatibility.",
                   ],
                 },
+
                 {
                   title: "Network Engineer at GENTEC Soft.",
                   date: "Jun 2023 – Sep 2023",
@@ -72,6 +77,7 @@ const Resume = () => {
                     "Designed scalable, secure network infrastructures for enterprise operations.",
                   ],
                 },
+
               ].map((job, index) => (
                 <Job key={index} job={job} />
               ))}
@@ -79,16 +85,19 @@ const Resume = () => {
 
             <Section title="Education">
               {[
+
                 {
                   degree: "Bachelor of Science in Software Engineering",
                   institution: "Isra University, Hyderabad",
                   duration: "2018 – 2022",
                 },
+
                 {
                   degree: "Certificate in Graphic Designing",
                   institution: "Isra University (Collaboration with NAVTTC)",
                   duration: "Oct 2017 – Mar 2018",
                 },
+
               ].map((edu, index) => (
                 <EducationItem key={index} edu={edu} />
               ))}
@@ -96,31 +105,38 @@ const Resume = () => {
 
             <Section title="Skills">
               <ul className="list-disc list-inside leading-relaxed">
+
                 <li>Frontend Development: React.js, Next.js, JavaScript, HTML, CSS</li>
                 <li>UI/UX Design: Adobe Photoshop, Illustrator, XD</li>
                 <li>Performance Optimization, Collaboration, Problem-Solving</li>
+
               </ul>
             </Section>
 
             <Section title="Technical Projects">
               <ul className="list-disc list-inside leading-relaxed">
+
                 <li>
                   <strong>E-Commerce Web Platform:</strong> Built a scalable
                   e-commerce application using React.js, Node.js, and Tailwind
                   CSS with an admin dashboard.
                 </li>
+
                 <li>
                   <strong>Portfolio Website:</strong> Designed a personal
                   portfolio showcasing live projects and development skills
                   using Next.js.
                 </li>
+
                 <li>
                   <strong>Blog Management Platform:</strong> Developed a blog
                   site with React.js, Clerk, and Tailwind CSS, including a
                   secure admin dashboard for content management.
                 </li>
+
               </ul>
             </Section>
+
           </div>
         </div>
       </div>
@@ -168,12 +184,14 @@ const Sidebar = () => (
     <div>
       <h3 className="text-lg font-semibold">Social Links</h3>
       <div className="flex space-x-4 mt-2">
+
         <SocialIcon href="https://linkedin.com/in/ahsanali-soomro" icon={faLinkedin} />
         <SocialIcon href="mailto:ahsanalisoomro147@gmail.com" icon={faEnvelope} />
         <SocialIcon href="https://github.com/AhsanAli-Soomro" icon={faGithub} />
         <SocialIcon href="https://www.instagram.com/soomroahsan_ali/" icon={faInstagram} />
         <SocialIcon href="https://www.facebook.com/ahsanali.king.92" icon={faFacebook} />
         <SocialIcon href="https://twitter.com/AhsanAli3860" icon={faTwitter} />
+
       </div>
     </div>
   </div>
@@ -188,6 +206,7 @@ const Section = ({ title, children }) => (
 
 const Job = ({ job }) => (
   <div className="mb-6">
+
     <h4 className="text-lg font-semibold">{job.title}</h4>
     <p className="text-sm text-gray-200">{job.date}</p>
     <ul className="list-disc list-inside mt-2 space-y-1 text-gray-100">
@@ -195,14 +214,17 @@ const Job = ({ job }) => (
         <li key={index}>{detail}</li>
       ))}
     </ul>
+
   </div>
 );
 
 const EducationItem = ({ edu }) => (
   <div className="mb-6">
+
     <h4 className="text-lg font-semibold">{edu.degree}</h4>
     <p className="text-sm text-gray-200">{edu.institution}</p>
     <p className="text-sm text-gray-200">{edu.duration}</p>
+    
   </div>
 );
 
