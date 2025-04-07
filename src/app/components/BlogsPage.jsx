@@ -7,6 +7,19 @@ const BlogsPage = () => {
     const [selectedIndex, setSelectedIndex] = useState(null);
     const blog = [
         {
+            title: 'Next.js Nirvana',
+            heading: 'Why Next.js is the Ultimate Framework for Production-Ready Web Apps',
+            description: 'Next.js, built on top of React, has rapidly become the go-to framework for developers seeking performance, scalability, and a great developer experience. Created by Vercel, Next.js offers a hybrid approach to rendering, allowing both server-side rendering (SSR) and static site generation (SSG) out of the box. This makes it ideal for building SEO-friendly, lightning-fast websites and applications. Features like API routes, image optimization, and built-in TypeScript support make Next.js a comprehensive solution for modern web development. Whether youre building a startup MVP or a large-scale enterprise app, Next.js equips you with the tools to succeed in production environments.',
+            image: '/NextjsNirvana.avif',
+            features: [
+                "Hybrid Rendering Capabilities: Support for Static Generation, Server-Side Rendering, and Incremental Static Regeneration gives unmatched flexibility.",
+                "File-Based Routing: Simplifies the routing process with a page-based system that mirrors your project structure.",
+                "Optimized for Performance: Features like automatic code splitting, built-in image optimization, and prefetching ensure blazing-fast user experiences.",
+                "Built-in API Routes: Allows you to create backend functionality within your Next.js app, reducing the need for separate backend services.",
+                "Seamless Developer Experience: Out-of-the-box support for TypeScript, CSS Modules, and hot-reloading accelerates development without configuration headaches."
+            ],
+        },        
+        {
             title: 'ReactJS Revolution',
             heading: 'Why ReactJS is the Future of Modern Web Development',
             description: 'ReactJS, a JavaScript library developed by Facebook, has transformed the way developers build web applications. It has gained immense popularity due to its ability to create dynamic, high-performance user interfaces effortlessly. Reacts component-based architecture allows for reusability, ensuring scalability in large projects. Its virtual DOM provides an optimized rendering process, making applications faster and more efficient. With a strong developer community and a wide array of supporting libraries, React is more than just a library—it’s an entire ecosystem. From building single-page applications (SPAs) to supporting mobile app development through React Native, this tool is versatile and future-ready. Companies like Netflix, Instagram, and Airbnb rely on ReactJS for its reliability, speed, and developer-friendly environment.',

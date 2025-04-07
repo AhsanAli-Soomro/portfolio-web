@@ -38,12 +38,9 @@ const Resume = () => {
           <div className="lg:col-span-2 space-y-12">
             <Section title="Summary">
               <p className="leading-relaxed">
-                Enthusiastic and results-oriented Frontend Developer with over
-                two years of experience creating interactive, user-friendly web
-                applications. Adept at developing scalable, maintainable, and
-                efficient solutions using React, Next.js, and modern tools.
-                Skilled in UI/UX principles, optimizing functionality and
-                aesthetics to elevate user experiences.
+                Enthusiastic and results-oriented Frontend Developer with over two years of experience creating interactive, user-friendly web
+                applications. Adept at developing scalable, maintainable, and efficient solutions using React, Next.js, and modern tools.
+                Skilled in UI/UX principles, optimizing functionality and aesthetics to elevate user experiences.
               </p>
             </Section>
 
