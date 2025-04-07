@@ -54,6 +54,7 @@ const ProjectsPage = () => {
             ],
             link: 'https://imageartify.vercel.app/'
         },
+
         {
             title: 'HireSide-Clone',
             heading: "Front-End Clone Model of HireSide",
@@ -65,6 +66,7 @@ const ProjectsPage = () => {
             ],
             link: 'https://github.com/AhsanAli-Soomro/hireside-clone'
         },
+
         {
             "title": "Eventify",
             "heading": "Your Ultimate Event Creation Platform",
@@ -81,6 +83,7 @@ const ProjectsPage = () => {
             ],
             link: "https://eventify-gold.vercel.app",
         },
+
         {
             title: 'AutoCare Pro',
             heading: 'Redefining Car Maintenance and Repair with Expertise and Technology',
@@ -96,6 +99,7 @@ const ProjectsPage = () => {
             ],
             link: 'https://car-service-iota.vercel.app/'
         },
+
         {
             title: 'MyVideos',
             heading: "Your Ultimate Video Watching Platform",
@@ -112,6 +116,7 @@ const ProjectsPage = () => {
             ],
             link: 'https://my-videos-nine.vercel.app/'
         },
+
     ];
     const handleProjectClick = (index) => {
         setSelectedIndex(index);
