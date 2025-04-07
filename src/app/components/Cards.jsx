@@ -13,6 +13,7 @@ const Cards = () => {
         "Touch-friendly navigation",
       ],
     },
+
     {
       title: "UI/UX Prototyping",
       features: [
@@ -23,6 +24,7 @@ const Cards = () => {
         "Iterative design improvements",
       ],
     },
+
     {
       title: "SEO Optimization",
       features: [
@@ -33,6 +35,7 @@ const Cards = () => {
         "Improving site architecture",
       ],
     },
+
     {
       title: "Custom Animations",
       features: [
@@ -43,6 +46,7 @@ const Cards = () => {
         "Performance optimization for animations",
       ],
     },
+
     {
       title: "Cross-Browser Compatibility",
       features: [
@@ -53,6 +57,7 @@ const Cards = () => {
         "Maintaining legacy browser support",
       ],
     },
+    
   ];
 
   return (
