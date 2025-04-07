@@ -6,6 +6,7 @@ import BlogsCard from "./BlogsCard";
 const BlogsPage = () => {
     const [selectedIndex, setSelectedIndex] = useState(null);
     const blog = [
+        
         {
             title: 'Next.js Nirvana',
             heading: 'Why Next.js is the Ultimate Framework for Production-Ready Web Apps',
@@ -18,7 +19,8 @@ const BlogsPage = () => {
                 "Built-in API Routes: Allows you to create backend functionality within your Next.js app, reducing the need for separate backend services.",
                 "Seamless Developer Experience: Out-of-the-box support for TypeScript, CSS Modules, and hot-reloading accelerates development without configuration headaches."
             ],
-        },        
+        },
+
         {
             title: 'ReactJS Revolution',
             heading: 'Why ReactJS is the Future of Modern Web Development',
@@ -32,6 +34,7 @@ const BlogsPage = () => {
                 "Cross-Platform Capabilities: Build web applications with ReactJS and extend your expertise to mobile development with React Native.",
             ],
         },
+
         {
             title: 'Crafting Experiences',
             heading: 'Building User-Centric Web Interfaces with Frontend Technologies',
@@ -45,6 +48,7 @@ const BlogsPage = () => {
                 "Accessibility Standards: Build inclusive websites by adhering to WCAG guidelines, ensuring that your content is accessible to all users."
             ],
         },
+
         {
             title: 'Blueprint of Success',
             heading: 'From Concept to Launch: Mastering the Website Development Process',
@@ -58,6 +62,7 @@ const BlogsPage = () => {
                 "Continuous Improvement: Utilize tools like Google Analytics and Hotjar to track performance and user behavior, refining your website over time."
             ],
         },
+
         {
             title: 'Vue.js Dynamics',
             heading: 'Unleashing the Power of Vue.js for Modern Frontend Development',
@@ -71,6 +76,7 @@ const BlogsPage = () => {
                 "Integration-Friendly: Use Vue.js with existing projects or libraries for seamless functionality enhancement."
             ],
         },
+
         {
             title: 'Angular Mastery',
             heading: 'Building Robust Applications with Angular Framework',
@@ -84,6 +90,7 @@ const BlogsPage = () => {
                 "Enterprise-Ready: Angular’s modular architecture ensures scalability and maintainability in large applications."
             ],
         },
+
         {
             title: 'Progressive Web Applications',
             heading: 'Revolutionizing User Experience with Progressive Web Apps',
@@ -97,6 +104,7 @@ const BlogsPage = () => {
                 "Improved Performance: Reduce load times and enhance the user experience with caching and background syncing."
             ],
         },
+
         {
             title: 'Full-Stack Development',
             heading: 'Mastering Both Frontend and Backend for Complete Web Solutions',
@@ -110,6 +118,7 @@ const BlogsPage = () => {
                 "DevOps Practices: Streamline development and deployment with CI/CD pipelines and cloud platforms like AWS or Azure."
             ],
         },
+
         {
             title: 'Next.js Masterclass',
             heading: 'Building High-Performance Applications with Next.js',
@@ -122,11 +131,7 @@ const BlogsPage = () => {
                 "Automatic Code Splitting: Optimize loading times by delivering only the necessary code for each page.",
                 "Image Optimization: Use Next.js’s built-in image optimization features to improve performance."
             ],
-        }
-
-
-
-
+        },
 
     ];
     const handleProjectClick = (index) => {
