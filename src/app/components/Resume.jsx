@@ -28,19 +28,14 @@ const Resume = () => {
   return (
     <div className="bg-gradient-to-br from-orange-800 via-orange-600 to-orange-500 min-h-screen text-white">
       <div className="container mx-auto px-6 lg:px-12 py-20">
-        {/* Header Section */}
         <Header onDownload={handleDownload} />
 
-        {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-12">
-          {/* Sidebar */}
           <div className="lg:col-span-1">
             <Sidebar />
           </div>
 
-          {/* Main Content */}
           <div className="lg:col-span-2 space-y-12">
-            {/* Summary */}
             <Section title="Summary">
               <p className="leading-relaxed">
                 Enthusiastic and results-oriented Frontend Developer with over
@@ -52,7 +47,6 @@ const Resume = () => {
               </p>
             </Section>
 
-            {/* Professional Experience */}
             <Section title="Professional Experience">
               {[
                 {
@@ -86,7 +80,6 @@ const Resume = () => {
               ))}
             </Section>
 
-            {/* Education */}
             <Section title="Education">
               {[
                 {
@@ -104,7 +97,6 @@ const Resume = () => {
               ))}
             </Section>
 
-            {/* Skills */}
             <Section title="Skills">
               <ul className="list-disc list-inside leading-relaxed">
                 <li>Frontend Development: React.js, Next.js, JavaScript, HTML, CSS</li>
@@ -113,7 +105,6 @@ const Resume = () => {
               </ul>
             </Section>
 
-            {/* Projects */}
             <Section title="Technical Projects">
               <ul className="list-disc list-inside leading-relaxed">
                 <li>
