@@ -15,8 +15,10 @@ import Cards from "./Cards";
 const About = () => {
     return (
         <div className="relative bg-gradient-to-br from-orange-800 via-orange-600 to-orange-500 overflow-hidden">
+
             {/* Hero Section */}
             <div className="container mx-auto px-6 sm:px-12 lg:px-16 py-16 sm:py-20 lg:py-28 flex flex-col justify-center items-center relative z-10 min-h-screen text-center">
+
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white mb-6 sm:mb-8 leading-tight">
                     <TypewriterText />
                 </h1>
@@ -35,36 +37,43 @@ const About = () => {
                 {/* Social Media Links */}
                 <div className="flex justify-center mt-4 sm:mt-6 lg:mt-8 space-x-4 sm:space-x-6">
                     {[
+
                         {
                             icon: faLinkedin,
                             href: "https://www.linkedin.com/in/ahsanali-soomro",
                             label: "LinkedIn",
                         },
+
                         {
                             icon: faEnvelope,
                             href: "mailto:ahsanalisoomro147@gmail.com",
                             label: "Email",
                         },
+
                         {
                             icon: faFacebook,
                             href: "https://www.facebook.com/ahsanali.king.92",
                             label: "Facebook",
                         },
+
                         {
                             icon: faInstagram,
                             href: "https://www.instagram.com/soomroahsan_ali/",
                             label: "Instagram",
                         },
+
                         {
                             icon: faTwitter,
                             href: "http://www.twitter.com/AhsanAli3860",
                             label: "Twitter",
                         },
+
                         {
                             icon: faGithub,
                             href: "https://www.github.com/AhsanAli-Soomro",
                             label: "GitHub",
                         },
+
                     ].map((social, idx) => (
                         <a
                             key={idx}
@@ -77,7 +86,9 @@ const About = () => {
                             <FontAwesomeIcon icon={social.icon} size="2x" />
                         </a>
                     ))}
+
                 </div>
+
             </div>
 
             {/* Expertise Section */}
@@ -93,6 +104,7 @@ const About = () => {
 
             {/* Overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-orange-900 opacity-50 pointer-events-none"></div>
+            
         </div>
     );
 };
