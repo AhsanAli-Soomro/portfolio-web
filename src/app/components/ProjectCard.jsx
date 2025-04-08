@@ -5,6 +5,7 @@ import Link from "next/link";
 const ProjectCard = ({ project, onClick }) => {
     return (
         <div className="w-full max-w-xs mx-auto mt-6 sm:mt-10">
+
             <article
                 className="relative h-52 sm:h-56 md:h-64 w-full isolate flex flex-col justify-end overflow-hidden rounded-2xl shadow-lg transition-transform transform hover:scale-105 cursor-pointer"
                 onClick={() => onClick(project)}
@@ -25,6 +26,7 @@ const ProjectCard = ({ project, onClick }) => {
                     </p>
                 </div>
             </article>
+
             <div className="mt-4 text-center">
                 <Link
                     href={project.link}
@@ -44,6 +46,7 @@ const ProjectCard = ({ project, onClick }) => {
                     </svg>
                 </Link>
             </div>
+            
         </div>
     );
 };
