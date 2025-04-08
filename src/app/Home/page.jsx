@@ -8,9 +8,6 @@ function page() {
       <div>
         <Hero />
       </div>
-      <div>
-        {/* <Cards /> */}
-      </div>
     </div>
   )
 }
