@@ -3,6 +3,7 @@ import { Typewriter } from 'react-simple-typewriter';
 
 const TypewriterTextAbout = ({ text }) => {
     return (
+
         <Typewriter
             options={{
                 strings: ['About Me'],
@@ -10,6 +11,7 @@ const TypewriterTextAbout = ({ text }) => {
                 loop: true,
             }}
         />
+        
     );
 };
 
