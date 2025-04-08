@@ -6,8 +6,11 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <div className="relative flex flex-col md:flex-row h-screen bg-gradient-to-br from-orange-800 via-orange-600 to-orange-500 bg-cover bg-center overflow-hidden">
+
       <div className="container mx-auto px-6 sm:px-12 lg:px-16 py-20 relative z-10 flex flex-col justify-center">
+
         <div className="flex flex-col md:flex-row items-center justify-between space-y-12 md:space-y-0 md:space-x-12">
+
           {/* Left Section */}
           <div className="md:w-2/3 text-center md:text-left">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white mb-6 leading-tight">
@@ -38,6 +41,7 @@ const Hero = () => {
 
           {/* Right Section */}
           <div className="relative md:w-1/3 flex justify-center md:justify-end">
+
             <div className="relative w-60 h-60 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden transform hover:scale-105 transition-transform duration-500">
               <Image
                 src="/ahsana.png"
@@ -46,14 +50,19 @@ const Hero = () => {
                 alt="Profile of Ahsan"
                 className="z-10"
               />
+
               {/* Subtle Glow */}
               <div className="absolute inset-0 rounded-full bg-orange-500 blur-lg opacity-20"></div>
+              
             </div>
+            
             {/* Glow Effects */}
             <div className="absolute -top-4 sm:-top-6 -right-4 sm:-right-6 w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-orange-400 blur-lg opacity-50"></div>
             <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-yellow-400 blur-lg opacity-50"></div>
           </div>
+
         </div>
+
       </div>
 
       {/* Background Glow Effects */}

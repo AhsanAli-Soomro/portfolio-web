@@ -49,6 +49,7 @@ const Hire = () => {
 
   return (
     <div className="bg-gradient-to-br py-16 from-orange-800 via-orange-600 to-orange-500 min-h-screen flex flex-col justify-center items-center text-white">
+
       {/* Header Section */}
       <div className="text-center mb-10">
         <h1 className="text-5xl font-extrabold mb-4">Get in Touch</h1>
@@ -60,6 +61,7 @@ const Hire = () => {
 
       {/* Contact Form */}
       <div className="bg-white text-gray-800 rounded-lg shadow-lg w-full max-w-4xl p-8">
+
         <form onSubmit={handleSubmit} className="space-y-6">
           <InputField
             label="Name"
@@ -88,6 +90,7 @@ const Hire = () => {
             value={formData.message}
             onChange={handleChange}
           />
+
           <div className="text-center">
             <button
               type="submit"
@@ -97,13 +100,16 @@ const Hire = () => {
             </button>
           </div>
         </form>
+
       </div>
     </div>
   );
 };
 
 const InputField = ({ label, type, name, value, onChange }) => (
+
   <div className="transition duration-300">
+
     <label className="block text-lg font-medium text-gray-700">{label}</label>
     <input
       type={type}
@@ -113,11 +119,15 @@ const InputField = ({ label, type, name, value, onChange }) => (
       className="w-full px-4 py-3 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300 bg-gray-100 text-gray-700 shadow-sm"
       required
     />
+
   </div>
+
 );
 
 const TextareaField = ({ label, name, value, onChange }) => (
+
   <div className="transition duration-300">
+
     <label className="block text-lg font-medium text-gray-700">{label}</label>
     <textarea
       name={name}
@@ -127,7 +137,9 @@ const TextareaField = ({ label, name, value, onChange }) => (
       rows="5"
       required
     ></textarea>
+
   </div>
+
 );
 
 export default Hire;

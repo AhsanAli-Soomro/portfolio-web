@@ -4,6 +4,7 @@ function Footer() {
     return (
         <footer className="fixed py-4 bottom-0 w-full z-50">
             <div className="container text-white mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+
                 {/* Left Section: Branding and Copyright */}
                 <span className="text-sm text-center md:text-left">
                     © 2024{" "}
@@ -32,6 +33,7 @@ function Footer() {
                         </a>
                     </li>
                 </ul>
+                
             </div>
         </footer>
     );
