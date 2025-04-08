@@ -26,6 +26,7 @@ const BlogsModal = ({ blog, onClose, onNext, onPrev }) => {
 
                 </button>
             </div>
+
             <div className="bg-gray-100 border z-10 h-svh pt-6 p-8 rounded-lg max-w-3xl w-4/5 my-10 relative overflow-y-auto max-h-screen text-black">
                 <button
                     onClick={onClose}
@@ -33,6 +34,7 @@ const BlogsModal = ({ blog, onClose, onNext, onPrev }) => {
                 >
                     &times;
                 </button>
+
                 <h2 className="text-3xl font-bold mb-4 text-orange-600">{blog.title}</h2>
                 <div className="flex flex-col md:flex-row gap-6">
                     <div className="relative w-full h-full">
@@ -46,6 +48,7 @@ const BlogsModal = ({ blog, onClose, onNext, onPrev }) => {
                     </div>
 
                 </div>
+
                 <p className="text-lg mb-4">{blog.description}</p>
                 {blog.features && (
                     <div>
@@ -57,6 +60,7 @@ const BlogsModal = ({ blog, onClose, onNext, onPrev }) => {
                         </ul>
                     </div>
                 )}
+
                 <div className="flex mt-4 justify-between items-center text-center">
                     <button
                         onClick={onClose}
@@ -66,6 +70,7 @@ const BlogsModal = ({ blog, onClose, onNext, onPrev }) => {
                     </button>
                 </div>
             </div>
+
             <div onClick={onNext} className='flex transition-transform transform hover:scale-110 cursor-pointer w-2/5 text-center hover:bg-opacity-40 h-svh justify-center items-center'>
                 <button
                     onClick={onNext}
@@ -85,6 +90,7 @@ const BlogsModal = ({ blog, onClose, onNext, onPrev }) => {
 
                 </button>
             </div>
+
         </div>
     );
 };
