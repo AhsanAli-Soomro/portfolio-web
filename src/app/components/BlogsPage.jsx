@@ -8,6 +8,20 @@ const BlogsPage = () => {
     const blog = [
         
         {
+            title: 'Astro Ascendancy',
+            heading: 'Why Astro is Redefining the Future of Web Development',
+            description: 'Astro is the rising star of the modern web dev ecosystem, offering a fresh take on building fast, content-focused websites. What sets Astro apart is its ability to ship zero JavaScript by default, ensuring unmatched speed and performance. By allowing developers to bring their favorite frameworks like React, Vue, Svelte, or Solid into one project, Astro provides ultimate flexibility without the bloat. Its component-based architecture, powerful Markdown and MDX support, and seamless integration with modern CMSs make it an ideal choice for content-heavy sites, blogs, marketing pages, and beyond. Whether you`re building a personal portfolio or a high-traffic documentation site, Astro delivers performance and simplicity in perfect harmony.',
+            image: '/AstroAscendancy.jpg',
+            features: [
+                "Zero JavaScript by Default: Astro sends no JS unless you explicitly add it, leading to ultra-fast load times and excellent Lighthouse scores.",
+                "Island Architecture: Ship only interactive components as needed — a revolutionary partial hydration approach that avoids overloading the browser.",
+                "Framework-Agnostic: Mix and match components from React, Svelte, Vue, and more — all within the same project.",
+                "Markdown and MDX First-Class Support: Build content-rich sites effortlessly with powerful content authoring capabilities.",
+                "Optimized Build System: Astro’s fast compiler and support for static site generation, SSR, and edge rendering make it ideal for modern deployment workflows."
+            ],
+        },
+
+        {
             title: 'Next.js Nirvana',
             heading: 'Why Next.js is the Ultimate Framework for Production-Ready Web Apps',
             description: 'Next.js, built on top of React, has rapidly become the go-to framework for developers seeking performance, scalability, and a great developer experience. Created by Vercel, Next.js offers a hybrid approach to rendering, allowing both server-side rendering (SSR) and static site generation (SSG) out of the box. This makes it ideal for building SEO-friendly, lightning-fast websites and applications. Features like API routes, image optimization, and built-in TypeScript support make Next.js a comprehensive solution for modern web development. Whether youre building a startup MVP or a large-scale enterprise app, Next.js equips you with the tools to succeed in production environments.',
