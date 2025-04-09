@@ -11,7 +11,7 @@ const BlogsPage = () => {
             title: 'Astro Ascendancy',
             heading: 'Why Astro is Redefining the Future of Web Development',
             description: 'Astro is the rising star of the modern web dev ecosystem, offering a fresh take on building fast, content-focused websites. What sets Astro apart is its ability to ship zero JavaScript by default, ensuring unmatched speed and performance. By allowing developers to bring their favorite frameworks like React, Vue, Svelte, or Solid into one project, Astro provides ultimate flexibility without the bloat. Its component-based architecture, powerful Markdown and MDX support, and seamless integration with modern CMSs make it an ideal choice for content-heavy sites, blogs, marketing pages, and beyond. Whether you`re building a personal portfolio or a high-traffic documentation site, Astro delivers performance and simplicity in perfect harmony.',
-            image: '/AstroAscendancy.jpg',
+            image: '/AstroAscendancy.jpeg',
             features: [
                 "Zero JavaScript by Default: Astro sends no JS unless you explicitly add it, leading to ultra-fast load times and excellent Lighthouse scores.",
                 "Island Architecture: Ship only interactive components as needed — a revolutionary partial hydration approach that avoids overloading the browser.",
