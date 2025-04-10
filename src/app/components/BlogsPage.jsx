@@ -8,6 +8,20 @@ const BlogsPage = () => {
     const blog = [
         
         {
+            title: 'Copilot Codecraft',
+            heading: 'How GitHub Copilot is Reshaping the Developer Workflow with AI',
+            description: 'GitHub Copilot, powered by OpenAI’s Codex model, is revolutionizing how developers write code. Acting like an intelligent pair programmer, Copilot helps you code faster, avoid boilerplate, and focus on logic rather than syntax. It’s more than autocomplete — it understands your intent and suggests entire functions, tests, and documentation in real-time. From solo indie hackers to large engineering teams, Copilot is rapidly becoming an indispensable tool in the modern coding toolkit. Whether you’re working in JavaScript, Python, or even obscure legacy languages, Copilot’s contextual awareness makes development smoother, faster, and more enjoyable.',
+            image: '/CopilotCodecraft.jpeg',
+            features: [
+                "AI-Powered Code Suggestions: Copilot suggests code snippets, complete functions, and even boilerplate structures based on natural language comments and context.",
+                "Multilanguage Support: Write code in over a dozen languages, including JavaScript, Python, TypeScript, Go, Ruby, and more — Copilot understands them all.",
+                "Contextual Awareness: It adapts to the file you’re working in, project structure, and even previously written code to maintain consistency.",
+                "Docs and Tests on the Fly: Generate documentation and test cases with a simple comment or prompt, reducing repetitive tasks.",
+                "Tightly Integrated with IDEs: Whether you're using VS Code or JetBrains, Copilot integrates natively, offering a seamless developer experience."
+            ],
+        },
+        
+        {
             title: 'Astro Ascendancy',
             heading: 'Why Astro is Redefining the Future of Web Development',
             description: 'Astro is the rising star of the modern web dev ecosystem, offering a fresh take on building fast, content-focused websites. What sets Astro apart is its ability to ship zero JavaScript by default, ensuring unmatched speed and performance. By allowing developers to bring their favorite frameworks like React, Vue, Svelte, or Solid into one project, Astro provides ultimate flexibility without the bloat. Its component-based architecture, powerful Markdown and MDX support, and seamless integration with modern CMSs make it an ideal choice for content-heavy sites, blogs, marketing pages, and beyond. Whether you`re building a personal portfolio or a high-traffic documentation site, Astro delivers performance and simplicity in perfect harmony.',
