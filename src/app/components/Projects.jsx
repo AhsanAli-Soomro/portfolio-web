@@ -6,6 +6,23 @@ import ProjectModal from "./ProjectModal";
 const ProjectsPage = () => {
     const [selectedIndex, setSelectedIndex] = useState(null);
     const projects = [
+        {
+            "title": "Inventory Management System",
+            "heading": "Powerful Inventory Control at Your Fingertips",
+            "description": "Introducing Inventory Management System – a streamlined and efficient desktop application designed to simplify inventory tracking and management. Built using Python and Tkinter, this system provides a user-friendly interface and all the essential tools to manage employees, suppliers, customers, categories, products, and sales in one place. Ideal for small to medium-sized businesses looking to digitize and control their inventory processes.",
+            "image": "/ims.png",
+            imageapp: '/ims-login.png',
+            "features": [
+              "Built with Python: Developed using Python, one of the most powerful and beginner-friendly programming languages.",
+              "Graphical Interface with Tkinter: Leveraged the Tkinter library to design a clean, intuitive, and responsive GUI for desktop users.",
+              "Modular Architecture: Features a modular structure with separate sections for Employees, Suppliers, Customers, Products, Sales, and more.",
+              "Real-Time Dashboards: View live stats and summaries such as total employees, suppliers, products, and sales directly on the dashboard.",
+              "Integrated Billing System: Includes a built-in billing module for quick transaction processing.",
+              "Easy Navigation: Sidebar menu with quick access to Reports, Logs, Sales & Purchase History, and Settings.",
+              "Secure Login System: Ensures secure access to system data with login/logout functionality."
+            ],
+            "link": "https://your-custom-link-if-any.com"
+        },          
 
         {
             title: 'DailyPulse',
