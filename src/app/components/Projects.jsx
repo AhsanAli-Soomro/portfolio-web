@@ -21,7 +21,7 @@ const ProjectsPage = () => {
               "Easy Navigation: Sidebar menu with quick access to Reports, Logs, Sales & Purchase History, and Settings.",
               "Secure Login System: Ensures secure access to system data with login/logout functionality."
             ],
-            "link": "https://your-custom-link-if-any.com"
+            "link": "https://github.com/AhsanAli-Soomro/IMS_Project"
         },          
 
         {
