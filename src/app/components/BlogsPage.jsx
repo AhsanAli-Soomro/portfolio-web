@@ -6,7 +6,7 @@ import BlogsCard from "./BlogsCard";
 const BlogsPage = () => {
     const [selectedIndex, setSelectedIndex] = useState(null);
     const blog = [
-        
+
         {
             title: 'Notion AI Nexus',
             heading: 'How Notion AI is Revolutionizing Productivity and Content Creation',
@@ -20,7 +20,6 @@ const BlogsPage = () => {
                 "Seamless Notion Integration: Built directly into the Notion platform, AI features feel like a native part of your daily workflow — no switching apps needed."
             ],
         },
-        
 
         {
             title: 'Copilot Codecraft',
