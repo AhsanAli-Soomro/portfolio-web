@@ -8,6 +8,21 @@ const BlogsPage = () => {
     const blog = [
 
         {
+            title: 'Figma AI Fusion',
+            heading: 'How Figma AI is Transforming the Design Workflow',
+            description: 'Figma AI brings intelligent automation to the heart of collaborative design. Whether you’re wireframing a new product, crafting pixel-perfect UI, or brainstorming UX flows with your team, Figma AI accelerates the process with smart suggestions, layout optimization, and real-time ideation support. No longer just a design canvas, Figma becomes a co-creator — helping teams move from concept to prototype with unprecedented speed and precision. With deep context-awareness and natural language processing, Figma AI adapts to your creative style and improves with every project.',
+            image: '/FigmaAIFusion.png',
+            features: [
+                "Auto Layout Intelligence: Suggests optimal spacing, alignment, and layout adjustments as you design, reducing manual tweaks.",
+                "Content-Aware Design: Automatically generates placeholder content, icons, and UI components based on your descriptions or context.",
+                "Real-Time Collaboration Enhancements: Offers design suggestions and feedback while you work alongside your team, streamlining iteration loops.",
+                "Voice & Text Prompts: Quickly mock up screens or components using natural language prompts, turning ideas into visuals instantly.",
+                "Plugin Synergy: Seamlessly integrates with Figma plugins, extending AI capabilities without disrupting your workflow."
+            ],
+        },
+        
+
+        {
             title: 'Notion AI Nexus',
             heading: 'How Notion AI is Revolutionizing Productivity and Content Creation',
             description: 'Notion AI brings the power of generative intelligence directly into your workspace, transforming how teams think, write, and collaborate. From summarizing meeting notes to generating content drafts, Notion AI is more than just a tool — it’s a creative and organizational partner. Seamlessly embedded in your docs and databases, it helps brainstorm ideas, refine writing, and automate mundane tasks. Whether you’re a solo entrepreneur, a busy project manager, or part of a scaling startup, Notion AI adapts to your workflow and boosts your output. It’s like having a writing assistant, research analyst, and project coordinator all in one sleek interface.',
