@@ -26,7 +26,7 @@ const BlogsPage = () => {
             title: 'Notion AI Nexus',
             heading: 'How Notion AI is Revolutionizing Productivity and Content Creation',
             description: 'Notion AI brings the power of generative intelligence directly into your workspace, transforming how teams think, write, and collaborate. From summarizing meeting notes to generating content drafts, Notion AI is more than just a tool — it’s a creative and organizational partner. Seamlessly embedded in your docs and databases, it helps brainstorm ideas, refine writing, and automate mundane tasks. Whether you’re a solo entrepreneur, a busy project manager, or part of a scaling startup, Notion AI adapts to your workflow and boosts your output. It’s like having a writing assistant, research analyst, and project coordinator all in one sleek interface.',
-            image: '/NotionAINexus.png',
+            image: '/NotionAINexus.jpg',
             features: [
                 "Smart Writing Assistance: Instantly draft, rephrase, or summarize content with natural language prompts, making writing smoother and faster.",
                 "Knowledge Summarization: Quickly distill lengthy documents, meeting notes, or research into digestible summaries and key takeaways.",
