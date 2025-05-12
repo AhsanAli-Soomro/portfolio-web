@@ -7,6 +7,25 @@ const ProjectsPage = () => {
     const [selectedIndex, setSelectedIndex] = useState(null);
     const projects = [
         {
+            "title": "Clinic/Doctor/Patient Management Platform",
+            "heading": "Streamlined Management for Clinics, Doctors, and Patients",
+            "description": "Introducing the Clinic/Doctor/Patient Management Platform – a robust web application designed to simplify and automate clinic operations. Built using Next.js, React, and MySQL, this platform enables patients to manage appointments, doctors to update their schedules, and administrators to oversee all aspects of the clinic. Hosted on AWS, the system ensures scalability and security, providing a seamless experience for all users.",
+            "image": "/clinic-management.png",
+            "imageapp": "/doctor-patient-dashboard.png",
+            "features": [
+                "Built with Next.js and React: Developed using modern web technologies for fast and responsive user experiences.",
+                "MySQL Database: Utilizes MySQL for secure and efficient data storage, handling complex relationships between clinics, doctors, and patients.",
+                "AWS Hosting: Deployed on AWS for robust performance, scalability, and security.",
+                "Patient Profile Management: Allows patients to register, update profiles, and book appointments with doctors.",
+                "Doctor Schedule Management: Doctors can set and manage their availability for patient appointments.",
+                "Admin Dashboard: Provides administrative control over users, appointments, and clinic operations.",
+                "Real-Time Appointment Booking: Patients can check doctor availability and book appointments in real-time.",
+                "User Authentication: Secure login and registration system with email verification for patients."
+            ],
+            "link": "https://mydoctorbooking.vercel.app"
+        },
+        
+        {
             "title": "Inventory Management System",
             "heading": "Powerful Inventory Control at Your Fingertips",
             "description": "Introducing Inventory Management System – a streamlined and efficient desktop application designed to simplify inventory tracking and management. Built using Python and Tkinter, this system provides a user-friendly interface and all the essential tools to manage employees, suppliers, customers, categories, products, and sales in one place. Ideal for small to medium-sized businesses looking to digitize and control their inventory processes.",
