@@ -1,40 +1,107 @@
-import { Inter } from 'next/font/google';
-import './globals.css';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import { BlogProvider } from '../context/BlogContext';
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import { BlogProvider } from "../context/BlogContext";
+import Script from "next/script";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
+
+const siteUrl = "https://ahsanalisoomro.vercel.app";
+const personId = `${siteUrl}#person`;
 
 export const metadata = {
-  title: 'Ahsan Ali Soomro',
-  description: 'Frontend web developer',
-  icon: '/favicon.ico',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Ahsan Ali Soomro — Front-End Developer & UI Engineer",
+    template: "%s | Ahsan Ali Soomro",
+  },
+  description:
+    "Portfolio of Ahsan Ali Soomro — Front-End Developer specializing in Next.js, React, and Tailwind CSS. Explore projects, blogs, resume, and hire me.",
+  alternates: { canonical: siteUrl },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    url: siteUrl,
+    title: "Ahsan Ali Soomro — Portfolio",
+    siteName: "Ahsan Ali Soomro",
+    description:
+      "Front-End Developer (Next.js, React, Tailwind). Projects, blogs, resume, and contact.",
+    images: [
+      {
+        url: "/og-cover.png", // ensure this exists in /public
+        width: 1200,
+        height: 630,
+        alt: "Ahsan Ali Soomro — Front-End Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ahsan Ali Soomro — Front-End Developer",
+    description:
+      "Next.js, React, Tailwind CSS. Portfolio, projects, blogs, and resume.",
+    images: ["/og-cover.png"],
+  },
+  icons: {
+    icon: "/favicon.ico", // replaces your previous 'icon' field
+  },
 };
 
 export default function RootLayout({ children }) {
+  // Centralized social profiles (reusable across pages)
+  const sameAs = [
+    "https://www.linkedin.com/in/ahsanali-soomro",
+    "https://github.com/AhsanAli-Soomro",
+    "https://twitter.com/AhsanAli3860",
+    "https://www.facebook.com/ahsanali.king.92",
+    "https://www.instagram.com/soomroahsan_ali/",
+  ];
+
+  const ldJson = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}#website`,
+        url: siteUrl,
+        name: "Ahsan Ali Soomro",
+        inLanguage: "en",
+      },
+      {
+        "@type": "Person",
+        "@id": personId,
+        name: "Ahsan Ali Soomro",
+        url: siteUrl,
+        jobTitle: "Front-End Developer",
+        image: `${siteUrl}/ahsan.png`, // make sure this file exists
+        sameAs,
+        email: "mailto:ahsanalisoomro147@gmail.com", // email goes here, not in sameAs
+      },
+    ],
+  };
+
   return (
     <html lang="en">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Ahsan Ali Soomro",
-              "url": "https://ahsanalisoomro.vercel.app",
-              "image": "https://ahsanalisoomro.vercel.app/ahsan-ali-soomro.jpg",
-              "jobTitle": "Frontend Web Developer",
-              "sameAs": [
-                "https://www.linkedin.com/in/your-linkedin-id",
-                "https://github.com/your-github-id"
-              ]
-            }),
-          }}
-        />
-      </head>
       <body className={inter.className}>
+        {/* Root-level structured data (declared once) */}
+        <Script
+          id="ld-root"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ldJson) }}
+        />
+
         <BlogProvider>
           <Navbar />
           {children}
