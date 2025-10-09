@@ -15,7 +15,7 @@ import Link from "next/link";
 
 const About = () => {
   return (
-    <main className="relative bg-gradient-to-br from-orange-800 via-orange-600 to-orange-500 overflow-hidden">
+    <main className="relative overflow-hidden">
       {/* Hero / Intro */}
       <section
         aria-labelledby="about-heading"

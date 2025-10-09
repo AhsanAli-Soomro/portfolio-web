@@ -3,7 +3,7 @@ import BlogsPage from "../components/BlogsPage";
 
 
 const siteUrl = "https://ahsanalisoomro.vercel.app";
-const pageUrl = `${siteUrl}/Blogs`; // or /blogs if lowercase
+const pageUrl = `${siteUrl}/Blogs`;
 
 export const metadata = {
   title: "Blogs — Ahsan Ali Soomro",
@@ -56,7 +56,8 @@ export default function BlogsListPage() {
   ];
 
   const jsonLd = {
-    "@context": "https://schema.org",
+    
+    "@context": "https://schema.org", "@type": "Blog", url: pageUrl, name: "Blogs — Ahsan Ali Soomro",
     "@graph": [
       {
         "@type": "WebPage",
@@ -101,17 +102,9 @@ export default function BlogsListPage() {
 
   return (
     <>
-      {/* JSON-LD */}
-      <Script
-        id="ld-blogs"
-        type="application/ld+json"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
-      {/* Hidden H1 if BlogsPage doesn’t render one */}
+      <Script id="ld-blogs" type="application/ld+json" strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <h1 className="sr-only">Blogs — Ahsan Ali Soomro</h1>
-
       <BlogsPage />
     </>
   );

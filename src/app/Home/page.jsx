@@ -2,6 +2,8 @@ import Script from "next/script";
 import Hero from "../components/Hero";
 import Cards from "../components/Cards";
 import Services from "../components/Services";
+import FeaturedProjects from "../components/FeaturedProjects";
+import ContactCta from "../components/ContactCta";
 
 const siteUrl = "https://ahsanalisoomro.vercel.app";
 
@@ -110,6 +112,8 @@ export default function HomePage() {
       {/* Hero Section */}
       <Hero />
       <Services />
+      <FeaturedProjects limit={6} />
+      <ContactCta />
       {/* Optional: show cards on homepage */}
       {/* <Cards /> */}
 
