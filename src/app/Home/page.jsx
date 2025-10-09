@@ -1,6 +1,7 @@
 import Script from "next/script";
 import Hero from "../components/Hero";
 import Cards from "../components/Cards";
+import Services from "../components/Services";
 
 const siteUrl = "https://ahsanalisoomro.vercel.app";
 
@@ -95,12 +96,24 @@ export default function HomePage() {
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+    <section
+      className="relative items-center bg-gradient-to-br from-orange-900 via-orange-700 to-orange-500 overflow-hidden"
+      aria-labelledby="hero-heading"
+    >
+      {/* Background Glow Effects (decorative) */}
+      <div className="absolute inset-0 z-0" aria-hidden="true" role="presentation">
+        <div className="absolute top-1/3 left-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-orange-700/40 rounded-full blur-[140px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-yellow-400/40 rounded-full blur-[140px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-orange-950/60" />
+      </div>
 
       {/* Hero Section */}
       <Hero />
-
+      <Services />
       {/* Optional: show cards on homepage */}
       {/* <Cards /> */}
+
+    </section>
     </>
   );
 }
