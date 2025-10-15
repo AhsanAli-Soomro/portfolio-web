@@ -65,7 +65,8 @@ export default function ProjectDetailPage({ params }) {
 
       <section className="mx-auto max-w-3xl px-6 sm:px-10 lg:px-0">
         {/* Breadcrumbs */}
-        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-white/70">
+        <nav aria-label="Breadcrumb"
+          className="relative z-20 mb-6 text-sm text-white/70"  >
           <Link href="/" className="hover:text-white">Home</Link>
           <span className="mx-2">/</span>
           <Link href="/Projects" className="hover:text-white">Projects</Link>

@@ -61,10 +61,11 @@ export default async function BlogDetailPage({ params }) {
       />
 
       <section className="mx-auto max-w-3xl px-6 sm:px-10 lg:px-0">
-        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-white/70">
+        <nav aria-label="Breadcrumb"
+          className="relative z-20 mb-6 text-sm text-white/70">
           <Link href="/" className="hover:text-white">Home</Link>
           <span className="mx-2">/</span>
-          <Link href="/blogs" className="hover:text-white">Blogs</Link>
+          <Link href="/Blogs" className="hover:text-white">Blogs</Link>
           <span className="mx-2">/</span>
           <span className="text-white/90">{blog.title}</span>
         </nav>

@@ -15,7 +15,7 @@ import {
 const Resume = () => {
   return (
     <main
-      className="bg-gradient-to-br from-orange-800 via-orange-600 to-orange-500 min-h-screen text-white"
+      className=" min-h-screen text-white"
       aria-labelledby="resume-heading"
     >
       <div className="container mx-auto px-6 lg:px-12 py-20">

@@ -6,7 +6,7 @@ import { blogsData } from "./data/blogs";
 
 export default function Blogs() {
   return (
-    <main className="bg-gradient-to-br from-orange-800 via-orange-600 to-orange-500 py-20">
+    <main className="py-20">
       <h1 className="sr-only">Blogs — Ahsan Ali Soomro</h1>
 
       <section aria-labelledby="blogs-heading" className="container mx-auto px-4 sm:px-6 lg:px-16">

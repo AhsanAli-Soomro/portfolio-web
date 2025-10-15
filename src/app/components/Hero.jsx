@@ -49,7 +49,7 @@ const Hero = () => {
 
               <div className="mt-8 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-center md:justify-start">
                 <Link
-                  href="/hire"
+                  href="/Hire"
                   aria-label="Start a project with Ahsan Ali Soomro"
                   className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-white text-orange-800 font-semibold shadow-lg
                              hover:bg-gray-100 hover:scale-[1.03] active:scale-[0.99] transition-transform duration-200 focus:outline-none focus:ring-4 focus:ring-orange-300"
@@ -57,7 +57,7 @@ const Hero = () => {
                   Start a project
                 </Link>
                 <Link
-                  href="/resume"
+                  href="/Resume"
                   aria-label="View Ahsan Ali Soomro resume"
                   className="inline-flex items-center justify-center px-5 py-3 rounded-lg border border-white/80 text-white font-semibold shadow-lg
                              hover:bg-white/10 transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-orange-400"
