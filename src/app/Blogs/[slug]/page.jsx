@@ -106,7 +106,7 @@ function PrevNext({ slug }) {
   const next = blogsData[(idx + 1) % blogsData.length];
 
   return (
-    <div className="mt-14 flex items-center justify-between text-white/85">
+    <div className="relative mt-14 flex items-center justify-between text-white/85">
       <Link href={`/blogs/${prev.slug}`} className="hover:text-white">&larr; {prev.title}</Link>
       <Link href={`/blogs/${next.slug}`} className="hover:text-white">{next.title} &rarr;</Link>
     </div>

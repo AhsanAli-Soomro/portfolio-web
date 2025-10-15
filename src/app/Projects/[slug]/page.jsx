@@ -103,7 +103,7 @@ export default function ProjectDetailPage({ params }) {
 
         {/* External link */}
         {project.link && (
-          <div className="mt-10">
+          <div className="relative mt-10">
             <a
               href={project.link}
               target="_blank"
@@ -129,7 +129,7 @@ function PrevNext({ slug }) {
   const next = projectsData[(idx + 1) % projectsData.length];
 
   return (
-    <div className="mt-14 flex items-center justify-between text-white/85">
+    <div className="relative mt-14 flex items-center justify-between text-white/85">
       <Link href={`/Projects/${prev.slug}`} className="hover:text-white">&larr; {prev.title}</Link>
       <Link href={`/Projects/${next.slug}`} className="hover:text-white">{next.title} &rarr;</Link>
     </div>
