@@ -1,0 +1,15 @@
+{
+  "clients": [
+    {
+      "username": "user1",
+      "password": "user123",
+      "clientName": "Habib Rice Corporation",
+      "downloads": [
+        {
+          "name": "Habib-Rice-Corporation-Setup.exe",
+          "link": "https://github.com/AhsanAli-Soomro/IMZ_Zebra_web/releases/download/latest-windows/Habib-Rice-Corporation-Setup.exe"
+        }
+      ]
+    }
+  ]
+}
