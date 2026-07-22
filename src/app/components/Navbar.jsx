@@ -16,7 +16,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setActiveLink(window.location.pathname);
-    const current = document.documentElement.dataset.theme || "dark";
+    const current = document.documentElement.dataset.theme || "light";
     setTheme(current);
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
@@ -25,7 +25,7 @@ export default function Navbar() {
   }, []);
 
   const toggleTheme = () => {
-    const next = theme === "dark" ? "light" : "dark";
+    const next = theme === "light" ? "dark" : "light";
     setTheme(next);
     document.documentElement.dataset.theme = next;
     localStorage.setItem("portfolio-theme", next);
@@ -42,7 +42,7 @@ export default function Navbar() {
         </div>
         <div className="nav-actions">
           <button className="theme-button" onClick={toggleTheme} type="button"
-            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}>
+            aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}>
             <IconSun className="sun-icon" size={18} />
             <IconMoon className="moon-icon" size={18} />
           </button>
