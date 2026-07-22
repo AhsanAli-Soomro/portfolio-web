@@ -1,13 +1,36 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import clientsData from "@/data/clients.json";
 
 export default function ClientPortalPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loggedInClient, setLoggedInClient] = useState(null);
+  const [downloadCounts, setDownloadCounts] = useState({});
   const [error, setError] = useState("");
+
+  const getStorageKey = (clientUsername, fileId) => {
+    return `download_count_${clientUsername}_${fileId}`;
+  };
+
+  const getRequestText = (fileName) => {
+    const clientName = loggedInClient?.clientName || loggedInClient?.username || "";
+    return `Hello, I need download access again.\nClient: ${clientName}\nFile: ${fileName}`;
+  };
+
+  useEffect(() => {
+    if (!loggedInClient) return;
+
+    const counts = {};
+
+    loggedInClient.downloads.forEach((file) => {
+      const key = getStorageKey(loggedInClient.username, file.id);
+      counts[file.id] = Number(localStorage.getItem(key) || 0);
+    });
+
+    setDownloadCounts(counts);
+  }, [loggedInClient]);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -32,63 +55,93 @@ export default function ClientPortalPage() {
     setUsername("");
     setPassword("");
     setError("");
+    setDownloadCounts({});
+  };
+
+  const handleDownload = (file) => {
+    if (!loggedInClient) return;
+
+    const currentCount = downloadCounts[file.id] || 0;
+    const limit = Number(file.downloadLimit || 1);
+
+    if (currentCount >= limit) {
+      return;
+    }
+
+    const newCount = currentCount + 1;
+    const key = getStorageKey(loggedInClient.username, file.id);
+
+    localStorage.setItem(key, String(newCount));
+
+    setDownloadCounts((prev) => ({
+      ...prev,
+      [file.id]: newCount,
+    }));
+
+    window.open(file.link, "_blank", "noopener,noreferrer");
+  };
+
+  const handleRequestAccess = (file) => {
+    const message = encodeURIComponent(getRequestText(file.name));
+    const whatsappNumber = "923173215380";
+
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
   };
 
   return (
-    <main className="min-h-screen bg-slate-950 px-4 py-10 text-white">
-      <div className="mx-auto flex min-h-[calc(100vh-80px)] max-w-5xl items-center justify-center">
-        <section className="w-full rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur md:p-10">
+    <main className="inner-page portal-page">
+      <div className="portal-container">
+        <section className="portal-card">
           {!loggedInClient ? (
-            <div className="mx-auto max-w-md">
-              <div className="mb-8 text-center">
-                <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-blue-300">
+            <div className="portal-login">
+              <div className="portal-heading">
+                <p className="section-index">
                   Client Portal
                 </p>
-                <h1 className="text-3xl font-bold md:text-4xl">
-                  Login to Download
+                <h1>
+                  Your files, securely delivered.
                 </h1>
-                <p className="mt-3 text-sm text-slate-300">
-                  Enter your assigned username and password to access your
-                  software files.
+                <p>
+                  Enter your assigned username and password to access your files.
                 </p>
               </div>
 
-              <form onSubmit={handleLogin} className="space-y-5">
-                <div>
-                  <label className="mb-2 block text-sm font-medium text-slate-200">
+              <form onSubmit={handleLogin} className="portal-form">
+                <label className="form-field">
+                  <span>
                     Username
-                  </label>
+                  </span>
                   <input
                     type="text"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     placeholder="Enter username"
-                    className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none ring-0 placeholder:text-slate-500 focus:border-blue-400"
+                    autoComplete="username"
                   />
-                </div>
+                </label>
 
-                <div>
-                  <label className="mb-2 block text-sm font-medium text-slate-200">
+                <label className="form-field">
+                  <span>
                     Password
-                  </label>
+                  </span>
                   <input
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter password"
-                    className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none ring-0 placeholder:text-slate-500 focus:border-blue-400"
+                    autoComplete="current-password"
                   />
-                </div>
+                </label>
 
                 {error && (
-                  <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-200">
+                  <div className="portal-error">
                     {error}
                   </div>
                 )}
 
                 <button
                   type="submit"
-                  className="w-full rounded-xl bg-blue-500 px-5 py-3 font-semibold text-white transition hover:bg-blue-600"
+                  className="button-primary portal-submit"
                 >
                   Login
                 </button>
@@ -96,56 +149,80 @@ export default function ClientPortalPage() {
             </div>
           ) : (
             <div>
-              <div className="mb-8 flex flex-col gap-4 border-b border-white/10 pb-6 md:flex-row md:items-start md:justify-between">
+              <div className="portal-dashboard-head">
                 <div>
-                  <p className="mb-2 text-sm font-semibold uppercase tracking-[0.3em] text-blue-300">
+                  <p className="section-index">
                     Downloads
                   </p>
-                  <h1 className="text-3xl font-bold md:text-4xl">
+                  <h1>
                     {loggedInClient.clientName || loggedInClient.username}
                   </h1>
-                  <p className="mt-3 text-sm text-slate-300">
+                  <p>
                     Available files for your account.
                   </p>
                 </div>
 
                 <button
                   onClick={handleLogout}
-                  className="rounded-xl border border-white/10 px-5 py-3 text-sm font-semibold text-slate-200 transition hover:bg-white/10"
+                  className="button-ghost"
                 >
                   Logout
                 </button>
               </div>
 
               {loggedInClient.downloads?.length > 0 ? (
-                <div className="grid gap-4 md:grid-cols-2">
-                  {loggedInClient.downloads.map((file, index) => (
-                    <div
-                      key={`${file.name}-${index}`}
-                      className="rounded-2xl border border-white/10 bg-slate-900/80 p-5"
-                    >
-                      <div className="mb-5">
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-                          File {index + 1}
-                        </p>
-                        <h2 className="mt-2 break-words text-xl font-bold text-white">
-                          {file.name}
-                        </h2>
-                      </div>
+                <div className="download-grid">
+                  {loggedInClient.downloads.map((file, index) => {
+                    const count = downloadCounts[file.id] || 0;
+                    const limit = Number(file.downloadLimit || 1);
+                    const remaining = Math.max(limit - count, 0);
+                    const limitReached = count >= limit;
 
-                      <a
-                        href={file.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex w-full items-center justify-center rounded-xl bg-emerald-500 px-5 py-3 text-center font-semibold text-white transition hover:bg-emerald-600"
+                    return (
+                      <div
+                        key={`${file.id}-${index}`}
+                        className="download-card"
                       >
-                        Download
-                      </a>
-                    </div>
-                  ))}
+                        <div>
+                          <p className="section-index">
+                            File {index + 1}
+                          </p>
+                          <h2>
+                            {file.name}
+                          </h2>
+
+                          <p className="download-count">
+                            Downloads left:{" "}
+                            <span className={limitReached ? "limit-hit" : "limit-ok"}>
+                              {remaining}
+                            </span>{" "}
+                            / {limit}
+                          </p>
+                        </div>
+
+                        {!limitReached ? (
+                          <button
+                            type="button"
+                            onClick={() => handleDownload(file)}
+                            className="button-primary portal-submit"
+                          >
+                            Download
+                          </button>
+                        ) : (
+                          <button
+                            type="button"
+                            onClick={() => handleRequestAccess(file)}
+                            className="button-ghost portal-submit"
+                          >
+                            Request Access
+                          </button>
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
               ) : (
-                <div className="rounded-2xl border border-yellow-500/30 bg-yellow-500/10 p-5 text-yellow-100">
+                <div className="portal-empty">
                   No downloads assigned to this client.
                 </div>
               )}

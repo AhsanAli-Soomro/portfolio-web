@@ -6,7 +6,7 @@ const TypewriterText = () => {
   return (
     <div className="w-full overflow-hidden">
 
-      <h1 className="text-white font-extrabold leading-tight truncate md:whitespace-nowrap">
+      <h1 className="theme-heading font-extrabold leading-tight truncate md:whitespace-nowrap">
         <Typewriter
           words={[
             'Hello, I am Ahsan Ali Soomro',

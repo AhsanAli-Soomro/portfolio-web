@@ -1,15 +1,17 @@
 {
-  "clients": [
-    {
-      "username": "info.habibricecorporation@gmail.com",
-      "password": "Habib@corporation",
-      "clientName": "Habib Rice Corporation",
-      "downloads": [
+    "clients": [
         {
-          "name": "Habib-Rice-Corporation-Setup.exe",
-          "link": "https://github.com/AhsanAli-Soomro/IMZ_Zebra_web/releases/download/latest-windows/Habib-Rice-Corporation-Setup.exe"
+            "username": "info.habibricecorporation@gmail.com",
+            "password": "Habib@corporation",
+            "clientName": "Habib Rice Corporation",
+            "downloads": [
+                {
+                    "id": "habib-setup",
+                    "name": "Habib-Rice-Corporation-Setup.exe",
+                    "link": "https://github.com/AhsanAli-Soomro/IMZ_Zebra_web/releases/download/latest-windows/Habib-Rice-Corporation-Setup.exe",
+                    "downloadLimit": 3
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

@@ -14,7 +14,7 @@ export default function TrustBar() {
   }, []);
 
   return (
-    <div className="mt-8 flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-3 text-white/80">
+    <div className="trust-bar mt-8 flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-3">
       {/* Trusted clients */}
       <span className="inline-flex items-center gap-2 text-sm">
         <span

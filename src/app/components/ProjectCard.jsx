@@ -4,10 +4,10 @@ import Link from "next/link";
 
 const ProjectCard = ({ project, onClick }) => {
     return (
-        <div className="w-full max-w-xs mx-auto mt-6 sm:mt-10">
+        <div className="legacy-content-card">
 
             <article
-                className="relative h-52 sm:h-56 md:h-64 w-full isolate flex flex-col justify-end overflow-hidden rounded-2xl shadow-lg transition-transform transform hover:scale-105 cursor-pointer"
+                className="legacy-media-card"
                 onClick={() => onClick(project)}
             >
                 <Image
@@ -30,7 +30,7 @@ const ProjectCard = ({ project, onClick }) => {
             <div className="mt-4 text-center">
                 <Link
                     href={project.link}
-                    className="text-white hover:text-orange-800 font-medium transition duration-300 inline-flex items-center"
+                    className="text-link"
                 >
                     Visit Site
                     <svg

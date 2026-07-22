@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blogsData } from "@/app/components/data/blogs";
+import { IconArrowLeft, IconArrowRight, IconCheck } from "@tabler/icons-react";
 // import { blogsData } from "@/data/blogs"; // put your blogsData here
 
 const getBlog = (slug) => blogsData.find((b) => b.slug === slug);
@@ -52,7 +53,7 @@ export default async function BlogDetailPage({ params }) {
   };
 
   return (
-    <main className="py-16">
+    <main className="inner-page detail-page article-page">
       <Script
         id="ld-blog"
         type="application/ld+json"
@@ -60,41 +61,38 @@ export default async function BlogDetailPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="mx-auto max-w-3xl px-6 sm:px-10 lg:px-0">
+      <article className="detail-container">
         <nav aria-label="Breadcrumb"
-          className="relative z-20 mb-6 text-sm text-white/70">
-          <Link href="/" className="hover:text-white">Home</Link>
+          className="breadcrumbs">
+          <Link href="/">Home</Link>
           <span className="mx-2">/</span>
-          <Link href="/Blogs" className="hover:text-white">Blogs</Link>
+          <Link href="/Blogs">Journal</Link>
           <span className="mx-2">/</span>
-          <span className="text-white/90">{blog.title}</span>
+          <span>{blog.title}</span>
         </nav>
 
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-white">{blog.heading || blog.title}</h1>
-        <p className="mt-2 text-white/80">
-          by <span className="font-semibold text-white">Ahsan Ali Soomro</span>
-        </p>
-        <p className="mt-1 text-white/70 text-sm">{blog.datePublished}</p>
+        <span className="section-index">Article / {blog.datePublished}</span>
+        <h1 className="detail-title">{blog.heading || blog.title}</h1>
+        <p className="article-meta">Written by <strong>Ahsan Ali Soomro</strong> · {blog.datePublished}</p>
 
         {blog.image && (
-          <div className="relative w-full h-64 sm:h-80 rounded-xl overflow-hidden border border-white/10 bg-white/5 mt-6">
+          <div className="article-cover">
             <Image src={blog.image} alt={blog.title} fill className="object-cover" priority />
           </div>
         )}
 
-        <p className="mt-6 text-white/85 leading-relaxed">{blog.description}</p>
+        <p className="article-body">{blog.description}</p>
 
         {blog.features?.length > 0 && (
-          <div className="mt-8">
-            <h2 className="text-xl font-semibold text-white">Key points</h2>
-            <ul className="mt-4 grid gap-3 list-disc pl-5 text-white/85">
-              {blog.features.map((f, i) => <li key={i}>{f}</li>)}
+          <div className="detail-highlights">
+            <span className="section-index">In this article</span><h2>Key takeaways</h2>
+            <ul>{blog.features.map((f, i) => <li key={i}><IconCheck size={17}/>{f}</li>)}
             </ul>
           </div>
         )}
 
         <PrevNext slug={blog.slug} />
-      </section>
+      </article>
     </main>
   );
 }
@@ -106,9 +104,9 @@ function PrevNext({ slug }) {
   const next = blogsData[(idx + 1) % blogsData.length];
 
   return (
-    <div className="relative mt-14 flex items-center justify-between text-white/85">
-      <Link href={`/blogs/${prev.slug}`} className="hover:text-white">&larr; {prev.title}</Link>
-      <Link href={`/blogs/${next.slug}`} className="hover:text-white">{next.title} &rarr;</Link>
+    <div className="prev-next">
+      <Link href={`/Blogs/${prev.slug}`}><IconArrowLeft/><span><small>Previous article</small>{prev.title}</span></Link>
+      <Link href={`/Blogs/${next.slug}`}><span><small>Next article</small>{next.title}</span><IconArrowRight/></Link>
     </div>
   );
 }

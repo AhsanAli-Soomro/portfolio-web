@@ -63,7 +63,7 @@ const BlogsModal = ({ blog, onClose, onNext, onPrev }) => {
   return (
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/75"
+      className="modal-overlay"
       onClick={onBackdropClick}
       onKeyDown={onKeyDown}
     >
@@ -74,7 +74,7 @@ const BlogsModal = ({ blog, onClose, onNext, onPrev }) => {
           onClick={onPrev}
           aria-label="Previous blog"
           title="Previous blog"
-          className="p-2 text-orange-600 hover:text-orange-800 focus:outline-none focus:ring-2 focus:ring-orange-500 rounded transition-transform hover:scale-110"
+          className="modal-arrow"
         >
           <svg
             fill="none"
@@ -98,22 +98,22 @@ const BlogsModal = ({ blog, onClose, onNext, onPrev }) => {
         aria-modal="true"
         aria-labelledby={titleId}
         tabIndex={-1}
-        className="bg-gray-100 border z-10 h-svh pt-6 p-8 rounded-lg max-w-3xl w-4/5 my-10 relative overflow-y-auto max-h-screen text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+        className="theme-modal theme-modal-large"
       >
         <button
           type="button"
           onClick={onClose}
           aria-label="Close dialog"
           title="Close"
-          className="absolute top-2 right-2 text-orange-600 rounded-full p-2 hover:text-red-600 transition-transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-orange-500"
+          className="modal-close"
         >
           &times;
         </button>
 
-        <h2 id={titleId} className="text-3xl font-bold mb-2 text-orange-600">
+        <h2 id={titleId}>
           {blog.title}
         </h2>
-        <p className="mb-4 text-sm text-gray-700">
+        <p className="modal-meta">
           by <span className="font-semibold">{author}</span>
         </p>
 
@@ -133,7 +133,7 @@ const BlogsModal = ({ blog, onClose, onNext, onPrev }) => {
 
         {blog.features && blog.features.length > 0 && (
           <div>
-            <h3 className="text-xl text-orange-600 font-semibold mb-2">
+            <h3 className="modal-subtitle">
               Key Features
             </h3>
             <ul className="list-disc list-inside mb-4 space-y-1">
@@ -148,7 +148,7 @@ const BlogsModal = ({ blog, onClose, onNext, onPrev }) => {
           <button
             type="button"
             onClick={onClose}
-            className="bg-orange-500 text-black py-2 px-4 rounded hover:bg-orange-600 transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="button-ghost"
           >
             Close
           </button>
@@ -162,7 +162,7 @@ const BlogsModal = ({ blog, onClose, onNext, onPrev }) => {
           onClick={onNext}
           aria-label="Next blog"
           title="Next blog"
-          className="p-2 text-orange-600 hover:text-orange-800 focus:outline-none focus:ring-2 focus:ring-orange-500 rounded transition-transform hover:scale-110"
+          className="modal-arrow"
         >
           <svg
             fill="none"

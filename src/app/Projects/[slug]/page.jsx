@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projectsData } from "@/app/components/data/projects";
+import { IconArrowLeft, IconArrowRight, IconArrowUpRight, IconCheck } from "@tabler/icons-react";
 
 
 // Helpers
@@ -60,57 +61,57 @@ export default function ProjectDetailPage({ params }) {
   };
 
   return (
-    <main className="py-16">
+    <main className="inner-page detail-page">
       <Script id="ld-project" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <section className="mx-auto max-w-3xl px-6 sm:px-10 lg:px-0">
+      <section className="detail-container">
         {/* Breadcrumbs */}
         <nav aria-label="Breadcrumb"
-          className="relative z-20 mb-6 text-sm text-white/70"  >
-          <Link href="/" className="hover:text-white">Home</Link>
+          className="breadcrumbs"  >
+          <Link href="/">Home</Link>
           <span className="mx-2">/</span>
-          <Link href="/Projects" className="hover:text-white">Projects</Link>
+          <Link href="/Projects">Projects</Link>
           <span className="mx-2">/</span>
-          <span className="text-white/90">{project.title}</span>
+          <span>{project.title}</span>
         </nav>
 
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-white">{project.heading || project.title}</h1>
-        <p className="mt-4 text-white/85 leading-relaxed">{project.description}</p>
+        <span className="section-index">Project case study</span>
+        <h1 className="detail-title">{project.heading || project.title}</h1>
+        <p className="detail-lead">{project.description}</p>
 
         {/* Images */}
-        <div className="flex mt-8 gap-4">
+        <div className="detail-gallery">
           {project.image && (
-            <div className="relative w-[75%] h-64 sm:h-80 rounded-xl overflow-hidden border border-white/10 bg-white/5">
-              <Image src={project.image} alt={project.title} fill sizes="(max-width:768px) 100vw, 800px" className="object-fill" priority />
+            <div className="detail-main-image">
+              <Image src={project.image} alt={project.title} fill sizes="(max-width:768px) 100vw, 800px" className="object-cover" priority />
             </div>
           )}
           {project.imageapp && (
-            <div className="relative w-[25%] h-64 sm:h-80 rounded-xl overflow-hidden border border-white/10 bg-white/5">
-              <Image src={project.imageapp} alt={`${project.title} — app view`} fill sizes="(max-width:768px) 100vw, 800px" className="object-fill" />
+            <div className="detail-app-image">
+              <Image src={project.imageapp} alt={`${project.title} — app view`} fill sizes="(max-width:768px) 100vw, 300px" className="object-cover" />
             </div>
           )}
         </div>
 
         {/* Highlights */}
         {project.features?.length > 0 && (
-          <div className="mt-10">
-            <h2 className="text-xl font-semibold text-white">Highlights</h2>
-            <ul className="mt-4 grid gap-3 list-disc pl-5 text-white/85">
-              {project.features.map((f, i) => <li key={i}>{f}</li>)}
+          <div className="detail-highlights">
+            <span className="section-index">What I delivered</span><h2>Project highlights</h2>
+            <ul>{project.features.map((f, i) => <li key={i}><IconCheck size={17}/>{f}</li>)}
             </ul>
           </div>
         )}
 
         {/* External link */}
         {project.link && (
-          <div className="relative mt-10">
+          <div className="detail-action">
             <a
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-white text-orange-800 font-semibold shadow hover:scale-[1.02] transition"
+              className="button-primary"
             >
-              Visit project ↗
+              Visit live project <IconArrowUpRight size={18}/>
             </a>
           </div>
         )}
@@ -129,9 +130,9 @@ function PrevNext({ slug }) {
   const next = projectsData[(idx + 1) % projectsData.length];
 
   return (
-    <div className="relative mt-14 flex items-center justify-between text-white/85">
-      <Link href={`/Projects/${prev.slug}`} className="hover:text-white">&larr; {prev.title}</Link>
-      <Link href={`/Projects/${next.slug}`} className="hover:text-white">{next.title} &rarr;</Link>
+    <div className="prev-next">
+      <Link href={`/Projects/${prev.slug}`}><IconArrowLeft/><span><small>Previous project</small>{prev.title}</span></Link>
+      <Link href={`/Projects/${next.slug}`}><span><small>Next project</small>{next.title}</span><IconArrowRight/></Link>
     </div>
   );
 }

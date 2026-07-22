@@ -63,7 +63,7 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
   return (
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/75"
+      className="modal-overlay"
       onClick={onBackdropClick}
       onKeyDown={onKeyDown}
       aria-hidden={false}
@@ -75,7 +75,7 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
           onClick={onPrev}
           aria-label="Previous project"
           title="Previous project"
-          className="p-2 text-orange-400 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 rounded transition-transform hover:scale-110"
+          className="modal-arrow"
         >
           <svg
             fill="none"
@@ -99,25 +99,25 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
         aria-modal="true"
         aria-labelledby={titleId}
         tabIndex={-1}
-        className="bg-gray-100 border z-10 h-svh pt-6 p-8 rounded-lg max-w-3xl w-4/5 my-10 relative overflow-y-auto max-h-screen text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400"
+        className="theme-modal theme-modal-large"
       >
         <button
           type="button"
           onClick={onClose}
           aria-label="Close dialog"
           title="Close"
-          className="absolute top-2 right-2 text-orange-400 rounded-full p-2 hover:text-red-600 transition-transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-orange-400"
+          className="modal-close"
         >
           &times;
         </button>
 
-        <h2 id={titleId} className="text-3xl font-bold mb-4 text-orange-400">
+        <h2 id={titleId}>
           {project.title}
         </h2>
 
         <div className="flex flex-col md:flex-row gap-6">
           <div className="relative transition-transform hover:scale-105">
-            <span className="absolute top-2 left-2 z-10 bg-orange-500/75 text-black px-2 py-0.5 rounded">
+            <span className="modal-label">
               Laptop View
             </span>
             <Image
@@ -132,7 +132,7 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
           </div>
 
           <div className="relative mx-auto md:mx-0 transition-transform hover:scale-105">
-            <span className="absolute top-2 left-2 z-10 bg-orange-500/75 text-black px-2 py-0.5 rounded">
+            <span className="modal-label">
               Mobile View
             </span>
             <Image
@@ -150,7 +150,7 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
 
         {project.features && project.features.length > 0 && (
           <div>
-            <h3 className="text-xl text-orange-400 font-semibold mb-2">
+            <h3 className="modal-subtitle">
               Key Features
             </h3>
             <ul className="list-disc list-inside mb-4 space-y-1">
@@ -165,7 +165,7 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
           <button
             type="button"
             onClick={onClose}
-            className="bg-orange-500 text-black py-2 px-4 rounded hover:bg-orange-600 transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-400"
+            className="button-ghost"
           >
             Close
           </button>
@@ -173,7 +173,7 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
           {project.link && (
             <Link href={project.link} target="_blank" rel="noopener noreferrer">
               <p
-                className="text-orange-600 hover:text-orange-700 inline-flex items-center font-medium transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-400 rounded px-2"
+                className="text-link"
                 title="Open project in new tab"
               >
                 Visit Site
@@ -202,7 +202,7 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
           onClick={onNext}
           aria-label="Next project"
           title="Next project"
-          className="p-2 text-orange-400 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 rounded transition-transform hover:scale-110"
+          className="modal-arrow"
         >
           <svg
             fill="none"

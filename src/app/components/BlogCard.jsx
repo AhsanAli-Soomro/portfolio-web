@@ -3,7 +3,7 @@ import React from 'react';
 const BlogCard = ({ blog, onClick, onDelete, onUpdate }) => {
     return (
         <div
-            className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl shadow-lg px-6 pb-6 pt-40 max-w-sm mx-auto mt-10 cursor-pointer transition-transform transform hover:scale-105 bg-white"
+            className="legacy-media-card legacy-admin-card"
             onClick={onClick}
         >
 
@@ -28,7 +28,7 @@ const BlogCard = ({ blog, onClick, onDelete, onUpdate }) => {
                         e.stopPropagation();
                         onUpdate(blog);
                     }}
-                    className="text-purple-300 hover:text-purple-500 font-medium transition duration-200"
+                    className="admin-edit"
                 >
                     Update
                 </button>
