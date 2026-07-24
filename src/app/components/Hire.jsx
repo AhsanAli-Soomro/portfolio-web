@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import emailjs from "emailjs-com";
 import { IconArrowUpRight, IconClock, IconMail, IconWorld } from "@tabler/icons-react";
 
 export default function Hire() {
@@ -12,7 +11,31 @@ export default function Hire() {
   const [status, setStatus] = useState({ type:"", message:"" });
   const handleChange = e => setFormData(s => ({ ...s, [e.target.name]: e.target.value }));
   const validate = () => { const e={}; if(!formData.name.trim())e.name="Please enter your name."; if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))e.email="Enter a valid email."; if(formData.subject.trim().length<3)e.subject="Add a short subject."; if(formData.message.trim().length<10)e.message="Tell me a little more about the project."; return e; };
-  const handleSubmit = async e => { e.preventDefault(); if(formData.website)return; const found=validate();setErrors(found);if(Object.keys(found).length)return;try{setSubmitting(true);await emailjs.sendForm(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID||"service_7hlzamp",process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID||"template_8fvs1ff",formRef.current,process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY||"i_JosCqmNXAH_Rebb");setStatus({type:"success",message:"Message sent — I'll get back to you soon."});setFormData({name:"",email:"",subject:"",message:"",website:""});}catch{setStatus({type:"error",message:"Could not send. Please email me directly."});}finally{setSubmitting(false);} };
+  const handleSubmit = async e => {
+    e.preventDefault();
+    if (formData.website) return;
+    const found = validate();
+    setErrors(found);
+    if (Object.keys(found).length) return;
+
+    try {
+      setSubmitting(true);
+      setStatus({ type: "", message: "" });
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || "Could not send message.");
+      setStatus({type:"success",message:"Message sent — I'll get back to you soon."});
+      setFormData({name:"",email:"",subject:"",message:"",website:""});
+    } catch {
+      setStatus({type:"error",message:"Could not send. Please email me directly."});
+    } finally {
+      setSubmitting(false);
+    }
+  };
   return (
     <main className="inner-page hire-page">
       <div className="page-container hire-layout">
