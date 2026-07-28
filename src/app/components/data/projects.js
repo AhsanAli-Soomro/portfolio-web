@@ -6,7 +6,7 @@ export const projectsData = [
     description:
       "A robust web app built with Next.js, React, and MySQL to simplify clinic operations. Patients manage appointments, doctors control schedules, and admins oversee users and bookings. Deployed on AWS for scalability and security.",
     image: "/clinic-management.png",
-    imageapp: "/doctor-patient-dashboard.png",
+    imageapp: "/doctor-patient-dashboard.jpeg",
     features: [
       "Built with Next.js and React for fast, responsive UX.",
       "MySQL for secure, relational data storage.",
