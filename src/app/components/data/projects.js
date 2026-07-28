@@ -21,26 +21,6 @@ export const projectsData = [
   },
 
   {
-    slug: "inventory-management-system",
-    title: "Inventory Management System — by Ahsan Ali Soomro",
-    heading: "Powerful Inventory Control at Your Fingertips",
-    description:
-      "A streamlined desktop application built with Python and Tkinter for managing employees, suppliers, customers, categories, products, and sales. Ideal for SMBs that need simple, reliable inventory control.",
-    image: "/ims.png",
-    imageapp: "/ims-login.png",
-    features: [
-      "Built with Python for power and clarity.",
-      "Tkinter GUI for a clean, intuitive desktop experience.",
-      "Modular architecture for Employees, Suppliers, Customers, Products, Sales.",
-      "Real-time dashboard metrics for quick oversight.",
-      "Integrated billing for fast transaction processing.",
-      "Easy navigation with reports, logs, sales & purchase history.",
-      "Secure login system with session control.",
-    ],
-    link: "https://github.com/AhsanAli-Soomro/IMS_Project",
-  },
-
-  {
     slug: "dailypulse",
     title: "DailyPulse — by Ahsan Ali Soomro",
     heading: "Your Pulse on News Trends and Thoughtful Insights",
@@ -149,22 +129,42 @@ export const projectsData = [
     link: "https://car-service-iota.vercel.app/",
   },
 
+  // {
+  //   slug: "myvideos",
+  //   title: "MyVideos — by Ahsan Ali Soomro",
+  //   heading: "Your Ultimate Video Watching Platform",
+  //   description:
+  //     "A smooth, high-definition video platform with recommendations, community features, and cross-device support.",
+  //   image: "/myvideosweb.webp",
+  //   imageapp: "/myvideosapp.webp",
+  //   features: [
+  //     "Large library across genres.",
+  //     "Intuitive, modern interface.",
+  //     "Smart personalized recommendations.",
+  //     "High-quality streaming with minimal buffering.",
+  //     "Community engagement: comments, likes, shares.",
+  //     "Works great across devices and screens.",
+  //   ],
+  //   link: "https://my-videos-nine.vercel.app/",
+  // },
+
   {
-    slug: "myvideos",
-    title: "MyVideos — by Ahsan Ali Soomro",
-    heading: "Your Ultimate Video Watching Platform",
+    slug: "inventory-management-system",
+    title: "Inventory Management System — by Ahsan Ali Soomro",
+    heading: "Powerful Inventory Control at Your Fingertips",
     description:
-      "A smooth, high-definition video platform with recommendations, community features, and cross-device support.",
-    image: "/myvideosweb.webp",
-    imageapp: "/myvideosapp.webp",
+      "A streamlined desktop application built with Python and Tkinter for managing employees, suppliers, customers, categories, products, and sales. Ideal for SMBs that need simple, reliable inventory control.",
+    image: "/ims.png",
+    imageapp: "/ims-login.png",
     features: [
-      "Large library across genres.",
-      "Intuitive, modern interface.",
-      "Smart personalized recommendations.",
-      "High-quality streaming with minimal buffering.",
-      "Community engagement: comments, likes, shares.",
-      "Works great across devices and screens.",
+      "Built with Python for power and clarity.",
+      "Tkinter GUI for a clean, intuitive desktop experience.",
+      "Modular architecture for Employees, Suppliers, Customers, Products, Sales.",
+      "Real-time dashboard metrics for quick oversight.",
+      "Integrated billing for fast transaction processing.",
+      "Easy navigation with reports, logs, sales & purchase history.",
+      "Secure login system with session control.",
     ],
-    link: "https://my-videos-nine.vercel.app/",
+    link: "https://github.com/AhsanAli-Soomro/IMS_Project",
   },
 ];
