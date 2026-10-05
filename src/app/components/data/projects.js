@@ -1,4 +1,23 @@
 export const projectsData = [
+  // "game for playstore build with Phaser and React and HTML5 canvas",
+  {
+    slug: "arrow-out",
+    title: "Arrow Out — by Ahsan Ali Soomro",
+    heading: "A Thrilling Arcade Game for Mobile Devices",
+    description:
+      "Arrow Out is a fast-paced arcade game built with Phaser and React, designed for mobile devices. Players navigate through challenging levels, testing their reflexes and strategic thinking.",
+    image: "/arrowoutweb.png",
+    imageapp: "/arrowoutapp.png",
+    privacyPolicy: true,
+    features: [
+      "Built with Phaser for smooth gameplay.",
+      "React integration for responsive UI.",
+      "HTML5 canvas for cross-platform compatibility.",
+      "Multiple levels with increasing difficulty.",
+      "Engaging graphics and sound effects.",
+    ],
+    link: "https://play.google.com/store/apps/details?id=com.ahsstudio.arrowout",
+  },
   {
     slug: "clinic-management-platform",
     title: "Clinic/Doctor/Patient Management Platform — by Ahsan Ali Soomro",

@@ -103,18 +103,25 @@ export default function ProjectDetailPage({ params }) {
         )}
 
         {/* External link */}
-        {project.link && (
-          <div className="detail-action">
+        <div className="detail-action">
+          {project.link && (
             <a
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
               className="button-primary"
             >
-              Visit live project <IconArrowUpRight size={18}/>
+              Visit live project <IconArrowUpRight size={18} />
             </a>
-          </div>
-        )}
+          )}
+
+          <Link
+            href={`/Projects/${project.slug}/privacy-policy`}
+            className="button-primary"
+          >
+            Privacy Policy
+          </Link>
+        </div>
 
         <PrevNext slug={project.slug} />
       </section>
