@@ -58,28 +58,25 @@ export default function ClientPortalPage() {
     setDownloadCounts({});
   };
 
-  const handleDownload = (file) => {
-    if (!loggedInClient) return;
+const handleDownload = (file) => {
+  if (!loggedInClient) return;
 
-    const currentCount = downloadCounts[file.id] || 0;
-    const limit = Number(file.downloadLimit || 1);
+  const currentCount = downloadCounts[file.id] || 0;
+  const limit = Number(file.downloadLimit || 1);
 
-    if (currentCount >= limit) {
-      return;
-    }
+  if (currentCount >= limit) return;
 
-    const newCount = currentCount + 1;
-    const key = getStorageKey(loggedInClient.username, file.id);
+  const key = getStorageKey(loggedInClient.username, file.id);
 
-    localStorage.setItem(key, String(newCount));
+  localStorage.setItem(key, String(currentCount + 1));
 
-    setDownloadCounts((prev) => ({
-      ...prev,
-      [file.id]: newCount,
-    }));
+  setDownloadCounts((prev) => ({
+    ...prev,
+    [file.id]: currentCount + 1,
+  }));
 
-    window.open(file.link, "_blank", "noopener,noreferrer");
-  };
+  window.location.href = file.link;
+};
 
   const handleRequestAccess = (file) => {
     const message = encodeURIComponent(getRequestText(file.name));
