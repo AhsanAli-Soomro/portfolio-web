@@ -7,9 +7,9 @@
             "downloads": [
                 {
                     "id": "habib-setup",
-                    "name": "Habib-Rice-Corporation-Setup.exe",
-                    "link": "https://github.com/AhsanAli-Soomro/IMZ_Zebra_web/releases/download/latest-windows/Habib-Rice-Corporation-Setup.exe",
-                    "downloadLimit": 3
+                    "name": "Habib-Rice-Corporation-Setup-1.0.29.exe",
+                    "link": "https://github.com/AhsanAli-Soomro/IMZ_Zebra_web/releases/download/latest-windows/Habib-Rice-Corporation-Setup-1.0.29.exe",
+                    "downloadLimit": 10
                 }
             ]
         }
