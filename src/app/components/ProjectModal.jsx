@@ -124,7 +124,7 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
               src={project.image}
               width={400}
               height={500}
-              alt={`${project.title} — Laptop view`}
+              alt={`${project.title} — Laptop view of project by Ahsan Ali Soomro`}
               className="rounded object-cover h-60 w-full"
               sizes="(max-width: 768px) 100vw, 400px"
               priority={false}
@@ -139,7 +139,7 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
               src={project.imageapp}
               width={300}
               height={200}
-              alt={`${project.title} — Mobile view`}
+              alt={`${project.title} — Mobile view of project by Ahsan Ali Soomro`}
               className="mb-4 rounded object-cover h-60 w-36"
               sizes="(max-width: 768px) 40vw, 300px"
             />

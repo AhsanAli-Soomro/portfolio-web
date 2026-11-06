@@ -1,0 +1,49 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "ahsanalisoomro.vercel.app"
+        }
+      ],
+      "destination": "https://ahsanalisoomro.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "ahsansoomro.com"
+        }
+      ],
+      "destination": "https://ahsanalisoomro.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.ahsansoomro.com"
+        }
+      ],
+      "destination": "https://ahsanalisoomro.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.ahsanalisoomro.com"
+        }
+      ],
+      "destination": "https://ahsanalisoomro.com/:path*",
+      "permanent": true
+    }
+  ]
+}
+

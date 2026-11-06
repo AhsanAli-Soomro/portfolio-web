@@ -34,7 +34,7 @@ export default function Navbar() {
   return (
     <header className={`nav-wrap ${scrolled ? "nav-scrolled" : ""}`}>
       <nav className="nav-inner" aria-label="Main navigation">
-        <a href="/" className="brand" aria-label="Ahsan home"><span>&lt;</span>ahsan<span>/&gt;</span></a>
+        <a href="/" className="brand" aria-label="Ahsan Ali Soomro Home"><span>&lt;</span>ahsan<span>/&gt;</span></a>
         <div className="nav-links">
           {links.map(([name, href]) => (
             <a key={href} href={href} className={activeLink === href ? "active" : ""}>{name}</a>

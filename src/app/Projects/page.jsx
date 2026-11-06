@@ -1,39 +1,64 @@
-import Script from "next/script";
 import Projects from "../components/Projects";
+import { SITE_URL, siteConfig } from "@/config/site";
 
-
-const siteUrl = "https://ahsanalisoomro.vercel.app";
-const pageUrl = `${siteUrl}/projects`;
+const pageUrl = `${SITE_URL}/Projects`;
 
 export const metadata = {
-  title: "Projects — Ahsan Ali Soomro",
-  description: "Selected projects by Ahsan Ali Soomro — Front-End Developer specializing in Next.js, React, and Tailwind CSS.",
+  title: "Projects | Ahsan Ali Soomro (Ahsan Soomro)",
+  description:
+    "Explore web applications and software systems built by Ahsan Ali Soomro (Ahsan Soomro) using Next.js, React, Node.js, TypeScript, and modern web architecture.",
   alternates: { canonical: pageUrl },
   openGraph: {
     type: "website",
     url: pageUrl,
-    title: "Projects — Ahsan Ali Soomro",
-    siteName: "Ahsan Ali Soomro",
-    description: "Showcase of Front-End projects built with Next.js, React, and Tailwind CSS.",
-    images: [{ url: "/og-cover.png", width: 1200, height: 630, alt: "Projects by Ahsan Ali Soomro" }],
+    title: "Projects by Ahsan Ali Soomro (Ahsan Soomro)",
+    siteName: siteConfig.name,
+    description:
+      "Showcase of Full Stack and frontend projects built with Next.js, React, Node.js, and TypeScript.",
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Projects by Ahsan Ali Soomro (Ahsan Soomro)",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Projects — Ahsan Ali Soomro",
-    description: "A portfolio of Front-End work using Next.js, React, and Tailwind CSS.",
-    images: ["/og-cover.png"],
+    title: "Projects by Ahsan Ali Soomro (Ahsan Soomro)",
+    description:
+      "A portfolio of web applications and interfaces engineered by Ahsan Ali Soomro.",
+    images: [siteConfig.ogImage],
   },
   robots: { index: true, follow: true },
 };
 
 export default function ProjectsListPage() {
-  // optional: keep your JSON-LD builder here if you like
-  const jsonLd = { "@context": "https://schema.org", "@type": "WebPage", url: pageUrl, name: "Projects — Ahsan Ali Soomro" };
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${pageUrl}#webpage`,
+    url: pageUrl,
+    name: "Projects by Ahsan Ali Soomro (Ahsan Soomro)",
+    description:
+      "Portfolio of projects and web applications engineered by Ahsan Ali Soomro.",
+    isPartOf: { "@id": `${SITE_URL}#website` },
+    author: {
+      "@type": "Person",
+      "@id": `${SITE_URL}#person`,
+      name: siteConfig.name,
+      alternateName: [siteConfig.alternateName],
+    },
+  };
 
   return (
     <>
-      <Script id="ld-projects" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <h1 className="sr-only">Projects — Ahsan Ali Soomro</h1>
+      <script
+        id="ld-projects"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Projects />
     </>
   );

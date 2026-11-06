@@ -1,27 +1,26 @@
-import Script from "next/script";
 import Resume from "../components/Resume";
+import { SITE_URL, siteConfig } from "@/config/site";
 
-const siteUrl = "https://ahsanalisoomro.vercel.app";
-const pageUrl = `${siteUrl}/Resume`;
+const pageUrl = `${SITE_URL}/Resume`;
 
 export const metadata = {
-  title: "Resume — Ahsan Ali Soomro",
+  title: "Résumé | Ahsan Ali Soomro (Ahsan Soomro)",
   description:
-    "Resume of Ahsan Ali Soomro — Front-End Developer & UI Engineer specializing in Next.js, React, and Tailwind CSS. Experience, skills, and contact details.",
+    "Explore the resume of Ahsan Ali Soomro (Ahsan Soomro) — Full Stack Developer & UI Engineer with 4+ years of experience building Next.js and React products.",
   alternates: { canonical: pageUrl },
   openGraph: {
     type: "profile",
     url: pageUrl,
-    title: "Resume — Ahsan Ali Soomro",
-    siteName: "Ahsan Ali Soomro",
+    title: "Résumé — Ahsan Ali Soomro (Ahsan Soomro)",
+    siteName: siteConfig.name,
     description:
-      "Front-End Developer focused on Next.js, React, Tailwind CSS, accessibility and performance.",
+      "Full Stack Developer specializing in Next.js, React, Node.js, and TypeScript. Experience, skills, and education.",
     images: [
       {
-        url: "/og-cover.png", // put a 1200x630 image in /public
+        url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: "Ahsan Ali Soomro — Front-End Developer",
+        alt: "Ahsan Ali Soomro (Ahsan Soomro) — Résumé",
       },
     ],
     firstName: "Ahsan",
@@ -29,37 +28,15 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Resume — Ahsan Ali Soomro",
+    title: "Résumé — Ahsan Ali Soomro (Ahsan Soomro)",
     description:
-      "Experience, projects, and skills of Front-End Developer Ahsan Ali Soomro.",
-    images: ["/og-cover.png"],
+      "Experience, projects, and skills of Full Stack Developer Ahsan Ali Soomro.",
+    images: [siteConfig.ogImage],
   },
   robots: { index: true, follow: true },
 };
 
 export default function ResumePage() {
-  // Public profiles / contact
-  const sameAs = [
-    "https://www.linkedin.com/in/ahsanali-soomro",
-    "https://github.com/AhsanAli-Soomro",
-    "https://twitter.com/AhsanAli3860",
-    "https://www.facebook.com/ahsanali.king.92",
-    "https://www.instagram.com/soomroahsan_ali/",
-    "mailto:ahsanalisoomro147@gmail.com",
-  ];
-
-  // Skills for schema (adjust freely)
-  const skills = [
-    "Next.js",
-    "React",
-    "Tailwind CSS",
-    "TypeScript",
-    "JavaScript",
-    "UI Engineering",
-    "Accessibility",
-    "Performance Optimization",
-  ];
-
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -67,44 +44,19 @@ export default function ResumePage() {
         "@type": "WebPage",
         "@id": `${pageUrl}#webpage`,
         url: pageUrl,
-        name: "Resume — Ahsan Ali Soomro",
+        name: "Résumé | Ahsan Ali Soomro (Ahsan Soomro)",
         description:
-          "Resume/CV of Front-End Developer Ahsan Ali Soomro — experience, projects, skills, and contact.",
-        isPartOf: { "@id": `${siteUrl}#website` },
+          "Resume/CV of Full Stack Developer Ahsan Ali Soomro — experience, projects, skills, and contact.",
+        isPartOf: { "@id": `${SITE_URL}#website` },
         breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
-        about: { "@id": `${siteUrl}#person` },
+        about: { "@id": `${SITE_URL}#person` },
       },
       {
         "@type": "BreadcrumbList",
         "@id": `${pageUrl}#breadcrumb`,
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
           { "@type": "ListItem", position: 2, name: "Resume", item: pageUrl },
-        ],
-      },
-      {
-        "@type": "WebSite",
-        "@id": `${siteUrl}#website`,
-        url: siteUrl,
-        name: "Ahsan Ali Soomro",
-        inLanguage: "en",
-      },
-      {
-        "@type": "Person",
-        "@id": `${siteUrl}#person`,
-        name: "Ahsan Ali Soomro",
-        url: siteUrl,
-        jobTitle: "Front-End Developer",
-        image: `${siteUrl}/ahsana.png`,
-        sameAs,
-        email: "mailto:ahsanalisoomro147@gmail.com",
-        knowsAbout: skills,
-        contactPoint: [
-          {
-            "@type": "ContactPoint",
-            contactType: "work",
-            email: "mailto:ahsanalisoomro147@gmail.com",
-          },
         ],
       },
     ],
@@ -112,17 +64,11 @@ export default function ResumePage() {
 
   return (
     <>
-      {/* Structured data for rich results */}
-      <Script
+      <script
         id="ld-resume"
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-
-      {/* Hidden H1 ensures the keyword is always present */}
-      <h1 className="sr-only">Resume — Ahsan Ali Soomro</h1>
-
       <Resume />
     </>
   );

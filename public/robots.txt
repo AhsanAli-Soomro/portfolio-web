@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /client-portal/
+Disallow: /Text
+
+Sitemap: https://ahsanalisoomro.com/sitemap.xml
+

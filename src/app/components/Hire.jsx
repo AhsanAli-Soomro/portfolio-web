@@ -39,11 +39,23 @@ export default function Hire() {
   return (
     <main className="inner-page hire-page">
       <div className="page-container hire-layout">
-        <section className="hire-copy">
+        <section className="hire-copy" aria-labelledby="hire-heading">
           <span className="section-index hero-animate">Contact / Start a project</span>
-          <h1 className="page-title hero-animate">Let&apos;s create something<br /><em>worth remembering.</em></h1>
-          <p className="page-lead hero-animate">Share what you&apos;re building, where you are in the process and what success looks like. I&apos;ll reply with clear next steps.</p>
-          <div className="contact-details hero-animate"><a href="mailto:ahsanalisoomro147@gmail.com"><IconMail /> <span><small>Email me</small>ahsanalisoomro147@gmail.com</span></a><div><IconClock /><span><small>Response time</small>Usually within 24 hours</span></div><div><IconWorld /><span><small>Based in</small>Pakistan · Working worldwide</span></div></div>
+          <h1 id="hire-heading" className="page-title hero-animate">Hire Ahsan Ali Soomro<br /><em>(Ahsan Soomro)</em></h1>
+          <p className="page-lead hero-animate">
+            Ahsan Ali Soomro is a Full Stack Developer & UI Engineer based in Hyderabad, Pakistan. Share what you&apos;re building, where you are in the process, and what success looks like. I&apos;ll reply within 24 hours.
+          </p>
+          <div className="contact-details hero-animate">
+            <a href="mailto:ahsanalisoomro147@gmail.com">
+              <IconMail /> <span><small>Email me</small>ahsanalisoomro147@gmail.com</span>
+            </a>
+            <div>
+              <IconClock /><span><small>Response time</small>Usually within 24 hours</span>
+            </div>
+            <div>
+              <IconWorld /><span><small>Based in</small>Hyderabad, Pakistan · Worldwide</span>
+            </div>
+          </div>
         </section>
         <section className="contact-form-card hero-animate">
           <div className="form-header"><span>Project enquiry</span><i /></div>

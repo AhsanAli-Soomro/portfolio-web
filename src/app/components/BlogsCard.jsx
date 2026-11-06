@@ -14,7 +14,7 @@ const BlogsCard = ({ blog, onClick }) => {
                     src={blog.image}
                     width={400}
                     height={300}
-                    alt={blog.title}
+                    alt={`${blog.title} — Tech article by Ahsan Ali Soomro`}
                     className="absolute inset-0 h-full w-full object-cover rounded-2xl"
                 />
                 {/* Gradient Overlay */}

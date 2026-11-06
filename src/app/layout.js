@@ -4,21 +4,20 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { BlogProvider } from "../context/BlogContext";
 import Script from "next/script";
+import { SITE_URL, siteConfig } from "@/config/site";
 
-const inter = Inter({ subsets: ["latin"] });
-
-const siteUrl = "https://ahsanalisoomro.vercel.app";
-const personId = `${siteUrl}#person`;
+const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Ahsan Ali Soomro — Front-End Developer & UI Engineer",
-    template: "%s | Ahsan Ali Soomro",
+    default: siteConfig.defaultTitle,
+    template: siteConfig.titleTemplate,
   },
-  description:
-    "Portfolio of Ahsan Ali Soomro — Front-End Developer specializing in Next.js, React, and Tailwind CSS. Explore projects, blogs, resume, and hire me.",
-  alternates: { canonical: siteUrl },
+  description: siteConfig.description,
+  alternates: {
+    canonical: SITE_URL,
+  },
   robots: {
     index: true,
     follow: true,
@@ -32,78 +31,87 @@ export const metadata = {
   },
   openGraph: {
     type: "website",
-    url: siteUrl,
-    title: "Ahsan Ali Soomro — Portfolio",
-    siteName: "Ahsan Ali Soomro",
-    description:
-      "Front-End Developer (Next.js, React, Tailwind). Projects, blogs, resume, and contact.",
+    locale: "en_US",
+    url: SITE_URL,
+    title: siteConfig.defaultTitle,
+    siteName: siteConfig.name,
+    description: siteConfig.description,
     images: [
       {
-        url: "/og-cover.png", // ensure this exists in /public
+        url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: "Ahsan Ali Soomro — Front-End Developer",
+        alt: `${siteConfig.name} (${siteConfig.alternateName}) - ${siteConfig.role}`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ahsan Ali Soomro — Front-End Developer",
-    description:
-      "Next.js, React, Tailwind CSS. Portfolio, projects, blogs, and resume.",
-    images: ["/og-cover.png"],
+    title: siteConfig.defaultTitle,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+    creator: "@AhsanAli3860",
   },
   icons: {
-    icon: "/favicon.ico", // replaces your previous 'icon' field
+    icon: "/favicon.ico",
+  },
+  verification: {
+    google: siteConfig.googleSiteVerification,
   },
 };
 
 export default function RootLayout({ children }) {
-  // Centralized social profiles (reusable across pages)
-  const sameAs = [
-    "https://www.linkedin.com/in/ahsanali-soomro",
-    "https://github.com/AhsanAli-Soomro",
-    "https://twitter.com/AhsanAli3860",
-    "https://www.facebook.com/ahsanali.king.92",
-    "https://www.instagram.com/soomroahsan_ali/",
-  ];
+  const personId = `${SITE_URL}#person`;
+  const websiteId = `${SITE_URL}#website`;
 
   const ldJson = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": `${siteUrl}#website`,
-        url: siteUrl,
-        name: "Ahsan Ali Soomro",
+        "@id": websiteId,
+        url: SITE_URL,
+        name: `${siteConfig.name} (${siteConfig.alternateName})`,
+        alternateName: [siteConfig.name, siteConfig.alternateName, `${siteConfig.alternateName} Portfolio`],
+        description: siteConfig.description,
         inLanguage: "en",
+        publisher: {
+          "@id": personId,
+        },
       },
       {
         "@type": "Person",
         "@id": personId,
-        name: "Ahsan Ali Soomro",
-        url: siteUrl,
-        jobTitle: "Front-End Developer",
-        image: `${siteUrl}/ahsan.png`, // make sure this file exists
-        sameAs,
-        email: "mailto:ahsanalisoomro147@gmail.com", // email goes here, not in sameAs
+        name: siteConfig.name,
+        alternateName: [siteConfig.alternateName],
+        url: SITE_URL,
+        image: siteConfig.ogImage,
+        jobTitle: siteConfig.role,
+        knowsAbout: siteConfig.skills,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: siteConfig.location.city,
+          addressCountry: siteConfig.location.country,
+        },
+        sameAs: siteConfig.sameAs,
+        email: `mailto:${siteConfig.email}`,
       },
     ],
   };
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body className={inter.className}>
+        {/* Person and WebSite JSON-LD Structured Data */}
+        <script
+          id="ld-root-identity"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ldJson) }}
+        />
+
         <Script id="theme-init" strategy="beforeInteractive">
           {`try{var t=localStorage.getItem('portfolio-theme');document.documentElement.dataset.theme=t||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}`}
         </Script>
-        {/* Root-level structured data (declared once) */}
-        <Script
-          id="ld-root"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(ldJson) }}
-        />
 
         <BlogProvider>
           <Navbar />

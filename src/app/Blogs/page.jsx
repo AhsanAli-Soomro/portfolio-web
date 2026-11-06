@@ -1,98 +1,88 @@
-import Script from "next/script";
 import BlogsPage from "../components/BlogsPage";
+import { blogsData } from "../components/data/blogs";
+import { SITE_URL, siteConfig } from "@/config/site";
 
-
-const siteUrl = "https://ahsanalisoomro.vercel.app";
-const pageUrl = `${siteUrl}/Blogs`;
+const pageUrl = `${SITE_URL}/Blogs`;
 
 export const metadata = {
-  title: "Blogs — Ahsan Ali Soomro",
+  title: "Blogs & Articles | Ahsan Ali Soomro (Ahsan Soomro)",
   description:
-    "Explore blogs by Ahsan Ali Soomro — covering web development, Next.js, React, Tailwind CSS, and technology insights.",
+    "Explore web development and engineering articles by Ahsan Ali Soomro (Ahsan Soomro) covering Next.js, React, TypeScript, and modern frontend tools.",
   alternates: { canonical: pageUrl },
   openGraph: {
     type: "website",
     url: pageUrl,
-    title: "Blogs — Ahsan Ali Soomro",
-    siteName: "Ahsan Ali Soomro",
+    title: "Blogs & Articles by Ahsan Ali Soomro (Ahsan Soomro)",
+    siteName: siteConfig.name,
     description:
-      "Insights and articles on web development, Next.js, React, Tailwind CSS, and modern front-end practices.",
+      "Insights and articles on web development, Next.js, React, TypeScript, and modern engineering practices.",
     images: [
       {
-        url: "/og-cover.png",
+        url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: "Blogs by Ahsan Ali Soomro",
+        alt: "Blogs by Ahsan Ali Soomro (Ahsan Soomro)",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blogs — Ahsan Ali Soomro",
+    title: "Blogs by Ahsan Ali Soomro (Ahsan Soomro)",
     description:
-      "Latest blogs and tutorials on Next.js, React, Tailwind CSS, and modern front-end development.",
-    images: ["/og-cover.png"],
+      "Latest articles and tutorials on Next.js, React, TypeScript, and modern web development.",
+    images: [siteConfig.ogImage],
   },
   robots: { index: true, follow: true },
 };
 
 export default function BlogsListPage() {
-  // Example blog list for structured data (replace with real posts from your BlogsPage)
-  const blogs = [
-    {
-      title: "Building Scalable Apps with Next.js",
-      url: `${pageUrl}/nextjs-scalable-apps`,
-      description:
-        "A practical guide on scaling applications using Next.js features like ISR, SSR, and API routes.",
-      datePublished: "2025-06-01",
-    },
-    {
-      title: "Why Tailwind CSS Speeds Up Front-End Development",
-      url: `${pageUrl}/tailwind-speed`,
-      description:
-        "Exploring how Tailwind CSS simplifies styling, promotes consistency, and speeds up prototyping.",
-      datePublished: "2025-06-10",
-    },
-  ];
-
   const jsonLd = {
-    
-    "@context": "https://schema.org", "@type": "Blog", url: pageUrl, name: "Blogs — Ahsan Ali Soomro",
+    "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "WebPage",
         "@id": `${pageUrl}#webpage`,
         url: pageUrl,
-        name: "Blogs — Ahsan Ali Soomro",
+        name: "Blogs & Articles by Ahsan Ali Soomro (Ahsan Soomro)",
         description:
-          "Blogs and insights by Ahsan Ali Soomro on web development, React, Next.js, Tailwind CSS, and modern UI/UX practices.",
-        isPartOf: { "@id": `${siteUrl}#website` },
+          "Blogs and technical insights by Ahsan Ali Soomro on Next.js, React, TypeScript, and software engineering.",
+        isPartOf: { "@id": `${SITE_URL}#website` },
         breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
       },
       {
         "@type": "BreadcrumbList",
         "@id": `${pageUrl}#breadcrumb`,
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
           { "@type": "ListItem", position: 2, name: "Blogs", item: pageUrl },
         ],
       },
       {
         "@type": "Blog",
         "@id": `${pageUrl}#blog`,
-        name: "Ahsan Ali Soomro — Blogs",
+        name: "Ahsan Ali Soomro (Ahsan Soomro) — Articles & Insights",
         url: pageUrl,
         description:
-          "Technical blogs and tutorials by Ahsan Ali Soomro on Next.js, React, Tailwind CSS, and front-end development.",
-        blogPost: blogs.map((b) => ({
+          "Technical articles and tutorials by Ahsan Ali Soomro on Next.js, React, TypeScript, and modern web engineering.",
+        author: {
+          "@type": "Person",
+          "@id": `${SITE_URL}#person`,
+          name: siteConfig.name,
+          alternateName: [siteConfig.alternateName],
+          url: SITE_URL,
+        },
+        blogPost: blogsData.map((b) => ({
           "@type": "BlogPosting",
           headline: b.title,
-          url: b.url,
+          url: `${SITE_URL}/Blogs/${b.slug}`,
           description: b.description,
+          image: b.image ? `${SITE_URL}${b.image}` : siteConfig.ogImage,
           author: {
             "@type": "Person",
-            name: "Ahsan Ali Soomro",
-            url: siteUrl,
+            "@id": `${SITE_URL}#person`,
+            name: siteConfig.name,
+            alternateName: [siteConfig.alternateName],
+            url: SITE_URL,
           },
           datePublished: b.datePublished,
         })),
@@ -102,9 +92,11 @@ export default function BlogsListPage() {
 
   return (
     <>
-      <Script id="ld-blogs" type="application/ld+json" strategy="afterInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <h1 className="sr-only">Blogs — Ahsan Ali Soomro</h1>
+      <script
+        id="ld-blogs"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <BlogsPage />
     </>
   );

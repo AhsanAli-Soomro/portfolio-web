@@ -14,7 +14,7 @@ const ProjectCard = ({ project, onClick }) => {
                     src={project.image}
                     width={400}
                     height={300}
-                    alt={project.title}
+                    alt={`${project.title} — Web project by Ahsan Ali Soomro`}
                     className="absolute inset-0 h-full w-full object-cover rounded-2xl"
                 />
                 {/* Gradient Overlay */}

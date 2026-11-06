@@ -1,62 +1,52 @@
-import Script from "next/script";
 import Hire from "../components/Hire";
+import { SITE_URL, siteConfig } from "@/config/site";
 
-const siteUrl = "https://ahsanalisoomro.vercel.app";
-const pageUrl = `${siteUrl}/Hire`;
+const pageUrl = `${SITE_URL}/Hire`;
 
 export const metadata = {
-  title: "Hire — Ahsan Ali Soomro",
+  title: "Hire | Ahsan Ali Soomro (Ahsan Soomro)",
   description:
-    "Hire Ahsan Ali Soomro — Front-End Developer & UI Engineer specializing in Next.js, React, and Tailwind CSS. Get fast, accessible, and high-quality web apps.",
+    "Hire Ahsan Ali Soomro (Ahsan Soomro) — Full Stack Developer & UI Engineer specializing in Next.js, React, Node.js, and TypeScript. Fast, reliable web development.",
   alternates: { canonical: pageUrl },
   openGraph: {
     type: "website",
     url: pageUrl,
-    title: "Hire — Ahsan Ali Soomro",
-    siteName: "Ahsan Ali Soomro",
+    title: "Hire Ahsan Ali Soomro (Ahsan Soomro) | Full Stack Developer",
+    siteName: siteConfig.name,
     description:
-      "Work with a Front-End Developer focused on performance, accessibility, and modern UX using Next.js, React, and Tailwind CSS.",
+      "Work with Full Stack Developer Ahsan Ali Soomro for modern, accessible web products built with Next.js, React, and TypeScript.",
     images: [
       {
-        url: "/og-cover.png", // place a 1200x630 image in /public
+        url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: "Hire Ahsan Ali Soomro — Front-End Developer",
+        alt: "Hire Ahsan Ali Soomro (Ahsan Soomro) — Full Stack Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hire — Ahsan Ali Soomro",
+    title: "Hire Ahsan Ali Soomro (Ahsan Soomro)",
     description:
-      "Front-End Developer (Next.js, React, Tailwind). Let’s build something great together.",
-    images: ["/og-cover.png"],
+      "Full Stack Developer (Next.js, React, Node.js, TypeScript). Let's collaborate.",
+    images: [siteConfig.ogImage],
   },
   robots: { index: true, follow: true },
 };
 
 export default function HirePage() {
-  const sameAs = [
-    "https://www.linkedin.com/in/ahsanali-soomro",
-    "https://github.com/AhsanAli-Soomro",
-    "https://twitter.com/AhsanAli3860",
-    "https://www.facebook.com/ahsanali.king.92",
-    "https://www.instagram.com/soomroahsan_ali/",
-    "mailto:ahsanalisoomro147@gmail.com",
-  ];
-
   const faqs = [
     {
-      q: "What technologies do you use?",
-      a: "I specialize in Next.js, React, Tailwind CSS, and TypeScript, with a focus on accessibility and performance.",
+      q: "What technical services does Ahsan Ali Soomro provide?",
+      a: "Ahsan specializes in Full Stack development, Next.js / React application architecture, custom UI component systems, API integrations, and performance optimization.",
     },
     {
-      q: "Are you available for freelance or contract work?",
-      a: "Yes. I take on freelance and short/long-term contracts. Share your scope and timeline on this page.",
+      q: "Is Ahsan available for remote work?",
+      a: "Yes, Ahsan is based in Hyderabad, Pakistan, and works with clients and companies worldwide across different time zones.",
     },
     {
-      q: "How can I contact you?",
-      a: "Email me at ahsanalisoomro147@gmail.com or message me on LinkedIn.",
+      q: "How quickly can I expect a response?",
+      a: "Ahsan typically responds to new project enquiries within 24 hours.",
     },
   ];
 
@@ -67,54 +57,29 @@ export default function HirePage() {
         "@type": ["WebPage", "ContactPage"],
         "@id": `${pageUrl}#webpage`,
         url: pageUrl,
-        name: "Hire — Ahsan Ali Soomro",
+        name: "Hire Ahsan Ali Soomro (Ahsan Soomro)",
         description:
-          "Hire Front-End Developer Ahsan Ali Soomro for Next.js/React projects focused on speed, accessibility, and clean UI.",
-        isPartOf: { "@id": `${siteUrl}#website` },
+          "Hire Full Stack Developer Ahsan Ali Soomro for Next.js, React, and TypeScript projects.",
+        isPartOf: { "@id": `${SITE_URL}#website` },
         breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
-        about: { "@id": `${siteUrl}#person` },
+        about: { "@id": `${SITE_URL}#person` },
       },
       {
         "@type": "BreadcrumbList",
         "@id": `${pageUrl}#breadcrumb`,
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
           { "@type": "ListItem", position: 2, name: "Hire", item: pageUrl },
         ],
       },
       {
-        "@type": "WebSite",
-        "@id": `${siteUrl}#website`,
-        url: siteUrl,
-        name: "Ahsan Ali Soomro",
-        inLanguage: "en",
-      },
-      {
-        "@type": "Person",
-        "@id": `${siteUrl}#person`,
-        name: "Ahsan Ali Soomro",
-        url: siteUrl,
-        jobTitle: "Front-End Developer",
-        image: `${siteUrl}/ahsana.png`,
-        sameAs,
-        contactPoint: [
-          {
-            "@type": "ContactPoint",
-            contactType: "work",
-            email: "mailto:ahsanalisoomro147@gmail.com",
-            areaServed: "Worldwide",
-            availableLanguage: ["en"],
-          },
-        ],
-      },
-      {
         "@type": "Service",
-        name: "Front-End Development & UI Engineering",
-        serviceType: "Web development",
+        name: "Full Stack Development & UI Engineering",
+        serviceType: "Web Development",
         areaServed: "Worldwide",
-        provider: { "@id": `${siteUrl}#person` },
+        provider: { "@id": `${SITE_URL}#person` },
         description:
-          "Next.js/React development, performance optimization, accessibility, and component-driven UI with Tailwind CSS.",
+          "Full Stack web engineering with Next.js, React, Node.js, TypeScript, and modern database architecture.",
         availableChannel: {
           "@type": "ServiceChannel",
           serviceUrl: pageUrl,
@@ -133,17 +98,11 @@ export default function HirePage() {
 
   return (
     <>
-      {/* Structured data for rich results */}
-      <Script
+      <script
         id="ld-hire"
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-
-      {/* Hidden H1 (keeps your design clean, boosts keyword presence) */}
-      <h1 className="sr-only">Hire Ahsan Ali Soomro — Front-End Developer</h1>
-
       <Hire />
     </>
   );
