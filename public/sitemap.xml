@@ -1,130 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ahsanalisoomro.com</loc>
+    <loc>https://ahsanalisoomro.vercel.app</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ahsanalisoomro.com/About</loc>
+    <loc>https://ahsanalisoomro.vercel.app/About</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ahsanalisoomro.com/Projects</loc>
+    <loc>https://ahsanalisoomro.vercel.app/Projects</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ahsanalisoomro.com/Blogs</loc>
+    <loc>https://ahsanalisoomro.vercel.app/Blogs</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ahsanalisoomro.com/Resume</loc>
+    <loc>https://ahsanalisoomro.vercel.app/Resume</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ahsanalisoomro.com/Hire</loc>
+    <loc>https://ahsanalisoomro.vercel.app/Hire</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ahsanalisoomro.com/Projects/arrow-out</loc>
+    <loc>https://ahsanalisoomro.vercel.app/Projects/arrow-out</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ahsanalisoomro.com/Projects/clinic-management-platform</loc>
+    <loc>https://ahsanalisoomro.vercel.app/Projects/clinic-management-platform</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ahsanalisoomro.com/Projects/dailypulse</loc>
+    <loc>https://ahsanalisoomro.vercel.app/Projects/dailypulse</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ahsanalisoomro.com/Projects/royalhunt</loc>
+    <loc>https://ahsanalisoomro.vercel.app/Projects/royalhunt</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ahsanalisoomro.com/Projects/imagartify</loc>
+    <loc>https://ahsanalisoomro.vercel.app/Projects/imagartify</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ahsanalisoomro.com/Projects/hireside-clone</loc>
+    <loc>https://ahsanalisoomro.vercel.app/Projects/hireside-clone</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ahsanalisoomro.com/Projects/eventify</loc>
+    <loc>https://ahsanalisoomro.vercel.app/Projects/eventify</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ahsanalisoomro.com/Projects/autocare-pro</loc>
+    <loc>https://ahsanalisoomro.vercel.app/Projects/autocare-pro</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ahsanalisoomro.com/Projects/inventory-management-system</loc>
+    <loc>https://ahsanalisoomro.vercel.app/Projects/inventory-management-system</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ahsanalisoomro.com/Blogs/figma-ai-fusion</loc>
+    <loc>https://ahsanalisoomro.vercel.app/Blogs/figma-ai-fusion</loc>
     <lastmod>2025-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ahsanalisoomro.com/Blogs/notion-ai-nexus</loc>
+    <loc>https://ahsanalisoomro.vercel.app/Blogs/notion-ai-nexus</loc>
     <lastmod>2025-07-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ahsanalisoomro.com/Blogs/copilot-codecraft</loc>
+    <loc>https://ahsanalisoomro.vercel.app/Blogs/copilot-codecraft</loc>
     <lastmod>2025-07-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ahsanalisoomro.com/Blogs/astro-ascendancy</loc>
+    <loc>https://ahsanalisoomro.vercel.app/Blogs/astro-ascendancy</loc>
     <lastmod>2025-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ahsanalisoomro.com/Blogs/nextjs-nirvana</loc>
+    <loc>https://ahsanalisoomro.vercel.app/Blogs/nextjs-nirvana</loc>
     <lastmod>2025-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ahsanalisoomro.com/Blogs/reactjs-revolution</loc>
+    <loc>https://ahsanalisoomro.vercel.app/Blogs/reactjs-revolution</loc>
     <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 </urlset>
-

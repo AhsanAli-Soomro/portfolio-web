@@ -4,7 +4,7 @@
  * Update SITE_URL here to update canonical URLs, sitemaps, Open Graph, 
  * Twitter cards, and JSON-LD structured data site-wide.
  */
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://ahsanalisoomro.com";
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://ahsanalisoomro.vercel.app";
 
 export const siteConfig = {
   name: "Ahsan Ali Soomro",
