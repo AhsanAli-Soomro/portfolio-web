@@ -24,18 +24,36 @@ export async function generateMetadata({ params }) {
   const description =
     project.description?.slice(0, 160) ||
     "Project case study engineered by Full Stack Developer Ahsan Ali Soomro.";
-  const imageUrl = project.image ? `${SITE_URL}${project.image}` : siteConfig.ogImage;
+  const ogPath = project.ogImage || project.image;
+  const imageUrl = ogPath ? `${SITE_URL}${ogPath}` : siteConfig.ogImage;
+  const imageWidth = project.ogWidth || 1200;
+  const imageHeight = project.ogHeight || 630;
+  const imageType = ogPath?.endsWith(".png")
+    ? "image/png"
+    : ogPath?.endsWith(".webp")
+    ? "image/webp"
+    : "image/jpeg";
 
   return {
     title,
     description,
     alternates: { canonical: pageUrl },
     openGraph: {
-      type: "article",
+      type: "website",
       url: pageUrl,
       title,
+      siteName: siteConfig.name,
       description,
-      images: [{ url: imageUrl, width: 1200, height: 630, alt: `${project.title} by Ahsan Ali Soomro` }],
+      images: [
+        {
+          url: imageUrl,
+          secureUrl: imageUrl,
+          width: imageWidth,
+          height: imageHeight,
+          type: imageType,
+          alt: `${project.title} by Ahsan Ali Soomro`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",

@@ -15,6 +15,9 @@ export const projectsData = [
     description:
       "A visceral 3D first-person zombie survival shooter set in a dark jungle environment, featuring an 8-weapon tactical arsenal, real-time mesh dismemberment, procedural combat feedback, and wave-based survival mechanics.",
     image: "/screenshots/zombie-jungle-survival.jpeg",
+    ogImage: "/screenshots/zombie-jungle-survival-og.jpg",
+    ogWidth: 1200,
+    ogHeight: 669,
     mediaLabel: "Unity 6 (URP) · In-Game Capture · 60 FPS Mobile/Desktop",
     features: [
       "Engineered a modular 8-Weapon Tactical Arsenal (Dual Pistols, Pump Shotgun, M4A1, FAMAS, G36C, SCAR-H, AK-47, and Scoped Marksman DMR) with dynamic attachment mounting (optics, suppressors, foregrips, tactical lasers), custom recoil curves, and wave-based progression.",
