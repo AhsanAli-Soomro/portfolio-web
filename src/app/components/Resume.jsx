@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { IconBrandGithub, IconBrandLinkedin, IconDownload, IconMail, IconMapPin, IconPhone } from "@tabler/icons-react";
+import Link from "next/link";
+import { IconArrowUpRight, IconBrandGithub, IconBrandLinkedin, IconDownload, IconMail, IconMapPin, IconPhone } from "@tabler/icons-react";
 import Reveal from "./Reveal";
 import { siteConfig } from "@/config/site";
 
@@ -51,6 +52,20 @@ const experience = [
   },
 ];
 
+const featuredProjects = [
+  {
+    title: "Zombie Jungle Survival — 3D Tactical FPS",
+    subtitle: "Solo Game Developer & Gameplay Programmer · Unity 6 (URP), C#",
+    href: "/Projects/zombie-jungle-survival",
+    points: [
+      "Engineered a modular 8-weapon tactical arsenal (Dual Pistols, Pump Shotgun, M4A1, FAMAS, G36C, SCAR-H, AK-47, and Scoped Marksman DMR) with dynamic attachment mounting (optics, suppressors, foregrips, tactical lasers), custom recoil curves, and wave-based progression.",
+      "Built a real-time skinned-mesh dismemberment system in C# using runtime BakeMesh vertex and bone-weight extraction to detach and physically simulate severed limbs and heads on impact.",
+      "Designed procedural combat and horror feedback systems, including custom 3D starburst muzzle flash meshes, directional camera hit-shake/death collapse animations, dynamic BPM low-health heartbeat audio synthesis, and 3D spatial soundscapes.",
+      "Developed ergonomic mobile FPS touch HUD & controls (virtual thumb joystick, auto-fire toggle, ADS scope zoom, and responsive UI scaling) optimized for smooth 60 FPS performance in Unity 6 URP.",
+    ],
+  },
+];
+
 const skills = [
   "Next.js",
   "React.js",
@@ -62,6 +77,8 @@ const skills = [
   "REST APIs",
   "Git & GitHub",
   "PostgreSQL / MySQL",
+  "Unity 6 (URP)",
+  "C#",
   "UI/UX Systems",
   "Accessibility (a11y)",
   "Performance Optimization",
@@ -165,7 +182,37 @@ export default function Resume() {
           </div>
 
           <Reveal className="education-block">
-            <span className="section-index">02 / Education</span>
+            <span className="section-index">02 / Projects</span>
+            <h2 className="resume-section-title">Featured engineering.</h2>
+            <div className="timeline">
+              {featuredProjects.map((proj, i) => (
+                <Reveal as="article" className="timeline-item" delay={i * 100} key={proj.title}>
+                  <span className="timeline-dot" />
+                  <div className="timeline-top">
+                    <div>
+                      <h3>{proj.title}</h3>
+                      <p>{proj.subtitle}</p>
+                    </div>
+                    <Link
+                      href={proj.href}
+                      className="text-link"
+                      style={{ fontSize: "12px", whiteSpace: "nowrap", height: "fit-content" }}
+                    >
+                      View case study <IconArrowUpRight size={15} />
+                    </Link>
+                  </div>
+                  <ul>
+                    {proj.points.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                </Reveal>
+              ))}
+            </div>
+          </Reveal>
+
+          <Reveal className="education-block">
+            <span className="section-index">03 / Education</span>
             <h2 className="resume-section-title">Learning foundation.</h2>
             <div className="education-card">
               <div>

@@ -49,6 +49,8 @@ export const siteConfig = {
     "PostgreSQL",
     "MySQL",
     "AWS",
+    "Unity 6 (URP)",
+    "C#",
   ],
 
   // Social & Developer Profiles
