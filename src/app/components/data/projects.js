@@ -1,4 +1,34 @@
 export const projectsData = [
+  {
+    slug: "zombie-jungle-survival",
+    title: "Zombie Jungle Survival — 3D Tactical FPS",
+    heading: "Zombie Jungle Survival — 3D Tactical FPS",
+    role: "Solo Game Developer & Gameplay Programmer",
+    techStack: [
+      "Unity 6 (URP)",
+      "C#",
+      "3D Spatial Audio",
+      "Procedural Mesh & VFX",
+      "Mobile Touch Controls",
+      "AI State Machines",
+    ],
+    description:
+      "A visceral 3D first-person zombie survival shooter set in a dark jungle environment, featuring an 8-weapon tactical arsenal, real-time mesh dismemberment, procedural combat feedback, and wave-based survival mechanics.",
+    image: "/screenshots/zombie-jungle-survival.png",
+    mediaLabel: "Unity 6 (URP) · In-Game Capture · 60 FPS Mobile/Desktop",
+    features: [
+      "Engineered a modular 8-Weapon Tactical Arsenal (Dual Pistols, Pump Shotgun, M4A1, FAMAS, G36C, SCAR-H, AK-47, and Scoped Marksman DMR) with dynamic attachment mounting (optics, suppressors, foregrips, tactical lasers), custom recoil curves, and wave-based progression.",
+      "Built a real-time Skinned-Mesh Dismemberment System using runtime BakeMesh vertex/bone-weight extraction to detach and physically simulate severed zombie limbs and heads on impact.",
+      "Designed Procedural Combat & Horror Feedback Systems, including custom 3D starburst muzzle flash meshes, directional camera hit-shake/death collapse animations, dynamic BPM low-health heartbeat audio synthesis, and 3D spatial soundscapes.",
+      "Developed ergonomic Mobile FPS Touch HUD & Controls (virtual thumb joystick, auto-fire toggle, ADS scope zoom, and responsive UI scaling) optimized for smooth 60 FPS mobile performance in URP.",
+    ],
+    cta: {
+      demoLabel: "Gameplay Demo",
+      breakdownLabel: "Technical Breakdown",
+      demoUrl: "#gameplay-demo",
+      breakdownUrl: "#technical-highlights",
+    },
+  },
   // "game for playstore build with Phaser and React and HTML5 canvas",
   {
     slug: "arrow-out",

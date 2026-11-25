@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { projectsData } from "@/app/components/data/projects";
 import { IconArrowLeft, IconArrowRight, IconArrowUpRight, IconCheck, IconUser } from "@tabler/icons-react";
 import { SITE_URL, siteConfig } from "@/config/site";
+import ProjectDemoActions from "@/app/components/ProjectDemoModalTrigger";
 
 // Helpers
 const getProject = (slug) => projectsData.find((p) => p.slug === slug);
@@ -60,6 +61,7 @@ export default async function ProjectDetailPage({ params }) {
     image: project.image ? [`${SITE_URL}${project.image}`] : [siteConfig.ogImage],
     headline: project.heading || project.title,
     description: project.description,
+    keywords: project.techStack?.join(", "),
     author: {
       "@type": "Person",
       "@id": `${SITE_URL}#person`,
@@ -99,26 +101,70 @@ export default async function ProjectDetailPage({ params }) {
           <span>{project.title}</span>
         </nav>
 
-        <span className="section-index">Project case study</span>
+        <span className="section-index">
+          {project.role || "Project case study"}
+        </span>
         <h1 className="detail-title">{project.heading || project.title}</h1>
         
         {/* Visible Author attribution */}
         <p className="article-meta" style={{ display: "flex", alignItems: "center", gap: "8px", margin: "10px 0 16px" }}>
           <IconUser size={16} />
-          <span>Project by <strong>Ahsan Ali Soomro (Ahsan Soomro)</strong> · Full Stack Developer</span>
+          <span>
+            Project by <strong>Ahsan Ali Soomro (Ahsan Soomro)</strong> ·{" "}
+            {project.role || "Full Stack Developer"}
+          </span>
         </p>
 
         <p className="detail-lead">{project.description}</p>
 
-        {/* Images with descriptive alt tags */}
-        <div className="detail-gallery">
+        {/* Tech Stack Badges */}
+        {project.techStack?.length > 0 && (
+          <div className="project-badges" aria-label="Technologies used" style={{ marginTop: "20px" }}>
+            {project.techStack.map((tech) => (
+              <span className="project-badge" key={tech}>{tech}</span>
+            ))}
+          </div>
+        )}
+
+        {/* Action Buttons */}
+        {project.cta ? (
+          <ProjectDemoActions project={project} />
+        ) : (
+          <div className="detail-action">
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button-primary"
+              >
+                Visit live project <IconArrowUpRight size={18} />
+              </a>
+            )}
+
+            {project.privacyPolicy && (
+              <Link
+                href={`/Projects/${project.slug}/privacy-policy`}
+                className="button-ghost"
+              >
+                Privacy Policy
+              </Link>
+            )}
+          </div>
+        )}
+
+        {/* Media / Preview Gallery */}
+        <div id="gameplay-demo" className="detail-gallery">
           {project.image && (
-            <div className="detail-main-image">
+            <div className={`detail-main-image ${!project.imageapp ? "full-width" : ""}`}>
+              {project.mediaLabel && (
+                <span className="media-preview-label">{project.mediaLabel}</span>
+              )}
               <Image
                 src={project.image}
-                alt={`${project.title} — Full Stack application by Ahsan Ali Soomro`}
+                alt={`${project.title} — In-game showcase and UI engineered by Ahsan Ali Soomro`}
                 fill
-                sizes="(max-width:768px) 100vw, 800px"
+                sizes="(max-width:768px) 100vw, 900px"
                 className="object-cover"
                 priority
               />
@@ -139,42 +185,19 @@ export default async function ProjectDetailPage({ params }) {
 
         {/* Highlights */}
         {project.features?.length > 0 && (
-          <div className="detail-highlights">
-            <span className="section-index">What I delivered</span>
-            <h2>Project highlights</h2>
+          <div id="technical-highlights" className="detail-highlights">
+            <span className="section-index">Architecture &amp; Mechanics</span>
+            <h2>Key Technical Highlights</h2>
             <ul>
               {project.features.map((f, i) => (
                 <li key={i}>
                   <IconCheck size={17} />
-                  {f}
+                  <span>{f}</span>
                 </li>
               ))}
             </ul>
           </div>
         )}
-
-        {/* External links */}
-        <div className="detail-action">
-          {project.link && (
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="button-primary"
-            >
-              Visit live project <IconArrowUpRight size={18} />
-            </a>
-          )}
-
-          {project.privacyPolicy && (
-            <Link
-              href={`/Projects/${project.slug}/privacy-policy`}
-              className="button-ghost"
-            >
-              Privacy Policy
-            </Link>
-          )}
-        </div>
 
         <PrevNext slug={project.slug} />
       </section>

@@ -17,8 +17,8 @@ export const privacyPoliciesData = [
       {
         title: "Advertising and third-party processing",
         paragraphs: [
-          "Arrow Out uses Google AdMob to show rewarded and interstitial advertisements. Google and its partners may process information such as device identifiers, IP address, general location derived from IP, diagnostics, and ad interactions to provide, secure, measure, and personalize advertising where permitted.",
-          "Consent choices may be requested before ads are loaded.",
+          "Arrow Out uses third-party advertising services, including Google AdMob and Start.io, to show rewarded, interstitial, and other in-game advertisements. These advertising partners and their networks may collect and process information such as device identifiers (e.g., Advertising ID, Android ID), IP address, general location derived from IP, device specifications, diagnostics, and ad interactions to provide, secure, measure, and personalize advertising where permitted.",
+          "Consent choices may be requested before ads are loaded, in compliance with applicable privacy regulations and store policies.",
         ],
         links: [
           {
@@ -28,6 +28,10 @@ export const privacyPoliciesData = [
           {
             label: "Google's advertising information",
             href: "https://policies.google.com/technologies/ads",
+          },
+          {
+            label: "Start.io Privacy Policy",
+            href: "https://www.start.io/policy/privacy-policy/",
           },
         ],
       },
@@ -42,7 +46,7 @@ export const privacyPoliciesData = [
         title: "Data retention and deletion",
         paragraphs: [
           "Local game data remains on your device until you select Settings → Reset Progress, clear the app's storage, or uninstall the app.",
-          "Information processed by Google is retained according to Google's policies and your Google settings.",
+          "Information processed by third-party ad partners (including Google and Start.io) is retained according to their respective privacy policies and your device/ad settings.",
         ],
       },
       {
